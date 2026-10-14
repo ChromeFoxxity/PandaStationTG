@@ -165,7 +165,7 @@ GLOBAL_DATUM_INIT(keycard_events, /datum/events, new)
 MAPPING_DIRECTIONAL_HELPERS(/obj/machinery/keycard_auth/wall_mounted, 26)
 
 GLOBAL_VAR_INIT(emergency_access, FALSE)
-/proc/make_maint_all_access()
+/proc/make_maint_all_access(silent = FALSE) // PANDA EDIT CHANGE - Silent Emergency Access
 	for(var/area/station/maintenance/area in GLOB.areas)
 		for (var/list/zlevel_turfs as anything in area.get_zlevel_turf_lists())
 			for(var/turf/area_turf as anything in zlevel_turfs)
