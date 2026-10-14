@@ -72,7 +72,7 @@
 
 // Security HUD icon_state defines
 
-#define DEFAULT_HUDS_DMI 'icons/mob/huds/hud.dmi'
+#define DEFAULT_HUDS_DMI 'modular_panda/icons/mob/huds/hud.dmi' // PANDA EDIT, ORIGINAL, 'icons/mob/huds/hud.dmi'
 
 #define SECHUD_NO_ID "hudno_id"
 #define SECHUD_UNKNOWN "hudunknown"
