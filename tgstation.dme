@@ -7223,6 +7223,7 @@
 #include "modular_panda\code\game\machinery\doors\windowdoor.dm"
 #include "modular_panda\code\game\machinery\lightswitch.dm"
 #include "modular_panda\code\game\objects\effects\decals\turfdecal\markings.dm"
+#include "modular_panda\code\game\objects\items\devices\radio\intercom.dm"
 #include "modular_panda\code\game\objects\items\stacks\tiles\tile_misc.dm"
 #include "modular_panda\code\game\objects\items\storage\boxes.dm"
 #include "modular_panda\code\game\objects\items\storage\briefcase.dm"
