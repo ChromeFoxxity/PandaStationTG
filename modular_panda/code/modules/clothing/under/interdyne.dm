@@ -8,6 +8,12 @@
 	icon_state = "staff"
 	inhand_icon_state = "p_suit"
 
+/obj/item/clothing/under/rank/medical/interdyne/geneticist
+	name = "interdyne geneticist uniform"
+	desc = "A snug, and comfortable dark purple turtleneck bearing a small Interdyne Pharmaceuticals insignia on the left breast. It's paired with durable charcoal trousers, designed for comfort whilst creating abominations."
+	icon_state = "geneticist"
+	inhand_icon_state = "p_suit"
+
 /obj/item/clothing/under/rank/medical/interdyne/officer
 	name = "interdyne executive suit"
 	desc = "A crisp, light-purple dress shirt, paired with a neatly knotted dark purple tie bearing a small Interdyne Pharmaceuticals insignia. Matching black dress pants complete the outfit, tailored for a professional appearance without sacrificing comfort."
