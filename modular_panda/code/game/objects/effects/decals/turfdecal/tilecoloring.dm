@@ -120,16 +120,15 @@ TRIMLINE_SUBTYPE_HELPER(/obj/effect/turf_decal/trimline/syndicate/interdyne)
 /// Cybersun tiles
 /obj/effect/turf_decal/tile/syndicate/cybersun
 	name = "cybersun tile decal"
-	color = "#003B7A"
+	color = "#F07828"
 
 TILE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/tile/syndicate/cybersun)
 
 /// Cybersun trimlines
 /obj/effect/turf_decal/trimline/syndicate/cybersun
 	name = "cybersun trimline decal"
-	color = "#003B7A"
+	color = "#F07828"
 
 TRIMLINE_SUBTYPE_HELPER(/obj/effect/turf_decal/trimline/syndicate/cybersun)
 
 #undef TRIMLINE_SUBTYPE_HELPER
-#undef DECAL_ALPHA
