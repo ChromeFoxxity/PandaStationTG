@@ -21,3 +21,18 @@
 /obj/item/clothing/suit/jacket/cybersun_coat/Initialize(mapload)
 	. = ..()
 	allowed += GLOB.security_vest_allowed
+
+/obj/item/clothing/suit/jacket/waffle_jacket
+	name = "waffle co. jacket"
+	desc = "A comfortable, puffy navy blue jacket with Waffle Corporation's logo on the left breast, and back of the jacket. It has yellow trims around the bottom of the jacket, and sleeve cuffs."
+	icon = 'modular_panda/icons/obj/clothing/suits/jacket.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/suits/jacket.dmi'
+	icon_state = "waffle_jacket"
+
+/obj/item/clothing/suit/jacket/waffle_vest
+	name = "waffle co. vest"
+	desc = "A comfortable, puffy navy blue vest with Waffle Corporation's logo on the left breast, and back of the jacket. It has yellow trims around the bottom of the vest."
+	icon = 'modular_panda/icons/obj/clothing/suits/jacket.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/suits/jacket.dmi'
+	icon_state = "waffle_vest"
+	body_parts_covered = CHEST
