@@ -131,4 +131,32 @@ TILE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/tile/syndicate/cybersun)
 
 TRIMLINE_SUBTYPE_HELPER(/obj/effect/turf_decal/trimline/syndicate/cybersun)
 
+/// Waffle tiles
+/obj/effect/turf_decal/tile/syndicate/waffle_blue
+	name = "waffle blue tile decal"
+	color = "#03417E"
+
+TILE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/tile/syndicate/waffle_blue)
+
+/// Waffle trimlines
+/obj/effect/turf_decal/trimline/syndicate/waffle_blue
+	name = "waffle blue trimline decal"
+	color = "#03417E"
+
+TRIMLINE_SUBTYPE_HELPER(/obj/effect/turf_decal/trimline/syndicate/waffle_blue)
+
+/// Waffle tiles
+/obj/effect/turf_decal/tile/syndicate/waffle_yellow
+	name = "waffle yellow tile decal"
+	color = "#FFC629"
+
+TILE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/tile/syndicate/waffle_yellow)
+
+/// Waffle trimlines
+/obj/effect/turf_decal/trimline/syndicate/waffle_yellow
+	name = "waffle yellow trimline decal"
+	color = "#FFC629"
+
+TRIMLINE_SUBTYPE_HELPER(/obj/effect/turf_decal/trimline/syndicate/waffle_yellow)
+
 #undef TRIMLINE_SUBTYPE_HELPER
