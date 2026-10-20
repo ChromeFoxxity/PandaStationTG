@@ -1,6 +1,6 @@
 /obj/structure/closet/l3closet/interdyne
 	icon = 'modular_panda/icons/obj/storage/closet.dmi'
-	icon_door "bio_interdyne"
+	icon_door = "bio_interdyne"
 
 /obj/structure/closet/l3closet/interdyne/PopulateContents()
 	new /obj/item/storage/bag/bio(src)
