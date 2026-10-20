@@ -22,12 +22,27 @@
 	name = "\improper dusty Interdyne crate"
 	desc = "A very outdated model and design of shipment crate from Interdyne Pharmaceutics. Hopefully doesn't have bioweapons inside."
 
+/obj/structure/closet/crate/secure/freezer/interdyne/old
+	name = "\improper dusty Interdyne Pharmaceuticals freezer"
+	desc = "A very outdated model and design of freezer from Interdyne Pharmaceutics. May or may not contain fresh organs."
+	icon = 'icons/obj/storage/crates.dmi'
+	icon_state = "interdynefreezer"
+	base_icon_state = "interdynefreezer"
+	req_access = list(ACCESS_SYNDICATE)
+
 /obj/structure/closet/crate/secure/wafflecorp
 	name = "\improper secure Waffle Corporation crate"
 	desc = "A access-locked crate from Waffle Corporation, a more modernized version. Golden lettering written in cursive on the bottom near the latch reads, 'Bringing you consecutively top five world-wide rated breakfast since 2055'. How endearing."
 	icon = 'modular_panda/icons/obj/storage/crates.dmi'
 	icon_state = "waffle_secure"
 	base_icon_state = "waffle_secure"
+
+/obj/structure/closet/crate/secure/weapon/wafflecorp
+	name = "\improper secure Waffle Corporation weapons crate"
+	desc = "A access-locked weapons crate from Waffle Corporation, they still do some smuggling it seems.. Golden lettering written in cursive below the logo on the lid, 'Bringing you safely smuggled weaponry and shipments since 2055'. How suspicious."
+	icon = 'modular_panda/icons/obj/storage/crates.dmi'
+	icon_state = "waffleweapon_secure"
+	base_icon_state = "waffleweapon_secure"
 
 /obj/structure/closet/crate/secure/freezer/wafflecorp
 	name = "\improper secure Waffle Corporation fridge"
@@ -49,3 +64,15 @@
 	icon = 'modular_panda/icons/obj/storage/crates.dmi'
 	icon_state = "interdyne_secure"
 	base_icon_state = "interdyne_secure"
+
+/obj/structure/closet/crate/secure/freezer/interdyne
+	name = "\improper secure Interdyne Pharmaceuticals freezer"
+	desc = "A access-locked Interdyne Pharmaceuticals branded freezer, a more modernized version. It embraces the Interdyne logo on the top of the lid, you'd be lucky if this didn't have any infected blood or bodies inside."
+	icon = 'modular_panda/icons/obj/storage/crates.dmi'
+	icon_state = "interdynefreezer_secure"
+	base_icon_state = "interdynefreezer_secure"
+	req_access = null
+
+/obj/structure/closet/crate/secure/freezer/interdyne/blood
+	name = "\improper secure Interdyne Pharmaceuticals blood freezer"
+	desc = "A access-locked Interdyne Pharmaceuticals branded freezer, a more modernized version. It embraces the Interdyne logo on the top of the lid, this is said to have high-quality blood, ethically sourced."
