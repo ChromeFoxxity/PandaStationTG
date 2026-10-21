@@ -159,4 +159,32 @@ TILE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/tile/syndicate/waffle_yellow)
 
 TRIMLINE_SUBTYPE_HELPER(/obj/effect/turf_decal/trimline/syndicate/waffle_yellow)
 
+/// Donk tiles
+/obj/effect/turf_decal/tile/syndicate/donk_red
+	name = "donk red tile decal"
+	color = "#7c1c2c"
+
+TILE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/tile/syndicate/donk_red)
+
+/// Donk trimlines
+/obj/effect/turf_decal/trimline/syndicate/donk_red
+	name = "donk red trimline decal"
+	color = "#7c1c2c"
+
+TRIMLINE_SUBTYPE_HELPER(/obj/effect/turf_decal/trimline/syndicate/donk_red)
+
+/// Donk tiles
+/obj/effect/turf_decal/tile/syndicate/donk_green
+	name = "donk green tile decal"
+	color = "#406642"
+
+TILE_DECAL_SUBTYPE_HELPER(/obj/effect/turf_decal/tile/syndicate/donk_green)
+
+/// Donk trimlines
+/obj/effect/turf_decal/trimline/syndicate/donk_green
+	name = "donk green trimline decal"
+	color = "#406642"
+
+TRIMLINE_SUBTYPE_HELPER(/obj/effect/turf_decal/trimline/syndicate/donk_green)
+
 #undef TRIMLINE_SUBTYPE_HELPER

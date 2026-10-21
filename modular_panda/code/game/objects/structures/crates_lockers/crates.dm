@@ -5,6 +5,13 @@
 	icon_state = "interdyne"
 	base_icon_state = "interdyne"
 
+/obj/structure/closet/crate/freezer/donk
+	name = "\improper Donk Corporation fridge"
+	desc = "A Donk Corporation brand refrigerator, emblazoned with the company logo and designed to keep your snacks, frozen meals, and less-than-regulation-approved ingredients fresh! Donk yellow lettering written in bold near the latch next to a smaller logo reads, 'Putting a little Donk in every bite since 2528'. How appetizing."
+	icon = 'modular_panda/icons/obj/storage/crates.dmi'
+	icon_state = "donkfreezer"
+	base_icon_state = "donkfreezer"
+
 /obj/structure/closet/crate/wafflecorp
 	name = "\improper Waffle Corporation crate"
 	desc = "A crate from Waffle Corporation, a more modernized version. Golden lettering written in cursive on the bottom near the latch reads, 'Bringing you consecutively top five world-wide rated breakfast since 2055'. How endearing."
@@ -46,3 +53,17 @@
 	icon = 'modular_panda/icons/obj/storage/crates.dmi'
 	icon_state = "interdynefreezer"
 	base_icon_state = "interdynefreezer"
+
+/obj/structure/closet/crate/donkcorp
+	name = "\improper Donk Corporation crate"
+	desc = "A modernized shipping crate from Donk Corporation, proudly bearing the company's unmistakable branding. Donk yellow lettering written in bold near the latch next to a smaller logo reads, 'Putting a little Donk in every bite since 2528'. How appetizing."
+	icon = 'modular_panda/icons/obj/storage/crates.dmi'
+	icon_state = "donk"
+	base_icon_state = "donk"
+
+/obj/structure/closet/crate/freezer/donkcorp
+	name = "\improper Donk Corporation fridge"
+	desc = "A Donk Corporation brand refrigerator, emblazoned with the company logo and designed to keep your snacks, frozen meals, and less-than-regulation-approved ingredients fresh! Donk yellow lettering written in bold near the latch next to a smaller logo reads, 'Putting a little Donk in every bite since 2528'. How appetizing."
+	icon = 'modular_panda/icons/obj/storage/crates.dmi'
+	icon_state = "donkfreezer"
+	base_icon_state = "donkfreezer"
