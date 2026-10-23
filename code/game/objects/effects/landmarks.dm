@@ -26,7 +26,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 /obj/effect/landmark/start
 	name = "start"
-	icon = 'icons/mob/landmarks.dmi'
+	icon = 'modular_panda/icons/mob/landmarks.dmi' // PANDA EDIT
 	icon_state = "x"
 	anchored = TRUE
 	layer = MOB_LAYER
