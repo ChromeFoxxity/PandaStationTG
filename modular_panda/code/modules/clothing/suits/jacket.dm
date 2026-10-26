@@ -36,3 +36,31 @@
 	worn_icon = 'modular_panda/icons/mob/clothing/suits/jacket.dmi'
 	icon_state = "waffle_vest"
 	body_parts_covered = CHEST
+
+/obj/item/clothing/suit/jacket/donk_sweatervest
+	name = "donk co. sweatervest"
+	desc = "A comfortable, snazzy sweatervest with Donk Corporation's logo on the left breast, and back of the vest, it looks warm."
+	icon = 'modular_panda/icons/obj/clothing/suits/jacket.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/suits/jacket.dmi'
+	icon_state = "donk_sweatervest"
+	body_parts_covered = CHEST
+
+/obj/item/clothing/suit/jacket/donk_waistcoat
+	name = "donk co. waistcoat"
+	desc = "A formal waistcoat with Donk Corporation's logo on the left breast, and back of the vest. It is black on the back, to make sure it looks even fancier, which it does!"
+	icon = 'modular_panda/icons/obj/clothing/suits/jacket.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/suits/jacket.dmi'
+	icon_state = "donk_waistcoat"
+	body_parts_covered = CHEST
+
+/obj/item/clothing/suit/jacket/donk_suit
+	name = "donk co. executive suit jacket"
+	desc = "A finely tailored red executive jacket with yellow trims along the lapels, collar, and cuffs. A small Donk Corporation insignia is embroidered over the left breast, giving the jacket a polished corporate appearance befitting a culinary executive."
+	icon = 'modular_panda/icons/obj/clothing/suits/jacket.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/suits/jacket.dmi'
+	icon_state = "donk_suit"
+	armor_type = /datum/armor/wintercoat_security
+
+/obj/item/clothing/suit/jacket/donk_suit/Initialize(mapload)
+	. = ..()
+	allowed += GLOB.security_vest_allowed

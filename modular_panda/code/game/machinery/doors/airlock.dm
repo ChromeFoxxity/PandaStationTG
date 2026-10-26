@@ -382,6 +382,26 @@
 /obj/machinery/door/airlock/tram/set_light(l_range, l_power, l_color = NONSENSICAL_VALUE, l_angle, l_dir, l_height, l_on)
 	return
 
+//SYNDICATE
+
+/obj/machinery/door/airlock/donk
+	name = "donk co. airlock"
+	icon = 'modular_panda/icons/obj/doors/airlocks/syndicate/donk.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_donk
+
+/obj/machinery/door/airlock/donk/glass
+	opacity = FALSE
+	glass = TRUE
+
+/obj/machinery/door/airlock/donk/green
+	name = "donk co. airlock"
+	icon = 'modular_panda/icons/obj/doors/airlocks/syndicate/donk_green.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_donk_green
+
+/obj/machinery/door/airlock/donk/green/glass
+	opacity = FALSE
+	glass = TRUE
+
 //ASSEMBLYS
 /obj/structure/door_assembly/door_assembly_public
 	icon = 'modular_panda/icons/obj/doors/airlocks/station2/glass.dmi'
@@ -552,6 +572,13 @@
 /obj/structure/door_assembly/
 	icon = 'modular_panda/icons/obj/doors/airlocks/station/public.dmi'
 	overlays_file = 'modular_panda/icons/obj/doors/airlocks/station/overlays.dmi'
+
+/obj/structure/door_assembly/door_assembly_donk_green
+	name = "donk co. airlock assembly"
+	icon = 'modular_panda/icons/obj/doors/airlocks/syndicate/donk_green.dmi'
+	base_name = "donk co. airlock"
+	glass_type = /obj/machinery/door/airlock/donk/green/glass
+	airlock_type = /obj/machinery/door/airlock/green/donk
 
 #undef AIRLOCK_FRAME_CLOSED
 #undef AIRLOCK_FRAME_CLOSING

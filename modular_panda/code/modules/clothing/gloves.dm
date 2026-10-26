@@ -17,3 +17,12 @@
 	inhand_icon_state = "greyscale_gloves"
 	greyscale_colors = "#3D3D3D"
 	clothing_traits = list(TRAIT_QUICK_BUILD)
+
+/obj/item/clothing/gloves/latex/nitrile/janitor
+	name = "heavy-duty rubber gloves"
+	desc = "Cheap, heavy-duty long rubber gloves manufactured by Donk Corporation. Thicker and more durable than standard gloves, they provide hand protection from handling trash, and dishes all the same, all the best for their custodian team!"
+	icon = 'modular_panda/icons/obj/clothing/gloves.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/hands.dmi'
+	icon_state = "rubber_gloves"
+	inhand_icon_state = "greyscale_gloves"
+	greyscale_colors = "#FFE037"

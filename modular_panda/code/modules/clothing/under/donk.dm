@@ -10,6 +10,13 @@
 	inhand_icon_state = ""
 	can_adjust = FALSE
 
+/obj/item/clothing/under/rank/donk/bartender
+	name = "donk co. bartending uniform"
+	desc = "A crisp, cream dress shirt, paired with a neatly knotted red tie bearing a small Donk Corporation insignia. It's paired with charcoal cargo pants, designed for comfort and easy movement during long shifts."
+	icon_state = "bartender"
+	inhand_icon_state = ""
+	can_adjust = FALSE
+
 /obj/item/clothing/under/rank/donk/janitor
 	name = "donk co. janitor uniform"
 	desc = "An industrial uniform worn by custodial staff, Donk Corporation insignia is display the shoulders. It's paired with durable cargo pants, designed for comfort and easy movement during long shifts."

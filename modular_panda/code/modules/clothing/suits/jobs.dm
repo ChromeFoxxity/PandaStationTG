@@ -11,6 +11,15 @@
 	icon = 'modular_panda/icons/obj/clothing/suits/utility.dmi'
 	worn_icon = 'modular_panda/icons/mob/clothing/suits/utility.dmi'
 	icon_state = "donk_apron"
+	allowed = list(
+		/obj/item/kitchen,
+		/obj/item/knife/kitchen,
+		/obj/item/storage/bag/tray,
+		/obj/item/reagent_containers/cup/glass,
+		/obj/item/rag,
+		/obj/item/gun/ballistic/shotgun/doublebarrel,
+		/obj/item/reagent_containers/condiment,
+	)
 
 /obj/item/clothing/suit/apron/overalls/donk
 	name = "donk co. botanist overalls"

@@ -84,6 +84,13 @@
 	icon_state = "donk_secure"
 	base_icon_state = "donk_secure"
 
+/obj/structure/closet/crate/secure/donkcorp/green
+	name = "\improper secure Donk Corporation crate"
+	desc = "A modernized access-locked shipping crate from Donk Corporation, proudly bearing the company's unmistakable branding. Donk yellow lettering written in bold near the latch next to a smaller logo reads, 'Putting a little Donk in every bite since 2528'. How appetizing."
+	icon = 'modular_panda/icons/obj/storage/crates.dmi'
+	icon_state = "donk_green_secure"
+	base_icon_state = "donk_green_secure"
+
 /obj/structure/closet/crate/secure/freezer/donkcorp
 	name = "\improper secure Donk Corporation fridge"
 	desc = "A access-locked Donk Corporation brand refrigerator, emblazoned with the company logo and designed to keep your snacks, frozen meals, and less-than-regulation-approved ingredients fresh! Donk yellow lettering written in bold near the latch next to a smaller logo reads, 'Putting a little Donk in every bite since 2528'. How appetizing."
