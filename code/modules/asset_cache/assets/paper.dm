@@ -16,7 +16,8 @@
 		"stamp-chap" = 'icons/stamp_icons/large_stamp-chap.png',
 		"stamp-mime" = 'icons/stamp_icons/large_stamp-mime.png',
 		"stamp-centcom" = 'icons/stamp_icons/large_stamp-centcom.png',
-		"stamp-syndicate" = 'icons/stamp_icons/large_stamp-syndicate.png'
+		"stamp-syndicate" = 'icons/stamp_icons/large_stamp-syndicate.png',
+		"stamp-doh" = 'icons/stamp_icons/large_stamp-doh.png' // PANDA ADDITION
 	)
 
 // Contains 256x128 versions of various in game company logos

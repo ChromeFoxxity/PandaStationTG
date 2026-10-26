@@ -4,7 +4,7 @@
 	icon = 'modular_panda/icons/obj/clothing/suits/jacket.dmi'
 	worn_icon = 'modular_panda/icons/mob/clothing/suits/jacket.dmi'
 	icon_state = "interdyne_suit"
-	armor_type = /datum/armor/wintercoat_security
+	armor_type = /datum/armor/wintercoat_hop
 
 /obj/item/clothing/suit/jacket/interdyne_suit/Initialize(mapload)
 	. = ..()
@@ -16,7 +16,7 @@
 	icon = 'modular_panda/icons/obj/clothing/suits/jacket.dmi'
 	worn_icon = 'modular_panda/icons/mob/clothing/suits/jacket.dmi'
 	icon_state = "cybersun_coat"
-	armor_type = /datum/armor/wintercoat_security
+	armor_type = /datum/armor/wintercoat_hop
 
 /obj/item/clothing/suit/jacket/cybersun_coat/Initialize(mapload)
 	. = ..()
@@ -59,7 +59,7 @@
 	icon = 'modular_panda/icons/obj/clothing/suits/jacket.dmi'
 	worn_icon = 'modular_panda/icons/mob/clothing/suits/jacket.dmi'
 	icon_state = "donk_suit"
-	armor_type = /datum/armor/wintercoat_security
+	armor_type = /datum/armor/wintercoat_hop
 
 /obj/item/clothing/suit/jacket/donk_suit/Initialize(mapload)
 	. = ..()

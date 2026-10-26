@@ -30,3 +30,13 @@
 	icon_state = "officer"
 	inhand_icon_state = ""
 	alt_covers_chest = TRUE
+
+/obj/item/clothing/under/rank/donk/officer/skirt
+	name = "donk co. executive skirt"
+	desc = "A crisp, cream dress shirt, paired with a neatly knotted yellow tie bearing a small Donk Corporation insignia. Matching charcoal skirt complete the outfit, tailored for a professional appearance without sacrificing comfort."
+	icon_state = "officer_skirt"
+	body_parts_covered = CHEST|GROIN|ARMS
+	dying_key = DYE_REGISTRY_JUMPSKIRT
+	female_sprite_flags = FEMALE_UNIFORM_TOP_ONLY
+	supports_variations_flags = CLOTHING_DIGITIGRADE_VARIATION_NO_NEW_ICON
+	bodyshapes_with_variations = NONE

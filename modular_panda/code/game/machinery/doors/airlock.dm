@@ -402,6 +402,16 @@
 	opacity = FALSE
 	glass = TRUE
 
+/obj/machinery/door/airlock/donk/head
+	name = "donk co. command airlock"
+	icon = 'modular_panda/icons/obj/doors/airlocks/syndicate/donk_head.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_donk_head
+
+/obj/machinery/door/airlock/donk/head/glass
+	opacity = FALSE
+	glass = TRUE
+	normal_integrity = 400
+
 //ASSEMBLYS
 /obj/structure/door_assembly/door_assembly_public
 	icon = 'modular_panda/icons/obj/doors/airlocks/station2/glass.dmi'
@@ -573,12 +583,26 @@
 	icon = 'modular_panda/icons/obj/doors/airlocks/station/public.dmi'
 	overlays_file = 'modular_panda/icons/obj/doors/airlocks/station/overlays.dmi'
 
+/obj/structure/door_assembly/door_assembly_donk
+	name = "donk co. airlock assembly"
+	icon = 'modular_panda/icons/obj/doors/airlocks/syndicate/donk.dmi'
+	base_name = "donk co. airlock"
+	glass_type = /obj/machinery/door/airlock/donk/glass
+	airlock_type = /obj/machinery/door/airlock/donk
+
 /obj/structure/door_assembly/door_assembly_donk_green
 	name = "donk co. airlock assembly"
 	icon = 'modular_panda/icons/obj/doors/airlocks/syndicate/donk_green.dmi'
 	base_name = "donk co. airlock"
 	glass_type = /obj/machinery/door/airlock/donk/green/glass
-	airlock_type = /obj/machinery/door/airlock/green/donk
+	airlock_type = /obj/machinery/door/airlock/donk/green
+
+/obj/structure/door_assembly/door_assembly_donk_head
+	name = "donk co. command airlock assembly"
+	icon = 'modular_panda/icons/obj/doors/airlocks/syndicate/donk_head.dmi'
+	base_name = "donk co. command airlock"
+	glass_type = /obj/machinery/door/airlock/donk/head/glass
+	airlock_type = /obj/machinery/door/airlock/donk/head
 
 #undef AIRLOCK_FRAME_CLOSED
 #undef AIRLOCK_FRAME_CLOSING

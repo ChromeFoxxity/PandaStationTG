@@ -376,6 +376,7 @@
 	ACCESS_HOP, \
 	ACCESS_QM, \
 	ACCESS_RD, \
+	ACCESS_DOH, \
 )
 
 /// Captains private rooms. Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_CAPTAIN)
@@ -446,6 +447,7 @@
 	ACCESS_LIBRARY, \
 	ACCESS_SERVICE, \
 	ACCESS_THEATRE, \
+	ACCESS_DOH, \
 )
 /// Name for the Security region.
 #define REGION_SECURITY "Security"
