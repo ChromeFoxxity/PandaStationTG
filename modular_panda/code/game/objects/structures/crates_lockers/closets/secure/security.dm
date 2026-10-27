@@ -1,7 +1,10 @@
+/obj/structure/closet/secure_closet/captains
+	name = "station director's locker"
+	icon = 'modular_panda/icons/obj/storage/closet.dmi'
+
 /obj/structure/closet/secure_closet/hop
-	name = "head of personnel's locker"
-	icon_state = "hop"
-	req_access = list(ACCESS_HOP)
+	name = "human resources officer's locker"
+	icon = 'modular_panda/icons/obj/storage/closet.dmi'
 
 /obj/structure/closet/secure_closet/hop/PopulateContents()
 	..()

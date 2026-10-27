@@ -26,3 +26,29 @@
 	icon_state = "rubber_gloves"
 	inhand_icon_state = "greyscale_gloves"
 	greyscale_colors = "#FFE037"
+
+/obj/item/clothing/gloves/combat
+	icon = 'modular_panda/icons/obj/clothing/gloves.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/hands.dmi'
+	icon_state = "combat"
+
+/obj/item/clothing/gloves/combat/wizard
+	icon = 'icons/obj/clothing/gloves.dmi'
+	worn_icon = null
+
+/obj/item/clothing/gloves/tackler/combat/insulated
+	icon = 'modular_panda/icons/obj/clothing/gloves.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/hands.dmi'
+	icon_state = "combat"
+
+/obj/item/clothing/gloves/kaza_ruk/combatglovesplus
+	icon = 'modular_panda/icons/obj/clothing/gloves.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/hands.dmi'
+	icon_state = "combat"
+
+/obj/item/clothing/gloves/captain/syndicate
+	name = "site director's gloves"
+	desc = "Some heavy-duty combat gloves, shock-proof, and thermally insulated! They are quite an expensive, and well-maintained pair of gloves."
+	icon = 'modular_panda/icons/obj/clothing/gloves.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/hands.dmi'
+	icon_state = "sd_gloves"

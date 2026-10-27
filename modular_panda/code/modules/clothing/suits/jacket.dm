@@ -64,3 +64,22 @@
 /obj/item/clothing/suit/jacket/donk_suit/Initialize(mapload)
 	. = ..()
 	allowed += GLOB.security_vest_allowed
+
+/obj/item/clothing/suit/armor/vest/capcarapace/syndicate/site_director
+	name = "site director's greatcoat"
+	desc = "A fashionable, heavily padded greatcoat in a dark red, decorated with golden markings, buttons, and insignia. It denotes the rank of \"Site Director\"."
+	icon = 'modular_panda/icons/obj/clothing/suits/jacket.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/suits/jacket.dmi'
+	icon_state = "sd_coat"
+	inhand_icon_state = ""
+	inhand_icon_state = null
+	body_parts_covered = CHEST|GROIN|ARMS
+	supports_variations_flags = CLOTHING_CERULEAN_MASK_INBETWEEN
+
+/obj/item/clothing/suit/armor/vest/hop/syndicate
+	name = "human resources officer's overcoat"
+	desc = "A fashionable, formal overcoat in a dark red, decorated with silver buttons and insignia. It denotes the rank of \"Human Resources Officer\"."
+	icon = 'modular_panda/icons/obj/clothing/suits/jacket.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/suits/jacket.dmi'
+	icon_state = "hro_coat"
+	inhand_icon_state = ""

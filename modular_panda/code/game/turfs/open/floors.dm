@@ -1,6 +1,48 @@
 /turf/open/floor
 	icon = 'modular_panda/icons/turf/floors/floors.dmi'
 
+/turf/open/floor/mineral/adamantine
+	icon = 'icons/turf/floors.dmi'
+
+/turf/open/floor/mineral/bananium/tiled
+	icon = 'icons/turf/floors.dmi'
+
+/turf/open/floor/mineral/bluespace
+	icon = 'icons/turf/floors.dmi'
+
+/turf/open/floor/mineral/diamond/tiled
+	icon = 'icons/turf/floors.dmi'
+
+/turf/open/floor/mineral/gold/sun
+	icon = 'icons/turf/floors.dmi'
+
+/turf/open/floor/mineral/gold/tiled
+	icon = 'icons/turf/floors.dmi'
+
+/turf/open/floor/mineral/metal_hydrogen
+	icon = 'icons/turf/floors.dmi'
+
+/turf/open/floor/mineral/mythril
+	icon = 'icons/turf/floors.dmi'
+
+/turf/open/floor/mineral/plasma/tiled
+	icon = 'icons/turf/floors.dmi'
+
+/turf/open/floor/mineral/runite
+	icon = 'icons/turf/floors.dmi'
+
+/turf/open/floor/mineral/silver/moon
+	icon = 'icons/turf/floors.dmi'
+
+/turf/open/floor/mineral/silver/tiled
+	icon = 'icons/turf/floors.dmi'
+
+/turf/open/floor/mineral/telecrystal
+	icon = 'icons/turf/floors.dmi'
+
+/turf/open/floor/mineral/uranium/tiled
+	icon = 'icons/turf/floors.dmi'
+
 /turf/open/floor/catwalk_floor
 	icon = 'modular_panda/icons/turf/floors/catwalk_plating.dmi'
 

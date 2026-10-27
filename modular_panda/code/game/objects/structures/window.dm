@@ -55,7 +55,6 @@
 	icon = 'modular_panda/icons/obj/smooth_structures/pod_window.dmi'
 	canSmoothWith =  SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_SURVIVAL_TITANIUM_POD + SMOOTH_GROUP_WALLS
 
-
 //MISC
 /obj/structure/window/bronze/fulltile
 	icon = 'modular_panda/icons/obj/smooth_structures/clockwork_window.dmi'
@@ -69,3 +68,15 @@
 	icon = MAP_SWITCH('modular_panda/icons/obj/smooth_structures/reinforced_window.dmi', 'icons/obj/smooth_structures/structure_variations.dmi')
 	icon_state = MAP_SWITCH("reinforced_window-0", "fake_window")
 	canSmoothWith = SMOOTH_GROUP_AIRLOCK + SMOOTH_GROUP_WINDOW_FULLTILE + SMOOTH_GROUP_WALLS
+
+/obj/structure/window/reinforced/survival_pod
+	icon = 'icons/obj/structures.dmi'
+
+/obj/structure/window/bronze
+	icon = 'icons/obj/structures.dmi'
+
+/obj/structure/window/cult
+	icon = 'icons/obj/structures.dmi'
+
+/obj/structure/window/reinforced/titanium
+	icon = 'icons/obj/structures.dmi'

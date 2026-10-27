@@ -146,7 +146,7 @@
 	icon = 'modular_panda/icons/obj/doors/airlocks/station/command.dmi'
 
 /obj/machinery/door/airlock/security
-	icon = 'modular_panda/icons/obj/doors/airlocks/station/security2.dmi'
+	icon = 'modular_panda/icons/obj/doors/airlocks/station/security.dmi'
 
 /obj/machinery/door/airlock/engineering
 	icon = 'modular_panda/icons/obj/doors/airlocks/station/engineering.dmi'
@@ -190,6 +190,7 @@
 	normal_integrity = 400
 
 /obj/machinery/door/airlock/service
+	name = "service airlock"
 	icon = 'modular_panda/icons/obj/doors/airlocks/station/service.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_service
 
@@ -198,21 +199,49 @@
 	glass = TRUE
 
 /obj/machinery/door/airlock/captain
+	name = "station director airlock"
 	icon = 'modular_panda/icons/obj/doors/airlocks/cap.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_captain
 
 /obj/machinery/door/airlock/hop
+	name = "human resources officer airlock"
 	icon = 'modular_panda/icons/obj/doors/airlocks/hop.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_hop
+
+/obj/machinery/door/airlock/doh
+	name = "director of hospitality airlock"
+	icon = 'modular_panda/icons/obj/doors/airlocks/doh.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_doh
+
+/obj/machinery/door/airlock/doh/glass
+	opacity = FALSE
+	glass = TRUE
+	normal_integrity = 400
 
 /obj/machinery/door/airlock/hos
+	name = "chief of security operations airlock"
 	icon = 'modular_panda/icons/obj/doors/airlocks/hos.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_hos
 
 /obj/machinery/door/airlock/hos/glass
 	opacity = FALSE
 	glass = TRUE
 	normal_integrity = 400
 
+/obj/machinery/door/airlock/warden
+	name = "warden airlock"
+	icon = 'modular_panda/icons/obj/doors/airlocks/warden.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_warden
+
+/obj/machinery/door/airlock/warden/glass
+	opacity = FALSE
+	glass = TRUE
+	normal_integrity = 400
+
 /obj/machinery/door/airlock/ce
+	name = "chief of engineering airlock"
 	icon = 'modular_panda/icons/obj/doors/airlocks/ce.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_ce
 
 /obj/machinery/door/airlock/ce/glass
 	opacity = FALSE
@@ -220,7 +249,9 @@
 	normal_integrity = 400
 
 /obj/machinery/door/airlock/rd
+	name = "director of research airlock"
 	icon = 'modular_panda/icons/obj/doors/airlocks/rd.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_rd
 
 /obj/machinery/door/airlock/rd/glass
 	opacity = FALSE
@@ -228,7 +259,9 @@
 	normal_integrity = 400
 
 /obj/machinery/door/airlock/qm
+	name = "logistics officer airlock"
 	icon = 'modular_panda/icons/obj/doors/airlocks/qm.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_qm
 
 /obj/machinery/door/airlock/qm/glass
 	opacity = FALSE
@@ -236,7 +269,9 @@
 	normal_integrity = 400
 
 /obj/machinery/door/airlock/cmo
+	name = "chief medical officer airlock"
 	icon = 'modular_panda/icons/obj/doors/airlocks/cmo.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_cmo
 
 /obj/machinery/door/airlock/cmo/glass
 	opacity = FALSE
@@ -402,16 +437,6 @@
 	opacity = FALSE
 	glass = TRUE
 
-/obj/machinery/door/airlock/donk/head
-	name = "donk co. command airlock"
-	icon = 'modular_panda/icons/obj/doors/airlocks/syndicate/donk_head.dmi'
-	assemblytype = /obj/structure/door_assembly/door_assembly_donk_head
-
-/obj/machinery/door/airlock/donk/head/glass
-	opacity = FALSE
-	glass = TRUE
-	normal_integrity = 400
-
 //ASSEMBLYS
 /obj/structure/door_assembly/door_assembly_public
 	icon = 'modular_panda/icons/obj/doors/airlocks/station2/glass.dmi'
@@ -520,44 +545,65 @@
 	airlock_type = /obj/machinery/door/airlock/service
 
 /obj/structure/door_assembly/door_assembly_captain
-	name = "captain airlock assembly"
+	name = "station director airlock assembly"
 	icon = 'modular_panda/icons/obj/doors/airlocks/cap.dmi'
+	base_name = "station director airlock"
 	glass_type = /obj/machinery/door/airlock/command/glass
 	airlock_type = /obj/machinery/door/airlock/captain
 
 /obj/structure/door_assembly/door_assembly_hop
-	name = "head of personnel airlock assembly"
+	name = "human resources officer airlock assembly"
 	icon = 'modular_panda/icons/obj/doors/airlocks/hop.dmi'
+	base_name = "human resources officer airlock"
 	glass_type = /obj/machinery/door/airlock/command/glass
 	airlock_type = /obj/machinery/door/airlock/hop
 
-/obj/structure/door_assembly/hos
-	name = "head of security airlock assembly"
+/obj/structure/door_assembly/door_assembly_doh
+	name = "director of hospitality airlock assembly"
+	icon = 'modular_panda/icons/obj/doors/airlocks/doh.dmi'
+	base_name = "director of hospitality airlock"
+	glass_type = /obj/machinery/door/airlock/doh/glass
+	airlock_type = /obj/machinery/door/airlock/doh
+
+/obj/structure/door_assembly/door_assembly_hos
+	name = "chief of security operations airlock assembly"
 	icon = 'modular_panda/icons/obj/doors/airlocks/hos.dmi'
+	base_name = "chief of security operations airlock"
 	glass_type = /obj/machinery/door/airlock/hos/glass
 	airlock_type = /obj/machinery/door/airlock/hos
+
+/obj/structure/door_assembly/door_assembly_warden
+	name = "warden airlock assembly"
+	icon = 'modular_panda/icons/obj/doors/airlocks/warden.dmi'
+	base_name = "warden airlock"
+	glass_type = /obj/machinery/door/airlock/warden/glass
+	airlock_type = /obj/machinery/door/airlock/warden
 
 /obj/structure/door_assembly/door_assembly_cmo
 	name = "chief medical officer airlock assembly"
 	icon = 'modular_panda/icons/obj/doors/airlocks/cmo.dmi'
+	base_name = "chief medical officer airlock"
 	glass_type = /obj/machinery/door/airlock/cmo/glass
 	airlock_type = /obj/machinery/door/airlock/cmo
 
 /obj/structure/door_assembly/door_assembly_ce
-	name = "chief engineer airlock assembly"
+	name = "chief of engineering airlock assembly"
 	icon = 'modular_panda/icons/obj/doors/airlocks/ce.dmi'
+	base_name = "chief of engineering airlock"
 	glass_type = /obj/machinery/door/airlock/ce/glass
 	airlock_type = /obj/machinery/door/airlock/ce
 
 /obj/structure/door_assembly/door_assembly_rd
-	name = "research director airlock assembly"
+	name = "director of research airlock assembly"
 	icon = 'modular_panda/icons/obj/doors/airlocks/rd.dmi'
+	base_name = "director of research airlock"
 	glass_type = /obj/machinery/door/airlock/rd/glass
 	airlock_type = /obj/machinery/door/airlock/rd
 
 /obj/structure/door_assembly/door_assembly_qm
-	name = "quartermaster airlock assembly"
+	name = "logistics officer airlock assembly"
 	icon = 'modular_panda/icons/obj/doors/airlocks/qm.dmi'
+	base_name = "logistics officer airlock"
 	glass_type = /obj/machinery/door/airlock/qm/glass
 	airlock_type = /obj/machinery/door/airlock/qm
 
@@ -596,13 +642,6 @@
 	base_name = "donk co. airlock"
 	glass_type = /obj/machinery/door/airlock/donk/green/glass
 	airlock_type = /obj/machinery/door/airlock/donk/green
-
-/obj/structure/door_assembly/door_assembly_donk_head
-	name = "donk co. command airlock assembly"
-	icon = 'modular_panda/icons/obj/doors/airlocks/syndicate/donk_head.dmi'
-	base_name = "donk co. command airlock"
-	glass_type = /obj/machinery/door/airlock/donk/head/glass
-	airlock_type = /obj/machinery/door/airlock/donk/head
 
 #undef AIRLOCK_FRAME_CLOSED
 #undef AIRLOCK_FRAME_CLOSING
