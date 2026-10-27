@@ -228,6 +228,11 @@
 	glass = TRUE
 	normal_integrity = 400
 
+/obj/machinery/door/airlock/cl
+	name = "corporate liaison airlock"
+	icon = 'modular_panda/icons/obj/doors/airlocks/cl.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_cl
+
 /obj/machinery/door/airlock/warden
 	name = "warden airlock"
 	icon = 'modular_panda/icons/obj/doors/airlocks/warden.dmi'
@@ -571,6 +576,13 @@
 	base_name = "chief of security operations airlock"
 	glass_type = /obj/machinery/door/airlock/hos/glass
 	airlock_type = /obj/machinery/door/airlock/hos
+
+/obj/structure/door_assembly/door_assembly_cl
+	name = "corporate liaison airlock assembly"
+	icon = 'modular_panda/icons/obj/doors/airlocks/cl.dmi'
+	base_name = "corporate liaison airlock"
+	glass_type = /obj/machinery/door/airlock/cl/glass
+	airlock_type = /obj/machinery/door/airlock/cl
 
 /obj/structure/door_assembly/door_assembly_warden
 	name = "warden airlock assembly"
