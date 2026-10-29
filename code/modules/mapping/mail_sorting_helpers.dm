@@ -116,5 +116,5 @@
 /obj/effect/mapping_helpers/mail_sorting/service/dormitories
 	sort_type = SORT_TYPE_DORMITORIES
 
-/obj/effect/mapping_helpers/mail_sorting/service/law_office
-	sort_type = SORT_TYPE_LAW_OFFICE
+/obj/effect/mapping_helpers/mail_sorting/service/cl_office // PANDA EDIT
+	sort_type = SORT_TYPE_CL_OFFICE // PANDA EDIT
