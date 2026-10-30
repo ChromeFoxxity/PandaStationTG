@@ -65,9 +65,9 @@
 	. = ..()
 	allowed += GLOB.security_vest_allowed
 
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate/site_director
-	name = "site director's greatcoat"
-	desc = "A fashionable, heavily padded greatcoat in a dark red, decorated with golden markings, buttons, and insignia. It denotes the rank of \"Site Director\"."
+/obj/item/clothing/suit/armor/vest/capcarapace/syndicate/station_director
+	name = "station director's greatcoat"
+	desc = "A fashionable, heavily padded greatcoat in a dark red, decorated with golden markings, buttons, and insignia. It denotes the rank of \"Station Director\"."
 	icon = 'modular_panda/icons/obj/clothing/suits/jacket.dmi'
 	worn_icon = 'modular_panda/icons/mob/clothing/suits/jacket.dmi'
 	icon_state = "sd_coat"

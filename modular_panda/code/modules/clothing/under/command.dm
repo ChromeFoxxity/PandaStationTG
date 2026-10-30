@@ -1,6 +1,6 @@
 /obj/item/clothing/under/rank/captain/syndicate
-	name = "site director's turtleneck"
-	desc = "It's a dark red turtleneck with golden markings and insignia embezzling it, with some matching charcoal dress pants with a gold stripe. It denotes the rank of \"Site Director\"."
+	name = "station director's turtleneck"
+	desc = "It's a dark red turtleneck with golden markings and insignia embezzling it, with some matching charcoal dress pants with a gold stripe. It denotes the rank of \"Station Director\"."
 	icon = 'modular_panda/icons/obj/clothing/under/command.dmi'
 	worn_icon = 'modular_panda/icons/mob/clothing/under/command.dmi'
 	icon_state = "sd"
@@ -11,8 +11,8 @@
 	armor_type = /datum/armor/clothing_under/rank_captain
 
 /obj/item/clothing/under/rank/captain/syndicate/skirt
-	name = "site director's skirtleneck"
-	desc = "It's a dark red turtleneck with golden markings and insignia embezzling it, with a matching charcoal skirt with a gold stripe. It denotes the rank of \"Site Director\"."
+	name = "station director's skirtleneck"
+	desc = "It's a dark red turtleneck with golden markings and insignia embezzling it, with a matching charcoal skirt with a gold stripe. It denotes the rank of \"Station Director\"."
 	icon_state = "sd_skirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	dying_key = DYE_REGISTRY_JUMPSKIRT

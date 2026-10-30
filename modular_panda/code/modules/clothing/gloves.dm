@@ -47,7 +47,7 @@
 	icon_state = "combat"
 
 /obj/item/clothing/gloves/captain/syndicate
-	name = "site director's gloves"
+	name = "station director's gloves"
 	desc = "Some heavy-duty combat gloves, shock-proof, and thermally insulated! They are quite an expensive, and well-maintained pair of gloves."
 	icon = 'modular_panda/icons/obj/clothing/gloves.dmi'
 	worn_icon = 'modular_panda/icons/mob/clothing/hands.dmi'
