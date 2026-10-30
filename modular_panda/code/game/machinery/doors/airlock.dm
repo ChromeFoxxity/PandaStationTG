@@ -234,7 +234,7 @@
 	assemblytype = /obj/structure/door_assembly/door_assembly_cl
 
 /obj/machinery/door/airlock/warden
-	name = "warden airlock"
+	name = "master at arms' airlock"
 	icon = 'modular_panda/icons/obj/doors/airlocks/warden.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_warden
 
@@ -585,9 +585,9 @@
 	airlock_type = /obj/machinery/door/airlock/cl
 
 /obj/structure/door_assembly/door_assembly_warden
-	name = "warden airlock assembly"
+	name = "master at arms' airlock assembly"
 	icon = 'modular_panda/icons/obj/doors/airlocks/warden.dmi'
-	base_name = "warden airlock"
+	base_name = "master at arms' airlock"
 	glass_type = /obj/machinery/door/airlock/warden/glass
 	airlock_type = /obj/machinery/door/airlock/warden
 

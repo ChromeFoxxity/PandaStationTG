@@ -7223,6 +7223,7 @@
 #include "interface\fonts\vcr_osd_mono.dm"
 #include "modular_panda\code\datums\weather\weather_types\radiation_storm.dm"
 #include "modular_panda\code\game\area\areas\station\command.dm"
+#include "modular_panda\code\game\area\areas\station\security.dm"
 #include "modular_panda\code\game\area\areas\station\service.dm"
 #include "modular_panda\code\game\machinery\lightswitch.dm"
 #include "modular_panda\code\game\machinery\microwave.dm"
