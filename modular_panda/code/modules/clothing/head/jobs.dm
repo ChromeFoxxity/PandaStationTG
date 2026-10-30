@@ -6,7 +6,7 @@
 	icon_state = "interdyne_surgicalcap"
 
 /obj/item/clothing/head/hats/caphat/parade/syndicate
-	name = "station director's parade cap"
+	name = "station director's peaked cap"
 	desc = "A very neat-looking peaked cap for formal occasions, it has the Syndicate emblem on the front in gold, it has two initials on the inside of the cap."
 	icon = 'modular_panda/icons/obj/clothing/head/hats.dmi'
 	worn_icon = 'modular_panda/icons/mob/clothing/head/hats.dmi'

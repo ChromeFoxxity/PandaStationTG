@@ -45,6 +45,8 @@
 /obj/item/clothing/under/rank/civilian/lawyer/liaison
 	name = "corporate liaison's suit"
 	desc = "A neatly fitted dress uniform with a white shirt with Syndicate insignia on the shoulders, the tie is well-pressed, and neat, it's covered with a formal vest to top it all off, there's a nametag with the liaison's name on it on the left breast. It's paired with charcoal dress pants, designed for comfort and easy movement during long shifts."
+	icon = 'modular_panda/icons/obj/clothing/under/command.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/under/command.dmi'
 	icon_state = "cl"
 	inhand_icon_state = ""
 	sensor_mode = SENSOR_COORDS

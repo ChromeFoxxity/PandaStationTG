@@ -2581,7 +2581,6 @@
 /area/station/hallway/secondary/entry)
 "aPD" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/turf_decal/tile/dark_red/half/contrasted{
 	dir = 4
 	},
@@ -2593,6 +2592,9 @@
 	},
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/pod/dark,
 /area/station/command/teleporter)
@@ -4823,7 +4825,7 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
-/turf/open/floor/wood/parquet,
+/turf/open/floor/wood,
 /area/station/command/corporate_showroom)
 "byi" = (
 /obj/machinery/atmospherics/components/tank,
@@ -8388,8 +8390,10 @@
 /obj/structure/cable,
 /obj/machinery/nuclearbomb/beer{
 	desc = "A syndicate-brand nuclear device. It looks like it's a older model that got repurposed for a trophy room, most of the circuits have been stripped. This is one of the Syndicate's pieces of technology that only proved to be an issue for Nanotrasen. Oddly enough, it requires the Nanotrasen Captain's NAD to actually activate, however. Which was quite a confusing design choice..";
-	name = "nuclear fission explosive"
+	name = "nuclear fission explosive";
+	anchored = 1
 	},
+/obj/effect/turf_decal/delivery/white,
 /turf/open/floor/mineral/plastitanium/pod/large,
 /area/station/command/corporate_showroom)
 "cKg" = (
@@ -21097,8 +21101,8 @@
 	pixel_x = 8;
 	pixel_y = 32
 	},
-/obj/item/soap/syndie{
-	pixel_y = 4
+/obj/item/gun/energy/laser/chameleon{
+	pixel_y = 1
 	},
 /turf/open/floor/mineral/plastitanium/pod/large,
 /area/station/command/corporate_showroom)
@@ -21803,6 +21807,9 @@
 /area/station/security/brig)
 "gRH" = (
 /obj/structure/table/wood,
+/obj/item/card/emagfake{
+	pixel_y = 3
+	},
 /turf/open/floor/mineral/plastitanium/pod/large,
 /area/station/command/corporate_showroom)
 "gRI" = (
@@ -21987,7 +21994,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/turf/open/floor/wood/parquet,
+/turf/open/floor/wood,
 /area/station/command/corporate_showroom)
 "gTR" = (
 /obj/machinery/door/firedoor,
@@ -23095,10 +23102,14 @@
 "hnN" = (
 /obj/effect/turf_decal/siding/wideplating_new/dark,
 /obj/effect/turf_decal/siding/wood,
-/turf/open/floor/wood/parquet,
+/turf/open/floor/wood,
 /area/station/command/corporate_showroom)
 "hnX" = (
 /obj/machinery/vending/coffee,
+/obj/effect/turf_decal/delivery/white,
+/obj/effect/turf_decal/siding/thinplating_new/dark{
+	dir = 1
+	},
 /turf/open/floor/mineral/plastitanium/pod/large,
 /area/station/hallway/secondary/command)
 "hob" = (
@@ -27606,7 +27617,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/turf/open/floor/wood/parquet,
+/turf/open/floor/wood,
 /area/station/command/corporate_showroom)
 "iJL" = (
 /obj/effect/landmark/start/hangover,
@@ -28442,6 +28453,7 @@
 	name = "stripped syndicate sleeper";
 	desc = "An enclosed machine used to stabilize and heal patients, this one seems to have had it's tech stripped, as a case of memoraphilia.. And budget cuts."
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/mineral/plastitanium/pod/red/large,
 /area/station/command/corporate_showroom)
 "iZp" = (
@@ -30128,15 +30140,6 @@
 /obj/effect/turf_decal/tile/neutral/half/contrasted,
 /turf/open/floor/iron/dark,
 /area/station/hallway/primary/central)
-"jEm" = (
-/obj/structure/table/wood,
-/obj/item/storage/briefcase/secure{
-	desc = "A large briefcase with a digital locking system, and the Nanotrasen logo emblazoned on the sides.";
-	name = "\improper Nanotrasen-brand secure briefcase exhibit";
-	pixel_y = 2
-	},
-/turf/open/floor/mineral/plastitanium/pod/large,
-/area/station/command/corporate_showroom)
 "jEo" = (
 /obj/structure/cable,
 /obj/structure/disposalpipe/segment{
@@ -30815,6 +30818,14 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/carpet,
 /area/station/service/chapel)
+"jPQ" = (
+/obj/structure/table/wood,
+/obj/machinery/light/directional/south,
+/obj/item/clothing/mask/chameleon/broken{
+	pixel_y = 3
+	},
+/turf/open/floor/mineral/plastitanium/pod/large,
+/area/station/command/corporate_showroom)
 "jQd" = (
 /obj/structure/cable,
 /obj/machinery/door/airlock/virology/glass{
@@ -30827,6 +30838,10 @@
 /area/station/medical/virology)
 "jQk" = (
 /obj/effect/spawner/random/vending/colavend,
+/obj/effect/turf_decal/delivery/white,
+/obj/effect/turf_decal/siding/thinplating_new/dark{
+	dir = 1
+	},
 /turf/open/floor/mineral/plastitanium/pod/large,
 /area/station/hallway/secondary/command)
 "jQm" = (
@@ -34636,7 +34651,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/turf/open/floor/wood/parquet,
+/turf/open/floor/wood,
 /area/station/command/corporate_showroom)
 "lah" = (
 /obj/structure/cable,
@@ -37552,9 +37567,6 @@
 /turf/open/floor/mineral/plastitanium/pod/dark,
 /area/station/command/eva)
 "lUm" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 4
-	},
 /obj/effect/turf_decal/tile/dark_red/half/contrasted{
 	dir = 8
 	},
@@ -42009,7 +42021,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/turf_decal/siding/wideplating_new/dark/end,
 /obj/effect/turf_decal/siding/wood/end,
-/turf/open/floor/wood/parquet,
+/turf/open/floor/wood,
 /area/station/command/corporate_showroom)
 "nvx" = (
 /obj/structure/cable,
@@ -42671,7 +42683,6 @@
 /turf/open/floor/plating,
 /area/station/maintenance/port/greater)
 "nGm" = (
-/obj/structure/table/wood,
 /obj/structure/sign/picture_frame/showroom/three{
 	pixel_x = -8;
 	pixel_y = 32
@@ -42680,7 +42691,11 @@
 	pixel_x = 8;
 	pixel_y = 32
 	},
-/obj/item/pai_card,
+/obj/structure/mannequin/wood{
+	starting_items = list(/obj/item/clothing/suit/space/syndicate/black/red/command,/obj/item/clothing/head/helmet/space/syndicate/black/red/command,);
+	name = "command space suit display"
+	},
+/obj/effect/turf_decal/bot_white,
 /turf/open/floor/mineral/plastitanium/pod/large,
 /area/station/command/corporate_showroom)
 "nGs" = (
@@ -43897,11 +43912,16 @@
 "oaq" = (
 /obj/structure/table/wood,
 /obj/structure/extinguisher_cabinet/directional/west,
-/obj/item/folder/blue,
-/obj/item/clothing/head/collectable/hop{
-	name = "novelty HoP hat"
-	},
 /obj/structure/cable,
+/obj/item/pai_card{
+	pixel_x = 9;
+	pixel_y = 5
+	},
+/obj/item/toy/talking/ai{
+	name = "\improper Nanotrasen-brand toy AI";
+	pixel_y = 4;
+	pixel_x = -6
+	},
 /turf/open/floor/mineral/plastitanium/pod/large,
 /area/station/command/corporate_showroom)
 "oaA" = (
@@ -49664,7 +49684,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
-/turf/open/floor/wood/parquet,
+/turf/open/floor/wood,
 /area/station/command/corporate_showroom)
 "pPZ" = (
 /turf/closed/wall/r_wall,
@@ -51226,7 +51246,7 @@
 /obj/effect/turf_decal/siding/wood/end{
 	dir = 1
 	},
-/turf/open/floor/wood/parquet,
+/turf/open/floor/wood,
 /area/station/command/corporate_showroom)
 "qrr" = (
 /obj/effect/turf_decal/trimline/red/filled/line{
@@ -51429,6 +51449,22 @@
 /obj/effect/mapping_helpers/airlock/access/all/science/xenobio,
 /turf/open/floor/iron,
 /area/station/maintenance/department/science/xenobiology)
+"qvw" = (
+/obj/structure/table/wood,
+/obj/item/toy/cards/deck/syndicate{
+	pixel_y = 11;
+	pixel_x = 4
+	},
+/obj/item/toy/nuke{
+	pixel_x = -11;
+	pixel_y = 3
+	},
+/obj/item/sticker/syndicate{
+	pixel_y = -1;
+	pixel_x = 3
+	},
+/turf/open/floor/mineral/plastitanium/pod/large,
+/area/station/command/corporate_showroom)
 "qvF" = (
 /obj/structure/disposalpipe/segment{
 	dir = 10
@@ -52475,7 +52511,7 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
-/turf/open/floor/wood/parquet,
+/turf/open/floor/wood,
 /area/station/command/corporate_showroom)
 "qOc" = (
 /obj/machinery/atmospherics/pipe/smart/simple/purple/visible{
@@ -53442,6 +53478,17 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/circuit,
 /area/station/ai/satellite/chamber)
+"rfU" = (
+/obj/structure/table/wood,
+/obj/item{
+	desc = "A device that automatically inserts an implant, skillchip or organ into the user without the hassle of extensive surgery. It has a slot to insert implants or organs and a screwdriver slot for removing accidentally added items, this one's broken.";
+	icon = 'icons/obj/devices/tool.dmi';
+	icon_state = "autosurgeon_syndicate";
+	name = "broken suspicious autosurgeon";
+	pixel_y = 6
+	},
+/turf/open/floor/mineral/plastitanium/pod/large,
+/area/station/command/corporate_showroom)
 "rfV" = (
 /obj/structure/table/glass,
 /obj/effect/turf_decal/tile/blue/fourcorners,
@@ -54468,26 +54515,6 @@
 	},
 /turf/open/floor/mineral/plastitanium/pod/dark,
 /area/station/command/bridge)
-"ruc" = (
-/obj/item/disk/data{
-	pixel_x = 9;
-	pixel_y = -1
-	},
-/obj/item/disk/tech_disk{
-	pixel_x = -2;
-	pixel_y = -3
-	},
-/obj/item/disk/design_disk{
-	name = "component design disk";
-	pixel_y = 6
-	},
-/obj/structure/table/wood,
-/obj/item/toy/talking/ai{
-	name = "\improper Nanotrasen-brand toy AI";
-	pixel_y = 6
-	},
-/turf/open/floor/mineral/plastitanium/pod/large,
-/area/station/command/corporate_showroom)
 "ruE" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -55375,8 +55402,14 @@
 "rIY" = (
 /obj/structure/table/wood,
 /obj/item/radio/intercom/directional/north,
-/obj/machinery/light/small/directional/north,
-/obj/item/clothing/head/collectable/captain,
+/obj/item/clothing/head/collectable/captain{
+	pixel_y = 6;
+	pixel_x = -5
+	},
+/obj/item/clothing/head/collectable/hop{
+	pixel_x = 4;
+	pixel_y = -4
+	},
 /turf/open/floor/mineral/plastitanium/pod/large,
 /area/station/command/corporate_showroom)
 "rJd" = (
@@ -56156,7 +56189,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
 	},
-/turf/open/floor/wood/parquet,
+/turf/open/floor/wood,
 /area/station/command/corporate_showroom)
 "rWU" = (
 /obj/structure/table,
@@ -57925,11 +57958,14 @@
 /area/station/medical/virology)
 "syl" = (
 /obj/machinery/light_switch/directional/north,
-/obj/machinery/light/small/directional/north,
-/obj/structure/table/wood,
 /obj/machinery/camera/directional/north{
 	c_tag = "Corporate Showroom"
 	},
+/obj/structure/mannequin/wood{
+	starting_items = list(/obj/item/clothing/suit/space/syndicate/civilian,/obj/item/clothing/head/helmet/space/syndicate/civilian,);
+	name = "crew space suit display"
+	},
+/obj/effect/turf_decal/bot_white,
 /turf/open/floor/mineral/plastitanium/pod/large,
 /area/station/command/corporate_showroom)
 "syB" = (
@@ -61041,18 +61077,19 @@
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
 "tvG" = (
-/obj/item/book/manual/wiki/security_space_law{
-	name = "space law";
-	pixel_y = 2
-	},
-/obj/item/toy/gun,
-/obj/item/restraints/handcuffs,
 /obj/structure/table/wood,
-/obj/item/clothing/head/collectable/hos{
-	name = "novelty HoS hat"
-	},
 /obj/machinery/firealarm/directional/east,
 /obj/structure/cable,
+/obj/item/book/manual/wiki/grenades{
+	pixel_y = 4;
+	pixel_x = -7
+	},
+/obj/item/book/manual/wiki/ordnance{
+	pixel_x = 6
+	},
+/obj/item/book/manual/wiki/engineering_hacking{
+	pixel_y = 3
+	},
 /turf/open/floor/mineral/plastitanium/pod/large,
 /area/station/command/corporate_showroom)
 "tvH" = (
@@ -61742,7 +61779,7 @@
 /obj/structure/cable,
 /obj/effect/turf_decal/siding/wideplating_new/dark,
 /obj/effect/turf_decal/siding/wood,
-/turf/open/floor/wood/parquet,
+/turf/open/floor/wood,
 /area/station/command/corporate_showroom)
 "tFz" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -65816,7 +65853,7 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/siding/wideplating_new/dark/end,
 /obj/effect/turf_decal/siding/wood/end,
-/turf/open/floor/wood/parquet,
+/turf/open/floor/wood,
 /area/station/command/corporate_showroom)
 "uWh" = (
 /obj/effect/turf_decal/delivery,
@@ -66500,6 +66537,14 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/station/maintenance/port/fore)
+"vhF" = (
+/obj/structure/table/wood,
+/obj/item/melee/energy/sword/surplus{
+	pixel_y = 10;
+	pixel_x = 8
+	},
+/turf/open/floor/mineral/plastitanium/pod/large,
+/area/station/command/corporate_showroom)
 "vhP" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -67645,7 +67690,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/turf/open/floor/wood/parquet,
+/turf/open/floor/wood,
 /area/station/command/corporate_showroom)
 "vys" = (
 /obj/structure/disposalpipe/segment{
@@ -70461,7 +70506,7 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
-/turf/open/floor/wood/parquet,
+/turf/open/floor/wood,
 /area/station/command/corporate_showroom)
 "wsp" = (
 /obj/effect/turf_decal/stripes/line,
@@ -73181,6 +73226,10 @@
 /area/station/engineering/break_room)
 "xiu" = (
 /obj/machinery/vending/cigarette,
+/obj/effect/turf_decal/delivery/white,
+/obj/effect/turf_decal/siding/thinplating_new/dark{
+	dir = 1
+	},
 /turf/open/floor/mineral/plastitanium/pod/large,
 /area/station/hallway/secondary/command)
 "xiF" = (
@@ -73692,6 +73741,7 @@
 	desc = "A Nanotrasen Nuclear Authentication Disk, this one is coated in the blood of who you'd assume to be the Captain of who held it as long as they possibly could, but to no avail. It being here only means that they were able to take it with them, it's caked in dust as a reminder that everything must fall someday.";
 	name = "dusty bloody nuclear authentication disk"
 	},
+/obj/machinery/light/directional/north,
 /turf/open/floor/mineral/plastitanium/pod/red/large,
 /area/station/command/corporate_showroom)
 "xrz" = (
@@ -74403,7 +74453,11 @@
 /area/station/commons/vacant_room/office)
 "xDG" = (
 /obj/structure/table/wood,
-/obj/machinery/light/small/directional/south,
+/obj/machinery/light/directional/south,
+/obj/item/storage/briefcase/secure{
+	pixel_y = 9
+	},
+/obj/item/clothing/head/fedora,
 /turf/open/floor/mineral/plastitanium/pod/large,
 /area/station/command/corporate_showroom)
 "xDL" = (
@@ -102729,7 +102783,7 @@ oJf
 xrw
 vyp
 hnN
-jEm
+gRH
 oJf
 fsP
 woP
@@ -103500,7 +103554,7 @@ oJf
 rIY
 vyp
 hnN
-gRH
+qvw
 qIt
 fgR
 lkN
@@ -104014,7 +104068,7 @@ oJf
 syl
 vyp
 hnN
-gRH
+vhF
 qIt
 yiw
 aNm
@@ -104271,7 +104325,7 @@ oJf
 nGm
 iJK
 hnN
-xDG
+jPQ
 oJf
 cFv
 hAm
@@ -104785,7 +104839,7 @@ oJf
 iZg
 vyp
 hnN
-ruc
+rfU
 oJf
 odL
 woP

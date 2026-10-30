@@ -15,3 +15,12 @@
 	name = "syndicate space helmet"
 	desc = "A special helmet with solar UV shielding to protect your eyes from harmful rays, this one is Syndicate branded, though this variant lacks armor padding."
 	armor_type = /datum/armor/helmet_space
+
+/obj/item/clothing/suit/space/syndicate/black/red/command
+	name = "syndicate command space suit"
+	desc = "A suit that protects against low pressure environments, this one is Syndicate branded, this design is meant specifically for the Command staff."
+	helmet_type = /obj/item/clothing/head/helmet/space/syndicate/black/red/command
+
+/obj/item/clothing/head/helmet/space/syndicate/black/red/command
+	name = "syndicate command space helmet"
+	desc = "A special helmet with solar UV shielding to protect your eyes from harmful rays, this one is Syndicate branded, this design is meant specifically for the Command staff."

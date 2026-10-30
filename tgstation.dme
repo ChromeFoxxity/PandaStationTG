@@ -7264,6 +7264,7 @@
 #include "modular_panda\code\modules\clothing\glasses.dm"
 #include "modular_panda\code\modules\clothing\gloves.dm"
 #include "modular_panda\code\modules\clothing\spacesuits.dm"
+#include "modular_panda\code\modules\clothing\head\collectable.dm"
 #include "modular_panda\code\modules\clothing\head\jobs.dm"
 #include "modular_panda\code\modules\clothing\head\soft_caps.dm"
 #include "modular_panda\code\modules\clothing\suits\bio.dm"
