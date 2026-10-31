@@ -31751,7 +31751,6 @@
 /obj/structure/disposalpipe/sorting/mail{
 	dir = 2
 	},
-/obj/effect/mapping_helpers/mail_sorting/service/law_office,
 /turf/open/floor/plating,
 /area/station/maintenance/fore)
 "kOK" = (

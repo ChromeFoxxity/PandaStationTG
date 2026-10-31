@@ -22329,7 +22329,6 @@
 	dir = 8;
 	name = "Law Office Junction"
 	},
-/obj/effect/mapping_helpers/mail_sorting/service/law_office,
 /turf/open/floor/iron/checker{
 	dir = 8
 	},

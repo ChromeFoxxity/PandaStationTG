@@ -581,7 +581,7 @@
 	name = "corporate liaison airlock assembly"
 	icon = 'modular_panda/icons/obj/doors/airlocks/cl.dmi'
 	base_name = "corporate liaison airlock"
-	glass_type = /obj/machinery/door/airlock/cl/glass
+	glass_type = /obj/machinery/door/airlock/command/glass
 	airlock_type = /obj/machinery/door/airlock/cl
 
 /obj/structure/door_assembly/door_assembly_warden

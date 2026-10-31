@@ -11,3 +11,6 @@
 	name = "\improper Director of Hospitality's Office"
 	icon = 'modular_panda/icons/area/areas_station.dmi'
 	icon_state = "doh_office"
+
+/area/station/command/heads_quarters/hos
+	name = "\improper Chief of Security Operation's Office"

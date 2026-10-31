@@ -75,4 +75,4 @@
 		to mysteriously vanish."
 	department = "civilian"
 	region_access = REGION_GENERAL
-	owner_trim = /datum/id_trim/job/director_of_hospitality
+	// owner_trim = /datum/id_trim/job/director_of_hospitality

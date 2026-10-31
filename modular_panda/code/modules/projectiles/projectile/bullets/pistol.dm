@@ -1,0 +1,100 @@
+//.22lr (Himehabu, Micro Target, Pounder (uwu))
+
+/obj/projectile/bullet/c22lr
+	name = ".22LR bullet"
+	damage = 20
+	armour_penetration = -40
+	ricochet_incidence_leeway = 20
+	ricochet_chance = 65
+
+/obj/projectile/bullet/c22lr/surplus
+	name = ".22LR surplus bullet"
+	weak_against_armour = TRUE
+
+/obj/projectile/bullet/c22lr/hp
+	name = ".22LR HP bullet"
+	damage = 24
+	weak_against_armour = TRUE
+	ricochet_chance = 0
+
+/obj/projectile/bullet/c22lr/ap
+	name = ".22LR armor piercing bullet"
+	damage = 18
+	armour_penetration = -20
+	ricochet_incidence_leeway = 20
+	ricochet_chance = 30
+
+/obj/projectile/bullet/c22lr/rubber
+	name = ".22LR rubber bullet"
+	damage = 4
+	stamina = 15
+	armour_penetration = -50
+	ricochets_max = 8 //ding ding ding ding
+	ricochet_incidence_leeway = 70
+	ricochet_chance = 130
+	ricochet_decay_damage = 0.8
+
+// 9mm (Commander, SABR)
+
+/obj/projectile/bullet/c9mm
+	name = "9mm bullet"
+	damage = 20
+	armour_penetration = -20
+	embed_type = /datum/embedding/bullet/c9mm
+
+/datum/embedding/bullet/c9mm
+	embed_chance = 15
+	fall_chance = 3
+	jostle_chance = 4
+	ignore_throwspeed_threshold = TRUE
+	pain_stam_pct = 0.4
+	pain_mult = 5
+	jostle_pain_mult = 6
+	rip_time = 1 SECONDS
+
+/obj/projectile/bullet/c9mm/surplus
+	name = "9mm surplus bullet"
+	weak_against_armour = TRUE
+
+/obj/projectile/bullet/c9mm/ap
+	name = "9mm armor-piercing bullet"
+	damage = 18
+	armour_penetration = 10
+
+/obj/projectile/bullet/c9mm/hp
+	name = "9mm hollow point bullet"
+	damage = 30
+	weak_against_armour = TRUE
+
+/obj/projectile/bullet/c9mm/rubber
+	name = "9mm rubber bullet"
+	damage = 5
+	armour_penetration = -40
+	stamina = 30
+
+// 10mm (Ringneck)
+
+/obj/projectile/bullet/c10mm
+	name = "10mm bullet"
+	damage = 25
+	armour_penetration = -20
+
+/obj/projectile/bullet/c10mm/surplus
+	name = "10mm surplus bullet"
+	weak_against_armour = TRUE
+
+/obj/projectile/bullet/c10mm/ap
+	name = "10mm armor-piercing bullet"
+	damage = 23
+	armour_penetration = 10
+
+/obj/projectile/bullet/c10mm/hp
+	name = "10mm hollow point bullet"
+	damage = 35
+	weak_against_armour = TRUE
+
+/obj/projectile/bullet/c10mm/rubber
+	name = "10mm rubber bullet"
+	damage = 7
+	stamina = 35
+	armour_penetration = -30
