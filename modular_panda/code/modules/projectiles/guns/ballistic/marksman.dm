@@ -17,6 +17,10 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
+	mag_display = TRUE
+	mag_display_ammo = TRUE
+	special_mags = TRUE
+
 	fire_delay = 1 SECONDS
 
 	burst_size = 1
@@ -55,14 +59,20 @@
 
 	accepted_magazine_type = /obj/item/ammo_box/magazine/sniper_rounds
 	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+
 	actions_types = list()
+
+	mag_display = TRUE
+	mag_display_ammo = TRUE
+	special_mags = TRUE
 
 	burst_size = 1
 	min_recoil = 0.1
 	spread = -5
 	recoil = 5
-	fire_delay = 1.5 SECONDS
+	fire_delay = 6 SECONDS
 
 /obj/item/gun/ballistic/automatic/taipan/Initialize(mapload)
 	. = ..()

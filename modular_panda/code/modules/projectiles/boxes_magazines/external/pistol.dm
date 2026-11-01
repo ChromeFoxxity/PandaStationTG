@@ -1,3 +1,18 @@
+/obj/item/ammo_box/magazine/m45
+	name = "Candor pistol magazine (.45 ACP)"
+	desc = "A 10-round single-stack magazine for the Candor pistol. These rounds do moderate damage, but struggle against armor."
+	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
+	icon_state = "candor_mag-10"
+	base_icon_state = "candor_mag"
+	ammo_type = /obj/item/ammo_casing/c45
+	caliber = ".45 ACP"
+	max_ammo = 10
+	multiple_sprites = AMMO_BOX_PER_BULLET
+
+/obj/item/ammo_box/magazine/m45/empty
+	icon_state = "candor_mag-0"
+	start_empty = TRUE
+
 /obj/item/ammo_box/magazine/m10mm_ringneck
 	name = "Ringneck pistol magazine (10mm)"
 	desc = "An 10-round magazine for the Ringneck pistol. These rounds do moderate damage, but struggle against armor."

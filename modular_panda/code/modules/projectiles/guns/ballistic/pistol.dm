@@ -1,10 +1,30 @@
 //########### PISTOLS ###########//
 
 /obj/item/gun/ballistic/automatic/pistol/m1911
-	icon = 'modular_panda/icons/obj/weapons/guns/guns.dmi'
-	inhand_icon_state = "colt"
-	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
+	name = "\improper Candor"
+	desc = "A classic semi-automatic handgun, widely popular throughout the Spinward Frontier. An engraving on the slide marks it as a product of Nanotrasen. Chambered in .45 ACP."
+
+	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
+	worn_icon = 'modular_panda/icons/obj/clothing/back.dmi'
+	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/scarborough_lefthand.dmi'
+	righthand_file = 'modular_panda/icons/mob/inhands/weapons/scarborough_righthand.dmi'
+	icon_state = "candor"
+	inhand_icon_state = "sa_generic"
+
+	accepted_magazine_type = /obj/item/ammo_box/magazine/m45
+
+	fire_sound = 'sound/weapons/gun/pistol/candor.ogg'
+	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
+	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
+
+	load_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
+
+/obj/item/gun/ballistic/automatic/pistol/ringneck/give_manufacturer_examine()
+	AddElement(/datum/element/manufacturer_examine, COMPANY_NANOTRASEN)
 
 /obj/item/gun/ballistic/automatic/pistol/ringneck
 	name = "PC-76 \"Ringneck\""
@@ -178,6 +198,8 @@
 	burst_size = 3
 	burst_delay = 0.1 SECONDS
 	fire_delay = 0.07 SECONDS
+	spread = 10
+	can_suppress = FALSE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake/give_manufacturer_examine()

@@ -17,13 +17,11 @@
 	inhand_icon_state = "bulldog"
 
 	weapon_weight = WEAPON_MEDIUM
+
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m12g_bulldog
-	fire_delay = 0.3 SECONDS
+
 	fire_sound = 'modular_panda/sound/weapons/gun/shotgun/bulldog.ogg'
-	empty_alarm = TRUE
-	internal_magazine = FALSE
-	casing_ejector = TRUE
-	tac_reloads = TRUE
+
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	pickup_sound =  'modular_panda/sound/handling/rifle_pickup.ogg'
 
@@ -37,6 +35,23 @@
 	spread = 3
 	recoil = 1
 
+	can_suppress = FALSE
+	burst_size = 1
+	burst_delay = 1
+	mag_display = TRUE
+	empty_indicator = TRUE
+	empty_alarm = TRUE
+	special_mags = TRUE
+	mag_display_ammo = TRUE
+	semi_auto = TRUE
+	internal_magazine = FALSE
+	tac_reloads = TRUE
+	burst_fire_selection = TRUE
+
+/obj/item/gun/ballistic/shotgun/bulldog/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.4 SECONDS)
+
 /obj/item/gun/ballistic/shotgun/bulldog/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_SCARBOROUGH)
 
@@ -44,7 +59,7 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog/bockadam
 	name = "SG-60db \"Bockadam\""
-	desc = "A bullpup combat shotgun from Gorlex Marauder reserves that's been heavily modified, sporting a sawn-down barrel and a two-shot receiver. Reliability has been traded for deadly lethality in tight quarters."
+	desc = "A bullpup combat shotgun from Gorlex Marauder reserves that has been heavily modified, sporting a sawn-down barrel and a two-shot receiver. Reliability has been traded for deadly lethality in tight quarters."
 
 	icon_state = "bockadam"
 	inhand_icon_state = "bockadam"
@@ -55,6 +70,11 @@
 	burst_delay = 0.25 SECONDS
 	fire_delay = 0.4 SECONDS
 	spread = 5
+
+	empty_alarm = FALSE
+
+/obj/item/gun/ballistic/shotgun/bulldog/bockadam/Initialize(mapload)
+	. = ..()
 
 /obj/item/gun/ballistic/shotgun/bulldog/drum
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m12g_bulldog/drum

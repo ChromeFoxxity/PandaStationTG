@@ -66,11 +66,49 @@
 	damage = 30
 	weak_against_armour = TRUE
 
+/obj/projectile/bullet/incendiary/c9mm
+	name = "9mm incendiary bullet"
+	damage = 10
+	fire_stacks = 2
+
 /obj/projectile/bullet/c9mm/rubber
 	name = "9mm rubber bullet"
 	damage = 5
 	armour_penetration = -40
 	stamina = 30
+
+// 45 ACP
+
+/obj/projectile/bullet/c45
+	name = ".45 ACP bullet"
+	damage = 25
+	wound_bonus = -10
+	wound_falloff_tile = -10
+
+/obj/projectile/bullet/c45/surplus
+	name = ".45 ACP surplus bullet"
+	weak_against_armour = TRUE
+
+/obj/projectile/bullet/c45/ap
+	name = ".45 ACP armor-piercing bullet"
+	damage = 20
+	armour_penetration = 30
+
+/obj/projectile/bullet/c45/hp
+	name = ".45 ACP hollow point bullet"
+	damage = 35
+	weak_against_armour = TRUE
+
+/obj/projectile/bullet/incendiary/c45
+	name = ".45 ACP incendiary bullet"
+	damage = 15
+	fire_stacks = 2
+
+/obj/projectile/bullet/c45/rubber
+	name = ".45 ACP rubber bullet"
+	damage = 8
+	armour_penetration = -30
+	stamina = 35
 
 // 10mm (Ringneck)
 

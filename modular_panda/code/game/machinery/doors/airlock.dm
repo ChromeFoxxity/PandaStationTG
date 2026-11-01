@@ -233,12 +233,22 @@
 	icon = 'modular_panda/icons/obj/doors/airlocks/cl.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_cl
 
-/obj/machinery/door/airlock/warden
+/obj/machinery/door/airlock/security/warden
 	name = "master at arms' airlock"
 	icon = 'modular_panda/icons/obj/doors/airlocks/warden.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_warden
 
-/obj/machinery/door/airlock/warden/glass
+/obj/machinery/door/airlock/security/warden/glass
+	opacity = FALSE
+	glass = TRUE
+	normal_integrity = 400
+
+/obj/machinery/door/airlock/security/secmed
+	name = "trauma specialist's airlock"
+	icon = 'modular_panda/icons/obj/doors/airlocks/secmed.dmi'
+	assemblytype = /obj/structure/door_assembly/door_assembly_secmed
+
+/obj/machinery/door/airlock/security/secmed/glass
 	opacity = FALSE
 	glass = TRUE
 	normal_integrity = 400
@@ -590,6 +600,13 @@
 	base_name = "master at arms' airlock"
 	glass_type = /obj/machinery/door/airlock/warden/glass
 	airlock_type = /obj/machinery/door/airlock/warden
+
+/obj/structure/door_assembly/door_assembly_secmed
+	name = "trauma specialist's airlock assembly"
+	icon = 'modular_panda/icons/obj/doors/airlocks/secmed.dmi'
+	base_name = "trauma specialist's airlock"
+	glass_type = /obj/machinery/door/airlock/secmed/glass
+	airlock_type = /obj/machinery/door/airlock/secmed
 
 /obj/structure/door_assembly/door_assembly_cmo
 	name = "chief medical officer airlock assembly"

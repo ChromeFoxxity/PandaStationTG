@@ -1,6 +1,6 @@
 //########### SMGS ###########//
 
-/obj/item/gun/ballistic/automatic/cobra
+/obj/item/gun/ballistic/automatic/c20r
 	name = "C-20r \"Cobra\""
 	desc = "A bullpup submachine gun with an integrated suppressor, heavily used by Syndicate strike teams. Still sees widespread use by the operatives of the Gorlex Marauders. Chambered in 10mm."
 
@@ -11,7 +11,16 @@
 	icon_state = "cobra"
 	inhand_icon_state = "cobra"
 
-	burst_size = 2
+	burst_delay = 2
+	burst_size = 3
+
+	pin = /obj/item/firing_pin
+
+	mag_display = TRUE
+	mag_display_ammo = TRUE
+	empty_indicator = TRUE
+	selector_switch_icon = TRUE
+
 	fire_delay = 0.1 SECONDS
 
 	w_class = WEIGHT_CLASS_BULKY
@@ -28,10 +37,10 @@
 	eject_empty_sound = 'modular_panda/sound/weapons/gun/smg/cm5_unload.ogg'
 	suppressed_sound = 'modular_panda/sound/weapons/gun/pistol/shot_suppressed.ogg'
 
-/obj/item/gun/ballistic/automatic/cobra/give_manufacturer_examine()
+/obj/item/gun/ballistic/automatic/c20r/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_SCARBOROUGH)
 
-/obj/item/gun/ballistic/automatic/cobra/indie
+/obj/item/gun/ballistic/automatic/c20r/indie
 	name = "Cobra-20"
 	desc = "An older model of submachine gun manufactured by Scarborough Arms and marketed to mercenaries, law enforcement, and independent militia, usually though it's just for budget cut Syndicate teams. Chambered in 10mm."
 	icon_state = "cobra20"
@@ -41,6 +50,8 @@
 	burst_delay = 0.8
 	fire_delay = 3
 	spread = 2
+
+	empty_alarm = FALSE
 
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 
@@ -73,6 +84,14 @@
 	fire_delay = 0.1 SECONDS
 	spread = 7
 	recoil = 0
+
+	actions_types = list()
+
+	mag_display = TRUE
+	bolt_type = BOLT_TYPE_LOCKING
+	show_bolt_icon = FALSE
+
+	empty_indicator = TRUE
 
 /obj/item/gun/ballistic/automatic/sidewinder/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_SCARBOROUGH)

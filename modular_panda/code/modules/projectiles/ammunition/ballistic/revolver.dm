@@ -4,20 +4,20 @@
 	name = ".357 bullet casing"
 	desc = "A .357 bullet casing."
 	icon = 'modular_panda/icons/obj/weapons/ammo/bullets/revolver.dmi'
-	icon_state = "magnum"
+	icon_state = "magnum-steel"
 	caliber = ".357"
 	projectile_type = /obj/projectile/bullet/c357
 
 /obj/item/ammo_casing/c357/match
 	name = ".357 match bullet casing"
 	desc = "A .357 match bullet casing."
-	icon_state = "magnum-rubber"
+	icon_state = "magnum-steel-rubber"
 	projectile_type = /obj/projectile/bullet/c357/match
 
 /obj/item/ammo_casing/c357/hp
 	name = ".357 hollow-point bullet casing"
 	desc = "A .357 hollow-point bullet casing."
-	icon_state = "magnum-hollow"
+	icon_state = "magnum-steel-hollow"
 	projectile_type = /obj/projectile/bullet/c357/hp
 
 // .45-70 (Hunting Revolver, Beacon)

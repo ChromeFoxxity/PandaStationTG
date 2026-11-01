@@ -32,6 +32,46 @@
 	icon_state = "pistol-rubber"
 	projectile_type = /obj/projectile/bullet/c10mm/rubber
 
+// 45 ACP
+
+/obj/item/ammo_casing/c45
+	name = ".45 ACP bullet casing"
+	desc = "A .45 ACP bullet casing."
+	icon = 'modular_panda/icons/obj/weapons/ammo/bullets/pistol.dmi'
+	icon_state = "pistol"
+	caliber = ".45 ACP"
+	projectile_type = /obj/projectile/bullet/c45
+
+/obj/item/ammo_casing/c45/surplus
+	name = ".45 ACP surplus bullet casing"
+	desc = "A .45 ACP surplus bullet casing."
+	icon_state = "pistol-surplus"
+	projectile_type = /obj/projectile/bullet/c9mm/surplus
+
+/obj/item/ammo_casing/c45/ap
+	name = ".45 ACP armor-piercing bullet casing"
+	desc = "A .45 ACP armor-piercing bullet casing."
+	icon_state = "pistol-ap"
+	projectile_type = /obj/projectile/bullet/c45/ap
+
+/obj/item/ammo_casing/c45/hp
+	name = ".45 ACP hollow-point bullet casing"
+	desc = "A .45 ACP hollow-point bullet casing."
+	icon_state = "pistol-hollow"
+	projectile_type = /obj/projectile/bullet/c45/hp
+
+/obj/item/ammo_casing/c45/rubber
+	name = ".45 ACP rubber bullet casing"
+	desc = "A .45 ACP rubber bullet casing."
+	icon_state = "pistol-rubber"
+	projectile_type = /obj/projectile/bullet/c45/rubber
+
+/obj/item/ammo_casing/c45/inc
+	name = ".45 ACP incendiary bullet casing"
+	desc = "A .45 ACP incediary bullet casing."
+	icon_state = "pistol-incen"
+	projectile_type = /obj/projectile/bullet/incendiary/c45
+
 // 9mm (Commander + SABR)
 
 /obj/item/ammo_casing/c9mm
@@ -65,6 +105,12 @@
 	desc = "A 9mm rubber bullet casing."
 	icon_state = "pistol-rubber"
 	projectile_type = /obj/projectile/bullet/c9mm/rubber
+
+/obj/item/ammo_casing/c9mm/inc
+	name = "9mm incendiary bullet casing"
+	desc = "A 9mm incediary bullet casing."
+	icon_state = "pistol-incen"
+	projectile_type = /obj/projectile/bullet/incendiary/c9mm
 
 // .22 LR (Himehabu, Pounder)
 

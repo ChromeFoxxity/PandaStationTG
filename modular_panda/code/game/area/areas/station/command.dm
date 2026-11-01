@@ -13,4 +13,4 @@
 	icon_state = "doh_office"
 
 /area/station/command/heads_quarters/hos
-	name = "\improper Chief of Security Operation's Office"
+	name = "\improper Chief of Security Operations' Office"

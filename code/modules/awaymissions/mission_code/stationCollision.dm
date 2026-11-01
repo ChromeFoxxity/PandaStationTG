@@ -45,6 +45,7 @@
 	desc = "An older model of the basic lasergun, no longer used by Nanotrasen's security or military forces."
 	clumsy_check = FALSE //No sense in having a harmless gun blow up in the clowns face
 
+/* // Old ass code.
 //Syndicate sub-machine guns.
 /obj/item/gun/ballistic/automatic/c20r/sc_c20r
 
@@ -53,6 +54,7 @@
 	for(var/ammo in magazine.stored_ammo)
 		if(prob(95)) //95% chance
 			magazine.stored_ammo -= ammo
+*/
 
 //Barman's shotgun
 /obj/item/gun/ballistic/shotgun/sc_pump

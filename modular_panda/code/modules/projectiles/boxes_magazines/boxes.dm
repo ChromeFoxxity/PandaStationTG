@@ -30,6 +30,12 @@
 	icon_state = "9mmbox-rubbershot"
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
 
+/obj/item/ammo_box/c9mm/incendiary
+	name = "box of incendiary 9mm ammo"
+	desc = "A box of 9mm incendiary ammo, designed to ignite targets on fire."
+	icon_state = "9mmbox-incendiary"
+	ammo_type = /obj/projectile/bullet/incendiary/c9mm
+
 /obj/item/ammo_box/c9mm/nt
 	name = "box of 9mm ammo"
 	desc = "A box of standard 9mm ammo."
@@ -52,6 +58,50 @@
 	desc = "A box of 9mm rubbershot ammo, designed to disable targets without causing serious damage."
 	icon_state = "9mmbox_nt-rubbershot"
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
+
+/obj/item/ammo_box/c9mm/nt/incendiary
+	name = "box of incendiary 9mm ammo"
+	desc = "A box of 9mm incendiary ammo, designed to ignite targets on fire."
+	icon_state = "9mmbox_nt-incendiary"
+	ammo_type = /obj/projectile/bullet/incendiary/c9mm
+
+/obj/item/ammo_box/c45
+	name = "box of .45 ACP ammo"
+	desc = "A box of standard .45 ACP ammo."
+	icon = 'modular_panda/icons/obj/weapons/ammo/boxes.dmi'
+	icon_state = "45box"
+	ammo_type = /obj/item/ammo_casing/c45
+	max_ammo = 60
+
+/obj/item/ammo_box/c45/surplus
+	name = "box of surplus .45 ACP ammo"
+	desc = "A box of low-quality .45 ACP ammo."
+	icon_state = "45box-surplus"
+	ammo_type = /obj/item/ammo_casing/c45/surplus
+
+/obj/item/ammo_box/c45/armor_piercing
+	name = "box of armor-piercing .45 ACP ammo"
+	desc = "A box of .45 ACP armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
+	icon_state = "45box-ap"
+	ammo_type = /obj/item/ammo_casing/c45/ap
+
+/obj/item/ammo_box/c45/hollow_point
+	name = "box of hollow-point .45 ACP ammo"
+	desc = "A box of .45 ACP hollow-point ammo, designed to cause massive tissue damage at the cost of armor penetration."
+	icon_state = "45box-hp"
+	ammo_type = /obj/item/ammo_casing/c45/hp
+
+/obj/item/ammo_box/c45/rubber
+	name = "box of rubber .45 ACP ammo"
+	desc = "A box of .45 ACP rubbershot ammo, designed to disable targets without causing serious damage."
+	icon_state = "45box-rubbershot"
+	ammo_type = /obj/item/ammo_casing/c45/rubber
+
+/obj/item/ammo_box/c45/incendiary
+	name = "box of incendiary .45 ACP ammo"
+	desc = "A box of .45 ACP incendiary ammo, designed to ignite targets on fire."
+	icon_state = "45box-incendiary"
+	ammo_type = /obj/item/ammo_casing/c45/inc
 
 /obj/item/ammo_box/c10mm
 	name = "box of 10mm ammo"
@@ -183,21 +233,21 @@
 	icon_state = "357box-hp"
 	ammo_type = /obj/item/ammo_casing/c357/hp
 
-/obj/item/ammo_box/c357/hp
-	name = "box of .357 ammo"
-	desc = "A box of standard .357 ammo."
-	icon_state = "357box_hp"
+/obj/item/ammo_box/c357/small
+	desc = "A more compact box of standard .357 ammo."
+	icon_state = "357box_small"
+	max_ammo = 20
 
-/obj/item/ammo_box/c357/hp/match
+/obj/item/ammo_box/c357/small/match
 	name = "box of match .357 ammo"
-	desc = "A box of match-grade .357 ammo, designed for maximum accuracy, consistency, and precision rather than expansion upon impact."
-	icon_state = "357box_hp-match"
+	desc = "A more compact box of match-grade .357 ammo, designed for maximum accuracy, consistency, and precision rather than expansion upon impact."
+	icon_state = "357box_small-match"
 	ammo_type = /obj/item/ammo_casing/c357/match
 
-/obj/item/ammo_box/c357/hp/hollow
+/obj/item/ammo_box/c357/small/hollow
 	name = "box of hollow-point .357 ammo"
-	desc = "A box of .357 hollow-point ammo, designed to cause massive tissue damage at the cost of armor penetration."
-	icon_state = "357box_hp-hp"
+	desc = "A more compact box of .357 hollow-point ammo, designed to cause massive tissue damage at the cost of armor penetration."
+	icon_state = "357box_small-hp"
 	ammo_type = /obj/item/ammo_casing/c357/hp
 
 /obj/item/ammo_box/a12g

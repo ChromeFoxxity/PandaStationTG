@@ -10,7 +10,7 @@
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/m12g_bulldog/slug
-	name = "shotgun box magazine (12g Slugs)"
+	name = "shotgun box magazine (12g slugs)"
 	ammo_type = /obj/item/ammo_casing/shotgun
 
 /obj/item/ammo_box/magazine/m12g_bulldog/empty

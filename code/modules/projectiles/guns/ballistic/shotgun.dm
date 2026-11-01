@@ -183,6 +183,7 @@
 
 // Bulldog shotgun //
 
+/* PANDA REMOVAL, Entirely new guns
 /obj/item/gun/ballistic/shotgun/bulldog
 	name = "\improper Bulldog Shotgun"
 	desc = "A 2-round burst fire, mag-fed shotgun for combat in narrow corridors, \
@@ -215,11 +216,10 @@
 	tac_reloads = TRUE
 	burst_fire_selection = TRUE
 	/// The type of secondary magazine for the bulldog
-	//var/secondary_magazine_type // PANDA REMOVAL
+	var/secondary_magazine_type
 	/// The secondary magazine
-	//var/obj/item/ammo_box/magazine/secondary_magazine // PANDA REMOVAL
+	var/obj/item/ammo_box/magazine/secondary_magazine
 
-/* Honestly, just no. Panda Removal
 /obj/item/gun/ballistic/shotgun/bulldog/Initialize(mapload)
 	. = ..()
 	secondary_magazine_type = secondary_magazine_type || spawn_magazine_type
@@ -299,10 +299,10 @@
 	secondary_magazine = primary_magazine
 	playsound(src, load_empty_sound, load_sound_volume, load_sound_vary)
 	update_appearance()
-*/
 
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted
 	pin = /obj/item/firing_pin
+*/
 
 // Double barrel shotgun skins
 /datum/atom_skin/bar_shotgun
