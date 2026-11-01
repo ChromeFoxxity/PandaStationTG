@@ -598,15 +598,15 @@
 	name = "master at arms' airlock assembly"
 	icon = 'modular_panda/icons/obj/doors/airlocks/warden.dmi'
 	base_name = "master at arms' airlock"
-	glass_type = /obj/machinery/door/airlock/warden/glass
-	airlock_type = /obj/machinery/door/airlock/warden
+	glass_type = /obj/machinery/door/airlock/security/warden/glass
+	airlock_type = /obj/machinery/door/airlock/security/warden
 
 /obj/structure/door_assembly/door_assembly_secmed
 	name = "trauma specialist's airlock assembly"
 	icon = 'modular_panda/icons/obj/doors/airlocks/secmed.dmi'
 	base_name = "trauma specialist's airlock"
-	glass_type = /obj/machinery/door/airlock/secmed/glass
-	airlock_type = /obj/machinery/door/airlock/secmed
+	glass_type = /obj/machinery/door/airlock/security/secmed/glass
+	airlock_type = /obj/machinery/door/airlock/security/secmed
 
 /obj/structure/door_assembly/door_assembly_cmo
 	name = "chief medical officer airlock assembly"

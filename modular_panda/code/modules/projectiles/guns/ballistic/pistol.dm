@@ -13,15 +13,15 @@
 
 	accepted_magazine_type = /obj/item/ammo_box/magazine/m45
 
-	fire_sound = 'sound/weapons/gun/pistol/candor.ogg'
-	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
-	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
-	bolt_drop_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
+	fire_sound = 'modular_panda/sound/weapons/gun/pistol/candor.ogg'
+	rack_sound = 'modular_panda/sound/weapons/gun/pistol/candor_cocked.ogg'
+	lock_back_sound = 'modular_panda/sound/weapons/gun/pistol/slide_lock.ogg'
+	bolt_drop_sound = 'modular_panda/sound/weapons/gun/pistol/candor_cocked.ogg'
 
-	load_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
-	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
-	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
+	load_sound = 'modular_panda/sound/weapons/gun/pistol/candor_reload.ogg'
+	load_empty_sound = 'modular_panda/sound/weapons/gun/pistol/candor_reload.ogg'
+	eject_sound = 'modular_panda/sound/weapons/gun/pistol/candor_unload.ogg'
+	eject_empty_sound = 'modular_panda/sound/weapons/gun/pistol/candor_unload.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/ringneck/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_BASTION)
@@ -258,8 +258,8 @@
 	AddElement(/datum/element/manufacturer_examine, COMPANY_SCARBOROUGH)
 
 /obj/item/gun/ballistic/automatic/pistol/derringer
-	name = "HP Spark"
-	desc = "An easily concealable derringer. Its simple design and modest demand make the Spark a common project for trainee HP gunsmiths. Chambered in .38."
+	name = "BA Spark"
+	desc = "An easily concealable derringer. Its simple design and modest demand make the Spark a common project for trainee Bastion Armaments gunsmiths. Chambered in .38."
 	icon_state = "derringer"
 	inhand_icon_state = "hp_generic"
 
@@ -297,9 +297,16 @@
 /obj/item/gun/ballistic/automatic/pistol/derringer/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_BASTION)
 
+/obj/item/gun/ballistic/automatic/pistol/derringer/gold
+	name = "golden derringer"
+	desc = "The golden sheen is somewhat counter-intuitive on a holdout weapon, but it looks cool. Uses .357 ammo."
+	icon_state = "derringer_gold"
+
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/derr357
+
 /obj/item/gun/ballistic/automatic/pistol/derringer/temblor
 	name = "D-9 \"Temblor\""
-	desc = "An easily concealable derriger. It was rarely used as an alternative to the PC-81 \"Himehabu\" during covert operations. Chambered in .357."
+	desc = "An easily concealable derriger. It was rarely used as an alternative to the PC-81 \"Himehabu\" during covert operations, but nowadays is just issued to civilian-station heads of staff for self-defense. Chambered in .357."
 
 	icon_state = "derringer_syndie"
 	inhand_icon_state = "sa_generic"

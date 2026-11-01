@@ -52,6 +52,12 @@
 	stamina = 15
 	armour_penetration = -35
 
+/obj/projectile/bullet/pellet/blank
+	name = "blank"
+	damage = 30
+	range = 2
+	armour_penetration = -70
+
 /obj/projectile/bullet/pellet/shotgun_improvised
 	name = "improvised pellet"
 	damage = 6

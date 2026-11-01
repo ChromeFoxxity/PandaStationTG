@@ -3,9 +3,9 @@
 	name = "MSR-90 \"Boomslang\""
 	desc = "A bullpup semi-automatic sniper rifle with a high-magnification scope. Compact and capable of rapid follow-up fire without sacrificing power. Used by Syndicate support units and infiltrators. Chambered in 6.5mm."
 	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
 	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
-	worn_icon = 'modular_panda/icons/obj/clothing/back.dmi'
 	icon_state = "boomslang"
 	inhand_icon_state = "boomslang"
 	fire_sound = 'modular_panda/sound/weapons/gun/sniper/cmf90.ogg'
@@ -38,7 +38,7 @@
 	name = "AMR-83 \"Taipan\""
 	desc = "A monstrous semi-automatic anti-materiel rifle, surprisingly short for its class. Designed to destroy mechs, light vehicles, and equipment, but more than capable of obliterating regular personnel. Chambered in .50 BMG."
 	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
-	worn_icon = 'modular_panda/icons/obj/clothing/back.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
 	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "taipan"
@@ -74,7 +74,7 @@
 	name = "NT-F4"
 	desc = "Nanotrasen's marksman rifle, used by both military units and station security. Designed not long after the NT-24, the venerable F4 has adapted well to continued upgrades. Chambered in .308."
 	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
-	worn_icon = 'modular_panda/icons/obj/clothing/back.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
 	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "f4"
@@ -101,7 +101,7 @@
 	name = "NT-F90"
 	desc = "A powerful sniper rifle used rarely by Nanotrasen private security teams, capable of impressive range and penetrating power. Chambered in 6.5mm."
 	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
-	worn_icon = 'modular_panda/icons/obj/clothing/back.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
 	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "f90"
@@ -110,7 +110,7 @@
 	weapon_weight = WEAPON_HEAVY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	mag_display = TRUE
-	fire_sound = 'sound/weapons/gun/sniper/cmf90.ogg'
+	fire_sound = 'modular_panda/sound/weapons/gun/sniper/cmf90.ogg'
 	accepted_magazine_type = /obj/item/ammo_box/magazine/f90
 	fire_delay = 1 SECONDS
 	min_recoil = 0.1

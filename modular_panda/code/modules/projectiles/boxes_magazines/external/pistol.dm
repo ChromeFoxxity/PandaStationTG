@@ -151,7 +151,7 @@
 	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
 	icon_state = "cm23_mag-1"
 	base_icon_state = "cm23_mag"
-	ammo_type = /obj/item/ammo_casing/a357
+	ammo_type = /obj/item/ammo_casing/c357
 	caliber = ".357"
 	max_ammo = 7
 	multiple_sprites = AMMO_BOX_FULL_EMPTY

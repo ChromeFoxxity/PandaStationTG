@@ -249,7 +249,7 @@
 	internal_magazine = FALSE
 	tac_reloads = TRUE
 	burst_fire_selection = TRUE
-	pickup_sound = 'modular_panda/sound/items/handling/rifle_pickup.ogg'
+	pickup_sound = 'modular_panda/sound/handling/rifle_pickup.ogg'
 	fire_sound = 'modular_panda/sound/weapons/gun/shotgun/bulldog.ogg'
 	load_sound = 'modular_panda/sound/weapons/gun/rifle/ar_reload.ogg'
 	load_empty_sound = 'modular_panda/sound/weapons/gun/rifle/ar_reload.ogg'

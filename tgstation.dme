@@ -7303,6 +7303,7 @@
 #include "modular_panda\code\modules\projectiles\boxes_magazines\external\shotgun.dm"
 #include "modular_panda\code\modules\projectiles\boxes_magazines\external\smg.dm"
 #include "modular_panda\code\modules\projectiles\boxes_magazines\external\sniper.dm"
+#include "modular_panda\code\modules\projectiles\boxes_magazines\internal\derringer.dm"
 #include "modular_panda\code\modules\projectiles\boxes_magazines\internal\revolver.dm"
 #include "modular_panda\code\modules\projectiles\boxes_magazines\internal\shotgun.dm"
 #include "modular_panda\code\modules\projectiles\guns\ballistic\launcher.dm"

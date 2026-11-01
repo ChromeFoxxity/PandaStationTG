@@ -93,7 +93,7 @@
 	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
 
 /obj/item/gun/ballistic/automatic/nt5/rubber
-	accepted_magazine_type = /obj/item/ammo_box/magazine/cm5_9mm/rubber
+	accepted_magazine_type = /obj/item/ammo_box/magazine/nt5_9mm/rubber
 
 /obj/item/gun/ballistic/automatic/nt5/compact
 	name = "\improper NT-5c"

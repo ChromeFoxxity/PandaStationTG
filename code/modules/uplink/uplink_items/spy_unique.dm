@@ -85,7 +85,7 @@
 /datum/uplink_item/spy_unique/bulldog_shotgun
 	name = "Bulldog Shotgun"
 	desc = "A bulldog shotgun. It's a shotgun that shoots bulldogs."
-	item = /obj/item/gun/ballistic/shotgun/bulldog/unrestricted
+	item = /obj/item/gun/ballistic/shotgun/bulldog // PANDA EDIT, ORIGINAL; "/obj/item/gun/ballistic/shotgun/bulldog/unrestricted"
 	cost = SPY_UPPER_COST_THRESHOLD
 	uplink_item_flags = SYNDIE_ILLEGAL_TECH | SYNDIE_TRIPS_CONTRABAND
 	relevant_child_items = list(
