@@ -42,12 +42,12 @@
 	caliber = "a300"
 	projectile_type = /obj/projectile/bullet/a300
 
-//6.5mm CLIP
+//6.5mm
 
-/obj/item/ammo_casing/a65clip
-	name = "6.5mm CLIP bullet casing"
-	desc = "A 6.5mm CLIP bullet casing."
+/obj/item/ammo_casing/a65
+	name = "6.5mm bullet casing"
+	desc = "A 6.5mm bullet casing."
 	icon = 'modular_panda/icons/obj/weapons/ammo/bullets/big.dmi'
 	icon_state = "big"
-	caliber = "6.5mm CLIP"
-	projectile_type = /obj/projectile/bullet/a65clip
+	caliber = "6.5mm"
+	projectile_type = /obj/projectile/bullet/a65

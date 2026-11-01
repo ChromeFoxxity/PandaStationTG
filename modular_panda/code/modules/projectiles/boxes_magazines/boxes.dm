@@ -188,30 +188,72 @@
 	ammo_type = /obj/item/ammo_casing/c57x39mm/hp
 
 /obj/item/ammo_box/c57x39/rubber
-	name = "box of 5.7x39mm rubber ammo"
+	name = "box of rubber 5.7x39mm ammo"
 	desc = "A box of standard 5.7x39mm rubber ammo, designed to disable targets without causing serious damage."
 	icon_state = "57x39mmbox-rubbershot"
 	ammo_type = /obj/item/ammo_casing/c57x39mm/rubber
 
 /obj/item/ammo_box/a556_42
-	name = "box of 5.56x42mm CLIP ammo"
-	desc = "A box of standard 5.56x42mm CLIP ammo."
+	name = "box of 5.56x42mm ammo"
+	desc = "A box of standard 5.56x42mm ammo."
 	icon = 'modular_panda/icons/obj/weapons/ammo/boxes.dmi'
 	icon_state = "a556_42box_big"
 	ammo_type = /obj/item/ammo_casing/a556_42
 	max_ammo = 60
 
 /obj/item/ammo_box/a556_42/ap
-	name = "box of armor-piercing 5.56x42mm CLIP ammo"
-	desc = "A box of standard 5.56x42mm CLIP armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
+	name = "box of armor-piercing 5.56x42mm ammo"
+	desc = "A box of standard 5.56x42mm armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "a556_42box_big-ap"
 	ammo_type = /obj/item/ammo_casing/a556_42/ap
 
 /obj/item/ammo_box/a556_42/hp
-	name = "box of hollow-point 5.56x42mm CLIP ammo"
-	desc = "A box of 5.56x42mm CLIP hollow-point ammo, designed to cause massive tissue damage at the cost of armor penetration."
+	name = "box of hollow-point 5.56x42mm ammo"
+	desc = "A box of 5.56x42mm hollow-point ammo, designed to cause massive tissue damage at the cost of armor penetration."
 	icon_state = "a556_42box_big-hp"
 	ammo_type = /obj/item/ammo_casing/a556_42/hp
+
+/obj/item/ammo_box/a65
+	name = "box of 6.5mm ammo"
+	desc = "A box of standard 6.5mm ammo."
+	icon = 'modular_panda/icons/obj/weapons/ammo/boxes.dmi'
+	icon_state = "65box"
+	ammo_type = /obj/item/ammo_casing/a65
+	max_ammo = 20
+
+/obj/item/ammo_box/a308
+	name = "box of .308 ammo"
+	desc = "A box of standard .308 ammo."
+	icon = 'modular_panda/icons/obj/weapons/ammo/boxes.dmi'
+	icon_state = "a308box"
+	ammo_type = /obj/item/ammo_casing/a308
+	max_ammo = 40
+
+/obj/item/ammo_box/a762_40
+	name = "box of 7.62x40mm ammo"
+	desc = "A box of standard 7.62x40mm ammo."
+	icon = 'modular_panda/icons/obj/weapons/ammo/boxes.dmi'
+	icon_state = "a762_40box"
+	ammo_type = /obj/item/ammo_casing/a762_40
+	max_ammo = 60
+
+/obj/item/ammo_box/a762_40/ap
+	name = "box of armor-piercing 7.62x40mm ammo"
+	desc = "A box of standard 7.62x40mm armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
+	icon_state = "a762_40box-ap"
+	ammo_type = /obj/item/ammo_casing/a762_40/ap
+
+/obj/item/ammo_box/a762_40/hp
+	name = "box of hollow-point 7.62x40mm ammo"
+	desc = "A box of standard 7.62x40mm hollow-point ammo, designed to cause massive tissue damage at the cost of armor penetration."
+	icon_state = "a762_40box-hp"
+	ammo_type = /obj/item/ammo_casing/a762_40/hp
+
+/obj/item/ammo_box/a762_40/rubber
+	name = "box of rubber 7.62x40mm ammo"
+	desc = "A box of standard 7.62x40mm rubber ammo, designed to disable targets without causing serious damage."
+	icon_state = "a762_40box-rubbershot"
+	ammo_type = /obj/item/ammo_casing/a762_40/rubber
 
 /obj/item/ammo_box/c357
 	name = "box of .357 ammo"
@@ -248,6 +290,42 @@
 	name = "box of hollow-point .357 ammo"
 	desc = "A more compact box of .357 hollow-point ammo, designed to cause massive tissue damage at the cost of armor penetration."
 	icon_state = "357box_small-hp"
+	ammo_type = /obj/item/ammo_casing/c357/hp
+
+/obj/item/ammo_box/c357/nt
+	name = "box of .357 ammo"
+	desc = "A box of standard .357 ammo."
+	icon_state = "357box_nt"
+	ammo_type = /obj/item/ammo_casing/c357
+	max_ammo = 60
+
+/obj/item/ammo_box/c357/nt/match
+	name = "box of match .357 ammo"
+	desc = "A box of match-grade .357 ammo, designed for maximum accuracy, consistency, and precision rather than expansion upon impact."
+	icon_state = "357box_nt-match"
+	ammo_type = /obj/item/ammo_casing/c357/match
+
+/obj/item/ammo_box/c357/nt/hollow
+	name = "box of hollow-point .357 ammo"
+	desc = "A box of .357 hollow-point ammo, designed to cause massive tissue damage at the cost of armor penetration."
+	icon_state = "357box_nt-hp"
+	ammo_type = /obj/item/ammo_casing/c357/hp
+
+/obj/item/ammo_box/c357/nt/small
+	desc = "A more compact box of standard .357 ammo."
+	icon_state = "357box_nt_small"
+	max_ammo = 20
+
+/obj/item/ammo_box/c357/nt/small/match
+	name = "box of match .357 ammo"
+	desc = "A more compact box of match-grade .357 ammo, designed for maximum accuracy, consistency, and precision rather than expansion upon impact."
+	icon_state = "357box_nt_small-match"
+	ammo_type = /obj/item/ammo_casing/c357/match
+
+/obj/item/ammo_box/c357/nt/small/hollow
+	name = "box of hollow-point .357 ammo"
+	desc = "A more compact box of .357 hollow-point ammo, designed to cause massive tissue damage at the cost of armor penetration."
+	icon_state = "357box_nt_small-hp"
 	ammo_type = /obj/item/ammo_casing/c357/hp
 
 /obj/item/ammo_box/a12g

@@ -104,3 +104,23 @@
 /obj/item/ammo_box/magazine/m10_cobra/empty
 	icon_state = "cobra_mag-0"
 	start_empty = TRUE
+
+/obj/item/ammo_box/magazine/nt5_9mm
+	name = "NT-5 magazine (9mm)"
+	desc = "A 30-round magazine for the NT-5 submachine gun. These rounds do okay damage, but struggle against armor."
+	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
+	icon_state = "cm5_mag-1"
+	base_icon_state = "cm5_mag"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = "9mm"
+	max_ammo = 30
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/nt5_9mm/empty
+	icon_state = "cm5_mag-0"
+	start_empty = TRUE
+
+/obj/item/ammo_box/magazine/nt5_9mm/rubber
+	name = "NT-5 magazine (9mm rubber)"
+	desc = "A 30-round magazine for the NT-5 submachine gun. These rubber rounds trade lethality for a heavy impact which can incapacitate targets. Performs even worse against armor."
+	ammo_type = /obj/item/ammo_casing/c9mm/rubber

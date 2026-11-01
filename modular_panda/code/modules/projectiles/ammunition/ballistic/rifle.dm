@@ -30,59 +30,59 @@
 	caliber = "a858"
 	projectile_type = /obj/projectile/bullet/a858
 
-// 5.56x42mm CLIP (CM82, Hydra variants)
+// 5.56x42mm (CM82, Hydra variants)
 
 /obj/item/ammo_casing/a556_42
-	name = "5.56x42mm CLIP bullet casing"
-	desc = "A 5.56x42mm CLIP bullet casing."
+	name = "5.56x42mm bullet casing"
+	desc = "A 5.56x42mm bullet casing."
 	icon = 'modular_panda/icons/obj/weapons/ammo/bullets/rifle.dmi'
 	icon_state = "rifle"
 	caliber = "5.56x42mm"
 	projectile_type = /obj/projectile/bullet/a556_42
 
 /obj/item/ammo_casing/a556_42/hp
-	name = "5.56x42mm CLIP hollow-point bullet casing"
-	desc = "A 5.56x42mm CLIP hollow-point bullet casing."
+	name = "5.56x42mm hollow-point bullet casing"
+	desc = "A 5.56x42mm hollow-point bullet casing."
 	icon_state = "rifle-hollow"
 	projectile_type = /obj/projectile/bullet/a556_42/hp
 
 /obj/item/ammo_casing/a556_42/ap
-	name = "5.56x42mm CLIP armor-piercing bullet casing"
-	desc = "A 5.56x42mm CLIP armor-piercing bullet casing."
+	name = "5.56x42mm armor-piercing bullet casing"
+	desc = "A 5.56x42mm armor-piercing bullet casing."
 	icon_state = "rifle-ap"
 	projectile_type = /obj/projectile/bullet/a556_42/ap
 
 /obj/item/ammo_casing/a556_42/rubber
-	name = "5.56x42mm CLIP rubber bullet casing"
-	desc = "A 5.56x42mm CLIP rubber bullet casing."
+	name = "5.56x42mm rubber bullet casing"
+	desc = "A 5.56x42mm rubber bullet casing."
 	icon_state = "rifle-rubber"
 	projectile_type = /obj/projectile/bullet/a556_42/rubber
 
-// 7.62x40mm CLIP (SKM Rifles)
+// 7.62x40mm (SKM Rifles)
 
 /obj/item/ammo_casing/a762_40
-	name = "7.62x40mm CLIP bullet casing"
-	desc = "A 7.62x40mm CLIP bullet casing."
+	name = "7.62x40mm bullet casing"
+	desc = "A 7.62x40mm bullet casing."
 	icon = 'modular_panda/icons/obj/weapons/ammo/bullets/rifle.dmi'
 	icon_state = "rifle"
 	caliber = "7.62x40mm"
 	projectile_type = /obj/projectile/bullet/a762_40
 
 /obj/item/ammo_casing/a762_40/hp
-	name = "7.62x40mm CLIP hollow-point bullet casing"
-	desc = "A 7.62x40mm CLIP hollow-point bullet casing."
+	name = "7.62x40mm hollow-point bullet casing"
+	desc = "A 7.62x40mm hollow-point bullet casing."
 	icon_state = "rifle-hollow"
 	projectile_type = /obj/projectile/bullet/a762_40/hp
 
 /obj/item/ammo_casing/a762_40/ap
-	name = "7.62x40mm CLIP armor-piercing bullet casing"
-	desc = "A 7.62x40mm CLIP armor-piercing bullet casing."
+	name = "7.62x40mm armor-piercing bullet casing"
+	desc = "A 7.62x40mm armor-piercing bullet casing."
 	icon_state = "rifle-ap"
 	projectile_type = /obj/projectile/bullet/a762_40/ap
 
 /obj/item/ammo_casing/a762_40/rubber
-	name = "7.62x40mm CLIP rubber bullet casing"
-	desc = "A 7.62x40mm CLIP rubber bullet casing."
+	name = "7.62x40mm rubber bullet casing"
+	desc = "A 7.62x40mm rubber bullet casing."
 	icon_state = "rifle-rubber"
 	projectile_type = /obj/projectile/bullet/a762_40/rubber
 

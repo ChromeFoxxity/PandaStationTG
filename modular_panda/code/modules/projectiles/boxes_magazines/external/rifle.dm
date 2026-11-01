@@ -28,8 +28,8 @@
 	ammo_type = /obj/item/ammo_casing/c46x30mm/recycled
 
 /obj/item/ammo_box/magazine/skm_762_40
-	name = "assault rifle magazine (7.62x40mm CLIP)"
-	desc = "A slightly curved, 20-round magazine for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
+	name = "assault rifle magazine (7.62x40mm)"
+	desc = "A slightly curved, 20-round magazine for the 7.62x40mm variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
 	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
 	base_icon_state = "skm_mag"
 	icon_state = "skm_mag-1"
@@ -42,8 +42,8 @@
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/skm_762_40/extended
-	name = "extended assault rifle magazine (7.62x40mm CLIP)"
-	desc = "A very curved, 40-round magazine for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
+	name = "extended assault rifle magazine (7.62x40mm)"
+	desc = "A very curved, 40-round magazine for the 7.62x40mm variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
 	base_icon_state = "skm_extended_mag"
 	icon_state = "skm_extended_mag-1"
 	max_ammo = 40
@@ -52,30 +52,16 @@
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/skm_762_40/drum
-	name = "assault rifle drum (7.62x40mm CLIP)"
-	desc = "A 75-round drum for the 7.62x40mm CLIP variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
+	name = "assault rifle drum (7.62x40mm)"
+	desc = "A 75-round drum for the 7.62x40mm variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
 	base_icon_state = "skm_drum"
 	icon_state = "skm_drum-1"
 	max_ammo = 75
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/ammo_box/magazine/f4_308
-	name = "\improper F4 Magazine (.308)"
-	desc = "A standard 10-round magazine for F4 platform DMRs. These rounds do good damage with significant armor penetration."
-	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
-	icon_state = "gal_mag-1"
-	base_icon_state = "gal_mag"
-	ammo_type = /obj/item/ammo_casing/a308
-	caliber = ".308"
-	max_ammo = 10
-	multiple_sprites = AMMO_BOX_FULL_EMPTY
-
-/obj/item/ammo_box/magazine/f4_308/empty
-	start_empty = TRUE
-
 /obj/item/ammo_box/magazine/p16 //repath to /obj/item/ammo_box/magazine/generic_556 sometime
-	name = "CM-82 magazine (5.56x42mm CLIP)"
-	desc = "A simple, 30-round magazine for 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
+	name = "NT-82 magazine (5.56x42mm)"
+	desc = "A simple, 30-round magazine for 5.56x42mm assault rifles. These rounds do moderate damage with good armor penetration."
 	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
 	icon_state = "p16_mag-1"
 	base_icon_state = "p16_mag"
@@ -85,11 +71,12 @@
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/p16/empty
+	icon_state = "p16_mag-0"
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/p16/extended
-	name = "extended CM-82 magazine (5.56x42mm CLIP)"
-	desc = "An extended magazine, with 45 rounds for 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
+	name = "extended NT-82 magazine (5.56x42mm)"
+	desc = "An extended magazine, with 45 rounds for 5.56x42mm assault rifles. These rounds do moderate damage with good armor penetration."
 	icon_state = "p16_mag_extended-1"
 	base_icon_state = "p16_mag_extended"
 	ammo_type = /obj/item/ammo_casing/a556_42
@@ -101,8 +88,8 @@
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/p16/casket
-	name = "casket CM-82 magazine (5.56x42mm CLIP)"
-	desc = "A casket magazine, with 60 rounds for 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
+	name = "casket NT-82 magazine (5.56x42mm)"
+	desc = "A casket magazine, with 60 rounds for 5.56x42mm assault rifles. These rounds do moderate damage with good armor penetration."
 	icon_state = "p16_mag_casket-1"
 	base_icon_state = "p16_mag_casket"
 	ammo_type = /obj/item/ammo_casing/a556_42
@@ -115,7 +102,7 @@
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/swiss
-	name = "\improper Swiss Cheese Magazine (5.56x42mm CLIP)"
+	name = "\improper Swiss Cheese Magazine (5.56x42mm)"
 	desc = "A deft, 30-round magazine for the Swiss Cheese assault rifle. These rounds do moderate damage with good armor penetration."
 	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
 	icon_state = "swissmag-1"
@@ -143,7 +130,7 @@
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/python_box
-	name = "Python drum magazine (5.56x42mm CLIP)"
+	name = "Python drum magazine (5.56x42mm)"
 	desc = "A 90 round drum magazine for SAW-90 Python. These rounds do good damage with good armor penetration."
 	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
 	base_icon_state = "python_mag"
@@ -161,8 +148,8 @@
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m556_42_hydra
-	name = "Hydra assault rifle magazine (5.56x42mm CLIP)"
-	desc = "A simple, 30-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
+	name = "Hydra assault rifle magazine (5.56x42mm)"
+	desc = "A simple, 30-round magazine for the Hydra platform of 5.56x42mm assault rifles. These rounds do moderate damage with good armor penetration."
 	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
 	icon_state = "hydra_mag-30"
 	base_icon_state = "hydra_mag"
@@ -180,8 +167,8 @@
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m556_42_hydra/small
-	name = "Short Hydra assault rifle magazine (5.56x42mm CLIP)"
-	desc = "A short, 20-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles; intended for the DMR variant. These rounds do moderate damage with good armor penetration."
+	name = "Short Hydra assault rifle magazine (5.56x42mm)"
+	desc = "A short, 20-round magazine for the Hydra platform of 5.56x42mm assault rifles; intended for the DMR variant. These rounds do moderate damage with good armor penetration."
 	icon_state = "hydra_small_mag-20"
 	base_icon_state = "hydra_small_mag"
 	max_ammo = 20
@@ -190,8 +177,8 @@
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m556_42_hydra/extended
-	name = "extended Hydra assault rifle magazine (5.56x42mm CLIP)"
-	desc = "A bulkier, 60-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
+	name = "extended Hydra assault rifle magazine (5.56x42mm)"
+	desc = "A bulkier, 60-round magazine for the Hydra platform of 5.56x42mm assault rifles. These rounds do moderate damage with good armor penetration."
 	icon_state = "hydra_extended_mag-1"
 	base_icon_state = "hydra_extended_mag"
 	max_ammo = 60
@@ -201,10 +188,26 @@
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m556_42_hydra/casket
-	name = "casket Hydra assault rifle magazine (5.56x42mm CLIP)"
-	desc = "A very long and bulky 100-round magazine for the Hydra platform of 5.56x42mm CLIP assault rifles. These rounds do moderate damage with good armor penetration."
+	name = "casket Hydra assault rifle magazine (5.56x42mm)"
+	desc = "A very long and bulky 100-round magazine for the Hydra platform of 5.56x42mm assault rifles. These rounds do moderate damage with good armor penetration."
 	icon_state = "hydra_casket_mag-1"
 	base_icon_state = "hydra_casket_mag"
 	max_ammo = 100
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/magazine/nt40_762_40_box
+	name = "NT-40 box magazine (7.62x40mm)"
+	desc = "An 80 round box magazine for NT-40 light machine gun. These rounds do good damage with good armor penetration."
+	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
+	base_icon_state = "cm40_mag"
+	icon_state = "cm40_mag-1"
+	ammo_type = /obj/item/ammo_casing/a762_40
+	caliber = "7.62x40mm"
+	max_ammo = 80
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/magazine/nt40_762_40_box/empty
+	icon_state = "cm40_mag-0"
+	start_empty = TRUE

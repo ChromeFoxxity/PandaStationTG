@@ -2,12 +2,12 @@
 
 /obj/item/gun/ballistic/automatic/pistol/m1911
 	name = "\improper Candor"
-	desc = "A classic semi-automatic handgun, widely popular throughout the Spinward Frontier. An engraving on the slide marks it as a product of Nanotrasen. Chambered in .45 ACP."
+	desc = "A classic semi-automatic handgun, widely popular throughout the Spinward Frontier. An engraving on the slide marks it as a product of Bastion Armaments. Chambered in .45 ACP."
 
 	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
-	worn_icon = 'modular_panda/icons/obj/clothing/back.dmi'
-	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/scarborough_lefthand.dmi'
-	righthand_file = 'modular_panda/icons/mob/inhands/weapons/scarborough_righthand.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
+	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "candor"
 	inhand_icon_state = "sa_generic"
 
@@ -24,16 +24,16 @@
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 
 /obj/item/gun/ballistic/automatic/pistol/ringneck/give_manufacturer_examine()
-	AddElement(/datum/element/manufacturer_examine, COMPANY_NANOTRASEN)
+	AddElement(/datum/element/manufacturer_examine, COMPANY_BASTION)
 
 /obj/item/gun/ballistic/automatic/pistol/ringneck
 	name = "PC-76 \"Ringneck\""
 	desc = "A compact handgun used by most Syndicate-affiliated groups. Small enough to conceal in most pockets, making it popular for covert elements and simply as a compact defensive weapon. Chambered in 10mm."
 
 	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
-	worn_icon = 'modular_panda/icons/obj/clothing/back.dmi'
-	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/scarborough_lefthand.dmi'
-	righthand_file = 'modular_panda/icons/mob/inhands/weapons/scarborough_righthand.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
+	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "ringneck"
 	inhand_icon_state = "sa_generic"
 
@@ -74,9 +74,9 @@
 	desc = "An armor-piercing combat handgun used by Syndicate strike teams, now primarily used by operatives of the Gorlex Marauders. Chambered in 5.7x39mm."
 
 	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
-	worn_icon = 'modular_panda/icons/obj/clothing/back.dmi'
-	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/scarborough_lefthand.dmi'
-	righthand_file = 'modular_panda/icons/mob/inhands/weapons/scarborough_righthand.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
+	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "asp"
 	inhand_icon_state = "sa_generic"
 
@@ -101,9 +101,9 @@
 	desc = "An imposing revolver used by officers and certain agents of Syndicate member factions, favored by captains and high-ranking officers of the Syndicate. Chambered in .357 Magnum."
 
 	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
-	worn_icon = 'modular_panda/icons/obj/clothing/back.dmi'
-	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/scarborough_lefthand.dmi'
-	righthand_file = 'modular_panda/icons/mob/inhands/weapons/scarborough_righthand.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
+	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "viper"
 	inhand_icon_state = "sa_generic"
 
@@ -174,9 +174,9 @@
 	desc = "A machine pistol, used by Syndicate infiltrators and special forces back then, nowadays it's used as a weapon to be a reliable sidearm for combative personnel. Chambered in 9mm."
 
 	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
-	worn_icon = 'modular_panda/icons/obj/clothing/back.dmi'
-	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/scarborough_lefthand.dmi'
-	righthand_file = 'modular_panda/icons/mob/inhands/weapons/scarborough_righthand.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
+	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "rattlesnake"
 	inhand_icon_state = "rattlesnake"
 
@@ -200,7 +200,6 @@
 	fire_delay = 0.07 SECONDS
 	spread = 10
 	can_suppress = FALSE
-	actions_types = list(/datum/action/item_action/toggle_firemode)
 
 /obj/item/gun/ballistic/automatic/pistol/rattlesnake/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_SCARBOROUGH)
@@ -230,9 +229,9 @@
 	inhand_icon_state = "sa_generic"
 
 	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
-	worn_icon = 'modular_panda/icons/obj/clothing/back.dmi'
-	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/scarborough_lefthand.dmi'
-	righthand_file = 'modular_panda/icons/mob/inhands/weapons/scarborough_righthand.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
+	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
 
 
 	w_class = WEIGHT_CLASS_TINY
@@ -265,8 +264,9 @@
 	inhand_icon_state = "hp_generic"
 
 	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
-	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/scarborough_lefthand.dmi'
-	righthand_file = 'modular_panda/icons/mob/inhands/weapons/scarborough_righthand.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
+	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
 
 	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/derr38
 
@@ -295,15 +295,11 @@
 	. += "[live_ammo ? live_ammo : "None"] of those are live rounds."
 
 /obj/item/gun/ballistic/automatic/pistol/derringer/give_manufacturer_examine()
-	AddElement(/datum/element/manufacturer_examine, COMPANY_NANOTRASEN)
+	AddElement(/datum/element/manufacturer_examine, COMPANY_BASTION)
 
 /obj/item/gun/ballistic/automatic/pistol/derringer/temblor
 	name = "D-9 \"Temblor\""
 	desc = "An easily concealable derriger. It was rarely used as an alternative to the PC-81 \"Himehabu\" during covert operations. Chambered in .357."
-
-	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
-	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/scarborough_lefthand.dmi'
-	righthand_file = 'modular_panda/icons/mob/inhands/weapons/scarborough_righthand.dmi'
 
 	icon_state = "derringer_syndie"
 	inhand_icon_state = "sa_generic"
@@ -314,3 +310,85 @@
 
 /obj/item/gun/ballistic/automatic/pistol/derringer/temblor/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_SCARBOROUGH)
+
+/obj/item/gun/ballistic/automatic/pistol/nt23
+	name = "\improper NT-23"
+	desc = "Nanotrasen's standard service pistol. 10 rounds of 10mm ammunition make the NT-23 deadlier than many other service pistols, but its weight and bulk have made it unpopular as a sidearm. It has largely been phased out outside of security officers on Nanotrasen civilian-class stations in the Spinward Sector. Chambered in 10mm."
+	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
+	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
+
+	icon_state = "nt23"
+	inhand_icon_state = "nt_generic"
+	w_class = WEIGHT_CLASS_NORMAL
+
+	accepted_magazine_type = /obj/item/ammo_box/magazine/nt23
+
+	fire_sound = 'modular_panda/sound/weapons/gun/pistol/cm23.ogg'
+	rack_sound = 'modular_panda/sound/weapons/gun/pistol/candor_cocked.ogg'
+	lock_back_sound = 'modular_panda/sound/weapons/gun/pistol/slide_lock.ogg'
+	bolt_drop_sound = 'modular_panda/sound/weapons/gun/pistol/slide_drop.ogg'
+
+	load_sound = 'modular_panda/sound/weapons/gun/pistol/candor_reload.ogg'
+	load_empty_sound = 'modular_panda/sound/weapons/gun/pistol/candor_reload.ogg'
+	eject_sound = 'modular_panda/sound/weapons/gun/pistol/candor_unload.ogg'
+	eject_empty_sound = 'modular_panda/sound/weapons/gun/pistol/candor_unload.ogg'
+
+/obj/item/gun/ballistic/automatic/pistol/nt23/give_manufacturer_examine()
+	AddElement(/datum/element/manufacturer_examine, COMPANY_NANOTRASEN)
+
+/obj/item/gun/ballistic/automatic/pistol/nt70
+	name = "NT-70 machine pistol"
+	desc = "A compact machine pistol designed to rapidly fire 9mm ammo. Popular with officers and certain specialized units, the NT-70 is incredibly dangerous at close range. Chambered in 9mm."
+
+	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
+	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
+
+	icon_state = "nt70"
+	inhand_icon_state = "nt_generic"
+
+	accepted_magazine_type = /obj/item/ammo_box/magazine/m9mm_nt70
+
+	burst_size = 3
+	burst_delay = 0.1 SECONDS
+	fire_delay = 0.07 SECONDS
+	spread = 8
+
+	fire_sound = 'modular_panda/sound/weapons/gun/pistol/cm70.ogg'
+
+/obj/item/gun/ballistic/automatic/pistol/nt70/give_manufacturer_examine()
+	AddElement(/datum/element/manufacturer_examine, COMPANY_NANOTRASEN)
+
+/obj/item/gun/ballistic/automatic/pistol/nt357
+	name = "\improper NT-357"
+	desc = "A powerful semi-automatic handgun designed for Nanotrasen's security for megafauna removal, as standard handguns had proven ineffective as backup weapons. The heft and power of the weapon have made it a status symbol among the few Nanotrasen officers able to requisition one. Chambered in .357."
+
+	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
+	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
+
+	icon_state = "nt357"
+	inhand_icon_state = "nt_generic"
+
+	w_class = WEIGHT_CLASS_NORMAL
+
+	accepted_magazine_type = /obj/item/ammo_box/magazine/nt357
+
+	fire_sound = 'modular_panda/sound/weapons/gun/pistol/deagle.ogg'
+	rack_sound = 'modular_panda/sound/weapons/gun/pistol/candor_cocked.ogg'
+	lock_back_sound = 'modular_panda/sound/weapons/gun/pistol/slide_lock.ogg'
+	bolt_drop_sound = 'modular_panda/sound/weapons/gun/pistol/slide_drop.ogg'
+
+	load_sound = 'modular_panda/sound/weapons/gun/pistol/candor_reload.ogg'
+	load_empty_sound = 'modular_panda/sound/weapons/gun/pistol/candor_reload.ogg'
+	eject_sound = 'modular_panda/sound/weapons/gun/pistol/candor_unload.ogg'
+	eject_empty_sound = 'modular_panda/sound/weapons/gun/pistol/candor_unload.ogg'
+
+	recoil = 1
+
+/obj/item/gun/ballistic/automatic/pistol/nt357/give_manufacturer_examine()
+	AddElement(/datum/element/manufacturer_examine, COMPANY_NANOTRASEN)

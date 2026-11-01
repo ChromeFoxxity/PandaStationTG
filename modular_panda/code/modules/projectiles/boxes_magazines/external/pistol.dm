@@ -111,3 +111,51 @@
 /obj/item/ammo_box/magazine/m22lr_himehabu/empty
 	icon_state = "himehabu_mag-0"
 	start_empty = TRUE
+
+/obj/item/ammo_box/magazine/nt23
+	name = "NT-23 pistol magazine (10mm)"
+	desc = "An 10-round magazine magazine designed for the NT-23 pistol. These rounds do moderate damage, but struggle against armor."
+	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
+	icon_state = "cm23_mag-1"
+	base_icon_state = "cm23_mag"
+	ammo_type = /obj/item/ammo_casing/c10mm
+	caliber = "10mm"
+	max_ammo = 10
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/nt23/empty
+	icon_state = "cm23_mag-0"
+	start_empty = TRUE
+
+/obj/item/ammo_box/magazine/m9mm_nt70
+	name = "NT-70 machine pistol magazine (9mm)"
+	desc = "A 18-round magazine designed for the NT-70 machine pistol. These rounds do okay damage, but struggle against armor."
+	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
+	icon_state = "cm70_mag_18"
+	base_icon_state = "cm70_mag"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = "9mm"
+	max_ammo = 18
+
+/obj/item/ammo_box/magazine/m9mm_nt70/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[round(ammo_count(), 3)]"
+
+/obj/item/ammo_box/magazine/m9mm_nt70/empty
+	icon_state = "cm70_mag_0"
+	start_empty = TRUE
+
+/obj/item/ammo_box/magazine/nt357
+	name = "NT-357 pistol magazine (.357)"
+	desc = "A 7-round magazine designed for the NT-357 pistol. These rounds do good damage, but struggle against armor."
+	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
+	icon_state = "cm23_mag-1"
+	base_icon_state = "cm23_mag"
+	ammo_type = /obj/item/ammo_casing/a357
+	caliber = ".357"
+	max_ammo = 7
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/nt357/empty
+	icon_state = "cm23_mag-0"
+	start_empty = TRUE

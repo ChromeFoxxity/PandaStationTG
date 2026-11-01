@@ -78,6 +78,9 @@
 /obj/item/ammo_casing/shotgun/pulverizer
 	icon_state = "taser"
 
+/obj/item/ammo_casing/shotgun/dragonsbreath
+	icon_state = "dragonsbreath"
+
 /*
 		Tech Shells
 */

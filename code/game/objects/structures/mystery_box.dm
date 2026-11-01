@@ -38,11 +38,15 @@ GLOBAL_LIST_INIT(mystery_box_guns, list(
 	/obj/item/gun/energy/pulse/pistol/taserless,
 	/obj/item/gun/ballistic/shotgun/lethal,
 	/obj/item/gun/ballistic/shotgun/automatic/combat,
-	/obj/item/gun/ballistic/shotgun/bulldog/unrestricted,
+	// PANDA EDIT START, ORIGINAL; "/obj/item/gun/ballistic/shotgun/bulldog/unrestricted"
+	/obj/item/gun/ballistic/shotgun/bulldog,
+	// PANDA EDIT END
 	/obj/item/gun/ballistic/rifle/boltaction,
 	/obj/item/gun/ballistic/automatic/ar,
 	/obj/item/gun/ballistic/automatic/proto/unrestricted,
-	/obj/item/gun/ballistic/automatic/c20r/unrestricted,
+	// PANDA EDIT START, ORIGINAL; "/obj/item/gun/ballistic/automatic/c20r/unrestricted"
+	/obj/item/gun/ballistic/automatic/c20r,
+	// PANDA EDIT END
 	/obj/item/gun/ballistic/automatic/l6_saw/unrestricted,
 	/obj/item/gun/ballistic/automatic/m90/unrestricted,
 	/obj/item/gun/ballistic/automatic/tommygun,

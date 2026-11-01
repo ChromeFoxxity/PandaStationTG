@@ -13,10 +13,10 @@
 	dismemberment = 0 //It goes through you cleanly.
 	knockdown = 0
 
-//6.5mm CLIP (F90, Boomslang)
+//6.5mm (F90, Boomslang)
 
-/obj/projectile/bullet/a65clip
-	name = "6.5mm CLIP bullet"
+/obj/projectile/bullet/a65
+	name = "6.5mm bullet"
 	stamina = 10
 	damage = 40
 	armour_penetration = 50

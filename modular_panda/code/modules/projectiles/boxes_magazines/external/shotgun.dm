@@ -47,3 +47,18 @@
 /obj/item/ammo_box/magazine/m12g_bulldog/drum/meteor
 	name = "shotgun drum magazine (12g meteor slugs)"
 	ammo_type = /obj/item/ammo_casing/shotgun/meteorslug
+
+/obj/item/ammo_box/magazine/nt15_12g
+	name = "NT-15 magazine (12g buckshot)"
+	desc = "An almost straight, 8-round magazine designed for the NT-15 shotgun."
+	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
+	icon_state = "cm15_mag-1"
+	base_icon_state = "cm15_mag"
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	caliber = "12ga"
+	max_ammo = 8
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+
+/obj/item/ammo_box/magazine/nt15_12g/empty
+	icon_state = "cm15_mag-0"
+	start_empty = TRUE
