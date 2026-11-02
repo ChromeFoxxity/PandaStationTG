@@ -139,7 +139,7 @@
 
 /obj/item/ammo_box/magazine/m9mm_nt70/update_icon_state()
 	. = ..()
-	icon_state = "[base_icon_state]-[round(ammo_count(), 3)]"
+	icon_state = "[base_icon_state]_[round(ammo_count(), 3)]"
 
 /obj/item/ammo_box/magazine/m9mm_nt70/empty
 	icon_state = "cm70_mag_0"
