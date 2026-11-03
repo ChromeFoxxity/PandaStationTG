@@ -103,7 +103,7 @@
 
 /obj/item/gun/modular/Initialize(mapload)
 	. = ..()
-	build_firemodes() // PANDA EDIT ADDITION - FIREMODES
+	build_firemodes()
 
 /obj/item/gun/modular/proc/build_firemodes()
 	if(FIREMODE_FULLAUTO in gun_firemodes)
@@ -116,7 +116,7 @@
 
 	var/datum/action/item_action/toggle_firemode/our_action
 	if(gun_firemodes.len > 1)
-		our_action = new(src)
+		our_action = new /datum/action/item_action/toggle_firemode(src)
 
 	firemode_index = gun_firemodes.Find(default_firemode)
 	if(!firemode_index)
@@ -146,41 +146,6 @@
 	for(var/datum/action/item_action/toggle_firemode/firemode_action in actions)
 		firemode_action.build_all_button_icons()
 
-/obj/item/gun/modular/Initialize(mapload)
-	. = ..()
-	RegisterSignal(src, COMSIG_ITEM_UI_ACTION_CLICK, PROC_REF(on_firemode_action))
-	build_firemodes()
-	toggle_firemode()
-
-/obj/item/gun/modular/proc/on_firemode_action(datum/source, mob/user, datum/action/action)
-	SIGNAL_HANDLER
-
-	if(!istype(action, /datum/action/item_action/toggle_firemode))
-		return NONE
-
-	fire_select(user)
-	return COMPONENT_ACTION_HANDLED
-
-/// Keep the base gun's firing implementation, but only burst in burst mode.
-/obj/item/gun/modular/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
-	var/current_firemode = gun_firemodes[firemode_index]
-
-	if(current_firemode == FIREMODE_OTHER)
-		return process_other(target, user, message, params, zone_override, bonus_spread)
-	if(current_firemode == FIREMODE_OTHER_TWO)
-		return process_other_two(target, user, message, params, zone_override, bonus_spread)
-
-	if(current_firemode == FIREMODE_BURST)
-		return ..()
-
-	// Semiauto, full-auto, and aimed modes fire one shot per process_fire call.
-	// Full-auto repetition is handled by the automatic-fire component.
-	var/saved_burst_size = burst_size
-	burst_size = 1
-	. = ..()
-	burst_size = saved_burst_size
-	return .
-
 /obj/item/gun/modular/proc/process_other(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	return FALSE
 
@@ -191,20 +156,15 @@
 	return SEND_SIGNAL(src, COMSIG_GUN_TRY_FIRE, user, target, FALSE, params) & COMPONENT_CANCEL_GUN_FIRE
 
 /obj/item/gun/modular/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
-	if(safety_blocks_fire(user, target, params))
-		return FALSE
-
 	var/current_firemode = gun_firemodes[firemode_index]
+
 	if(current_firemode == FIREMODE_OTHER)
 		return process_other(target, user, message, params, zone_override, bonus_spread)
 	if(current_firemode == FIREMODE_OTHER_TWO)
 		return process_other_two(target, user, message, params, zone_override, bonus_spread)
-
 	if(current_firemode == FIREMODE_BURST)
 		return ..()
 
-	// Semiauto, full-auto, and aimed modes fire one shot per process_fire call.
-	// Full-auto repetition is handled by the automatic-fire component.
 	var/saved_burst_size = burst_size
 	burst_size = 1
 	. = ..()
