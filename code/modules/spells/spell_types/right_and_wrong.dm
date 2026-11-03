@@ -16,9 +16,7 @@ GLOBAL_LIST_INIT(summoned_all_guns, get_sane_item_types(/obj/item/gun))
 GLOBAL_LIST_INIT(summoned_guns, list(
 	/obj/item/gun/ballistic/automatic/ar,
 	/obj/item/gun/ballistic/automatic/battle_rifle,
-	// PANDA EDIT START, ORIGINAL; "/obj/item/gun/ballistic/automatic/c20r/unrestricted"
-	/obj/item/gun/ballistic/automatic/c20r,
-	// PANDA EDIT END
+	/obj/item/gun/ballistic/automatic/c20r/unrestricted,
 	/obj/item/gun/ballistic/automatic/gyropistol,
 	/obj/item/gun/ballistic/automatic/l6_saw/unrestricted,
 	/obj/item/gun/ballistic/automatic/laser,
@@ -46,9 +44,7 @@ GLOBAL_LIST_INIT(summoned_guns, list(
 	/obj/item/gun/ballistic/rifle/sniper_rifle,
 	/obj/item/gun/ballistic/rocketlauncher/unrestricted,
 	/obj/item/gun/ballistic/shotgun/automatic/combat,
-	// PANDA EDIT START, ORIGINAL; "/obj/item/gun/ballistic/shotgun/bulldog/unrestricted"
-	/obj/item/gun/ballistic/shotgun/bulldog,
-	// PANDA EDIT END
+	/obj/item/gun/ballistic/shotgun/bulldog/unrestricted,
 	/obj/item/gun/ballistic/shotgun/doublebarrel,
 	/obj/item/gun/ballistic/shotgun/hook,
 	/obj/item/gun/ballistic/shotgun/lethal,

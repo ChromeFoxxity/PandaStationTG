@@ -282,7 +282,7 @@
 			/obj/item/melee/energy/sword/saber,
 			/obj/item/gun/ballistic/automatic/pistol,
 			/obj/item/gun/ballistic/automatic/c20r,
-			/obj/item/gun/ballistic/shotgun/bulldog,
+			/obj/item/gun/ballistic/shotgun/bulldog/unrestricted,
 		),
 	)
 

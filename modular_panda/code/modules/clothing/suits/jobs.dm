@@ -17,7 +17,7 @@
 		/obj/item/storage/bag/tray,
 		/obj/item/reagent_containers/cup/glass,
 		/obj/item/rag,
-		/obj/item/gun/ballistic/shotgun/doublebarrel,
+		/obj/item/gun/modular/ballistic/shotgun/doublebarrel,
 		/obj/item/reagent_containers/condiment,
 	)
 

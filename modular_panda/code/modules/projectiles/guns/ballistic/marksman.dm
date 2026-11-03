@@ -1,17 +1,18 @@
 //########### MARKSMAN ###########//
-/obj/item/gun/ballistic/modular/automatic/marksman
-	abstract_type = /obj/item/gun/ballistic/modular/automatic/marksman
+/obj/item/gun/modular/ballistic/automatic/marksman
+	abstract_type = /obj/item/gun/modular/ballistic/automatic/marksman
 	mag_display = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 	burst_size = 1
 	min_recoil = 0.1
 
-/obj/item/gun/ballistic/modular/automatic/marksman/Initialize(mapload)
+/obj/item/gun/modular/ballistic/automatic/marksman/Initialize(mapload)
 	. = ..()
+	AddComponent(/datum/component/ammo_hud)
 	AddComponent(/datum/component/scope, range_modifier = 6)
 
-/obj/item/gun/ballistic/modular/automatic/marksman/boomslang
+/obj/item/gun/modular/ballistic/automatic/marksman/boomslang
 	name = "MSR-90 \"Boomslang\""
 	desc = "A bullpup semi-automatic sniper rifle with a high-magnification scope. Compact and capable of rapid follow-up fire without sacrificing power. Used by Syndicate support units and infiltrators. Chambered in 6.5mm."
 	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
@@ -28,16 +29,16 @@
 	spread = 0
 	recoil = 2
 
-/obj/item/gun/ballistic/modular/automatic/marksman/boomslang/give_manufacturer_examine()
+/obj/item/gun/modular/ballistic/automatic/marksman/boomslang/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_SCARBOROUGH)
 
-/obj/item/gun/ballistic/modular/automatic/marksman/boomslang/indie
+/obj/item/gun/modular/ballistic/automatic/marksman/boomslang/indie
 	name = "Boomslang-90"
 	desc = "A modern semi-automatic hunting rifle. Its relative portability and fast follow-up potential compared to other weapons in its class have made it very popular with well-to-do hunters and the occasional law enforcement agency or mercenary. Chambered in 6.5mm."
 	icon_state = "boomslang90"
 	inhand_icon_state = "boomslang90"
 
-/obj/item/gun/ballistic/modular/automatic/marksman/taipan
+/obj/item/gun/modular/ballistic/automatic/marksman/taipan
 	name = "AMR-83 \"Taipan\""
 	desc = "A monstrous semi-automatic anti-materiel rifle, surprisingly short for its class. Designed to destroy mechs, light vehicles, and equipment, but more than capable of obliterating regular personnel. Chambered in .50 BMG."
 	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
@@ -61,10 +62,10 @@
 	recoil = 5
 	fire_delay = 6 SECONDS
 
-/obj/item/gun/ballistic/modular/automatic/marksman/taipan/give_manufacturer_examine()
+/obj/item/gun/modular/ballistic/automatic/marksman/taipan/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_SCARBOROUGH)
 
-/obj/item/gun/ballistic/modular/automatic/marksman/f4
+/obj/item/gun/modular/ballistic/automatic/marksman/f4
 	name = "NT-F4"
 	desc = "Nanotrasen's marksman rifle, used by both military units and station security. Designed not long after the NT-24, the venerable F4 has adapted well to continued upgrades. Chambered in .308."
 	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
@@ -79,10 +80,10 @@
 	spread = 0
 	recoil = 1
 
-/obj/item/gun/ballistic/modular/automatic/marksman/f4/give_manufacturer_examine()
+/obj/item/gun/modular/ballistic/automatic/marksman/f4/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_NANOTRASEN)
 
-/obj/item/gun/ballistic/modular/automatic/marksman/f90
+/obj/item/gun/modular/ballistic/automatic/marksman/f90
 	name = "NT-F90"
 	desc = "A powerful sniper rifle used rarely by Nanotrasen private security teams, capable of impressive range and penetrating power. Chambered in 6.5mm."
 	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
@@ -98,5 +99,5 @@
 	spread = 0
 	recoil = 3
 
-/obj/item/gun/ballistic/modular/automatic/marksman/f90/give_manufacturer_examine()
+/obj/item/gun/modular/ballistic/automatic/marksman/f90/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_NANOTRASEN)

@@ -1,5 +1,5 @@
-/obj/item/gun/ballistic/modular/revolver
-	abstract_type = /obj/item/gun/ballistic/modular/revolver
+/obj/item/gun/modular/ballistic/revolver
+	abstract_type = /obj/item/gun/modular/ballistic/revolver
 	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
 	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
 	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
@@ -13,18 +13,27 @@
 	vary_fire_sound = FALSE
 	fire_sound_volume = 90
 	dry_fire_sound = 'modular_panda/sound/weapons/gun/revolver/dry_fire.ogg'
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
 	casing_ejector = FALSE
 	internal_magazine = TRUE
 	bolt_type = BOLT_TYPE_NO_BOLT
 	tac_reloads = FALSE
 	recoil = 0.5
+	var/spin_delay = 10
+	var/recent_spin = 0
+	var/last_fire = 0
 
-/obj/item/gun/ballistic/modular/revolver/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
+/obj/item/gun/modular/ballistic/revolver/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/ammo_hud/revolver)
+
+/obj/item/gun/modular/ballistic/revolver/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread)
 	. = ..()
 	if(.)
 		last_fire = world.time
 
-/obj/item/gun/ballistic/modular/revolver/chamber_round(spin_cylinder = TRUE, replace_new_round)
+/obj/item/gun/modular/ballistic/revolver/chamber_round(spin_cylinder = TRUE, replace_new_round)
 	if(!magazine) //if it mag was qdel'd somehow.
 		CRASH("revolver tried to chamber a round without a magazine!")
 	if(chambered)
@@ -39,15 +48,15 @@
 	if(chambered)
 		RegisterSignal(chambered, COMSIG_MOVABLE_MOVED, PROC_REF(clear_chambered))
 
-/obj/item/gun/ballistic/modular/revolver/shoot_with_empty_chamber(mob/living/user as mob|obj)
+/obj/item/gun/modular/ballistic/revolver/shoot_with_empty_chamber(mob/living/user as mob|obj)
 	..()
 	chamber_round()
 
-/obj/item/gun/ballistic/modular/revolver/click_alt(mob/user)
+/obj/item/gun/modular/ballistic/revolver/click_alt(mob/user)
 	spin_chamber(user)
 	return CLICK_ACTION_SUCCESS
 
-/obj/item/gun/ballistic/modular/revolver/fire_sounds()
+/obj/item/gun/modular/ballistic/revolver/fire_sounds()
 	var/frequency_to_use = sin((90/magazine?.max_ammo) * get_ammo(TRUE, FALSE)) // fucking REVOLVERS
 	var/click_frequency_to_use = 1 - frequency_to_use * 0.75
 	var/play_click = sqrt(magazine?.max_ammo) > get_ammo(TRUE, FALSE)
@@ -60,10 +69,10 @@
 		if(play_click)
 			playsound(src, 'sound/items/weapons/gun/general/ballistic_click.ogg', fire_sound_volume, vary_fire_sound, frequency = click_frequency_to_use)
 
-GAME_VERB(/obj/item/gun/ballistic/modular/revolver, spin, "Spin Chamber", null)
+GAME_VERB(/obj/item/gun/modular/ballistic/revolver, spin, "Spin Chamber", null)
 	spin_chamber(usr)
 
-/obj/item/gun/ballistic/modular/revolver/verb/spin_chamber(mob/living/user)
+/obj/item/gun/modular/ballistic/revolver/verb/spin_chamber(mob/living/user)
 	if(!istype(user) || IS_UNCONSCIOUS_OR_CRIT(user) || !in_range(user, src))
 		return
 
@@ -77,16 +86,16 @@ GAME_VERB(/obj/item/gun/ballistic/modular/revolver, spin, "Spin Chamber", null)
 		visible_message(span_notice("[user] spins [src]'s chamber."), span_notice("You spin [src]'s chamber."))
 		balloon_alert(user, "chamber spun")
 	else
-		verbs -= /obj/item/gun/ballistic/modular/revolver/verb/spin
+		verbs -= /obj/item/gun/modular/ballistic/revolver/verb/spin
 
-/obj/item/gun/ballistic/modular/revolver/proc/do_spin()
+/obj/item/gun/modular/ballistic/revolver/proc/do_spin()
 	var/obj/item/ammo_box/magazine/internal/cylinder/C = magazine
 	. = istype(C)
 	if(.)
 		C.spin()
 		chamber_round(spin_cylinder = FALSE)
 
-/obj/item/gun/ballistic/modular/revolver/get_ammo(countchambered = FALSE, countempties = TRUE)
+/obj/item/gun/modular/ballistic/revolver/get_ammo(countchambered = FALSE, countempties = TRUE)
 	var/boolets = 0 //mature var names for mature people
 	if (chambered && countchambered)
 		boolets++
@@ -94,17 +103,17 @@ GAME_VERB(/obj/item/gun/ballistic/modular/revolver, spin, "Spin Chamber", null)
 		boolets += magazine.ammo_count(countempties)
 	return boolets
 
-/obj/item/gun/ballistic/modular/revolver/examine(mob/user)
+/obj/item/gun/modular/ballistic/revolver/examine(mob/user)
 	. = ..()
 	var/live_ammo = get_ammo(FALSE, FALSE)
 	. += "[live_ammo ? live_ammo : "None"] of those are live rounds."
 	. += span_notice("It can be spun with [EXAMINE_HINT("alt-click")].")
 
-/obj/item/gun/ballistic/modular/revolver/ignition_effect(atom/A, mob/user)
+/obj/item/gun/modular/ballistic/revolver/ignition_effect(atom/A, mob/user)
 	if(last_fire && last_fire + 15 SECONDS > world.time)
 		return span_rose("[user] touches the end of [src] to \the [A], using the residual heat to ignite it in a puff of smoke. What a badass.")
 
-/obj/item/gun/ballistic/modular/revolver/viper
+/obj/item/gun/modular/ballistic/revolver/viper
 	name = "R-23 \"Viper\""
 	desc = "An imposing revolver used by officers and certain agents of Syndicate member factions, favored by captains and high-ranking officers of the Syndicate. Chambered in .357 Magnum."
 	icon_state = "viper"
@@ -118,10 +127,10 @@ GAME_VERB(/obj/item/gun/ballistic/modular/revolver, spin, "Spin Chamber", null)
 	spread = 3
 	recoil = 1
 
-/obj/item/gun/ballistic/modular/revolver/viper/give_manufacturer_examine()
+/obj/item/gun/modular/ballistic/revolver/viper/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_SCARBOROUGH)
 
-/obj/item/gun/ballistic/modular/revolver/viper/indie
+/obj/item/gun/modular/ballistic/revolver/viper/indie
 	name = "Viper-23"
 	desc = "A powerful bull-barrel revolver. Very popular among mercenaries and the occasional well-to-do spacer or pirate for its flashy appearance and powerful cartridge. Chambered in .357 Magnum."
 	icon_state = "viper23"
@@ -129,7 +138,7 @@ GAME_VERB(/obj/item/gun/ballistic/modular/revolver, spin, "Spin Chamber", null)
 	spread = 5
 	obj_flags = UNIQUE_RENAME
 
-/obj/item/gun/ballistic/modular/revolver/viper/indie/setup_reskins()
+/obj/item/gun/modular/ballistic/revolver/viper/indie/setup_reskins()
 	AddComponent(/datum/component/reskinable_item, /datum/atom_skin/viper_revolver)
 
 // Viper special skins

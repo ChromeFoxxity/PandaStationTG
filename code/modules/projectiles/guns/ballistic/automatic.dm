@@ -34,7 +34,6 @@
 /obj/item/gun/ballistic/automatic/proto/unrestricted
 	pin = /obj/item/firing_pin
 
-/* // PANDA REMOVAL, New Weapons Entirely.
 /obj/item/gun/ballistic/automatic/c20r
 	name = "\improper C-20r SMG"
 	desc = "A bullpup three-round burst .45 SMG, designated 'C-20r'. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstamp."
@@ -63,7 +62,6 @@
 /obj/item/gun/ballistic/automatic/c20r/Initialize(mapload)
 	. = ..()
 	update_appearance()
-*/
 
 /obj/item/gun/ballistic/automatic/wt550
 	name = "\improper WT-550 Autorifle"

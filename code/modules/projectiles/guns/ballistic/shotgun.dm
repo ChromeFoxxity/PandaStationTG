@@ -183,7 +183,6 @@
 
 // Bulldog shotgun //
 
-/* PANDA REMOVAL, Entirely new guns
 /obj/item/gun/ballistic/shotgun/bulldog
 	name = "\improper Bulldog Shotgun"
 	desc = "A 2-round burst fire, mag-fed shotgun for combat in narrow corridors, \
@@ -302,7 +301,6 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog/unrestricted
 	pin = /obj/item/firing_pin
-*/
 
 // Double barrel shotgun skins
 /datum/atom_skin/bar_shotgun

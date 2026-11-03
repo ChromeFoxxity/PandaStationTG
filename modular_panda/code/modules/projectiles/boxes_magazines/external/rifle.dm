@@ -18,11 +18,12 @@
 	desc = "A slightly-curved, 30-round magazine for the SKM-24v. These rounds do okay damage with average performance against armor"
 	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
 	base_icon_state = "skmcarbine_mag"
-	icon_state = "skmcarbine_mag-1"
+	icon_state = "skmcarbine_mag-full"
 	ammo_type = /obj/item/ammo_casing/c46x30mm
 	caliber = "4.6x30mm"
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	multiple_sprite_use_base = TRUE
 
 /obj/item/ammo_box/magazine/skm_46_30/recycled
 	ammo_type = /obj/item/ammo_casing/c46x30mm/recycled
@@ -32,30 +33,33 @@
 	desc = "A slightly curved, 20-round magazine for the 7.62x40mm variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
 	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
 	base_icon_state = "skm_mag"
-	icon_state = "skm_mag-1"
+	icon_state = "skm_mag-full"
 	ammo_type = /obj/item/ammo_casing/a762_40
 	caliber = "7.62x40mm"
 	max_ammo = 20
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	multiple_sprite_use_base = TRUE
 
 /obj/item/ammo_box/magazine/skm_762_40/empty
+	icon_state = "skm_mag-empty"
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/skm_762_40/extended
 	name = "extended assault rifle magazine (7.62x40mm)"
 	desc = "A very curved, 40-round magazine for the 7.62x40mm variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
 	base_icon_state = "skm_extended_mag"
-	icon_state = "skm_extended_mag-1"
+	icon_state = "skm_extended_mag-full"
 	max_ammo = 40
 
 /obj/item/ammo_box/magazine/skm_762_40/extended/empty
+	icon_state = "skm_extended_mag-empty"
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/skm_762_40/drum
 	name = "assault rifle drum (7.62x40mm)"
 	desc = "A 75-round drum for the 7.62x40mm variants of the SKM assault rifle family. These rounds do good damage with good armor penetration."
 	base_icon_state = "skm_drum"
-	icon_state = "skm_drum-1"
+	icon_state = "skm_drum-full"
 	max_ammo = 75
 	w_class = WEIGHT_CLASS_NORMAL
 
@@ -63,54 +67,56 @@
 	name = "NT-82 magazine (5.56x42mm)"
 	desc = "A simple, 30-round magazine for 5.56x42mm assault rifles. These rounds do moderate damage with good armor penetration."
 	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
-	icon_state = "p16_mag-1"
+	icon_state = "p16_mag-full"
 	base_icon_state = "p16_mag"
 	ammo_type = /obj/item/ammo_casing/a556_42
 	caliber = "5.56x42mm"
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	multiple_sprite_use_base = TRUE
 
 /obj/item/ammo_box/magazine/p16/empty
-	icon_state = "p16_mag-0"
+	icon_state = "p16_mag-empty"
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/p16/extended
 	name = "extended NT-82 magazine (5.56x42mm)"
 	desc = "An extended magazine, with 45 rounds for 5.56x42mm assault rifles. These rounds do moderate damage with good armor penetration."
-	icon_state = "p16_mag_extended-1"
+	icon_state = "p16_mag_extended-full"
 	base_icon_state = "p16_mag_extended"
 	ammo_type = /obj/item/ammo_casing/a556_42
 	caliber = "5.56x42mm"
 	max_ammo = 45
-	multiple_sprites = AMMO_BOX_FULL_EMPTY
 
 /obj/item/ammo_box/magazine/p16/extended/empty
+	icon_state = "p16_mag_extended-empty"
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/p16/casket
 	name = "casket NT-82 magazine (5.56x42mm)"
 	desc = "A casket magazine, with 60 rounds for 5.56x42mm assault rifles. These rounds do moderate damage with good armor penetration."
-	icon_state = "p16_mag_casket-1"
+	icon_state = "p16_mag_casket-full"
 	base_icon_state = "p16_mag_casket"
 	ammo_type = /obj/item/ammo_casing/a556_42
 	caliber = "5.56x42mm"
 	max_ammo = 60
-	multiple_sprites = AMMO_BOX_FULL_EMPTY
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/p16/casket/empty
+	icon_state = "p16_mag_casket-empty"
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/swiss
 	name = "\improper Swiss Cheese Magazine (5.56x42mm)"
 	desc = "A deft, 30-round magazine for the Swiss Cheese assault rifle. These rounds do moderate damage with good armor penetration."
 	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
-	icon_state = "swissmag-1"
+	icon_state = "swissmag-full"
 	base_icon_state = "swissmag"
 	ammo_type = /obj/item/ammo_casing/a556_42
 	caliber = "5.56x42mm"
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	multiple_sprite_use_base = TRUE
 
 // 8x50mmR En Bloc Clip (Illestren Hunting Rifle)
 
@@ -123,6 +129,7 @@
 	caliber = "8x50mmR"
 	max_ammo = 5
 	multiple_sprites = AMMO_BOX_PER_BULLET
+	multiple_sprite_use_base = TRUE
 	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = 500)
 
@@ -134,17 +141,16 @@
 	desc = "A 90 round drum magazine for SAW-90 Python. These rounds do good damage with good armor penetration."
 	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
 	base_icon_state = "python_mag"
-	icon_state = "python_mag-1"
+	icon_state = "python_mag-full"
 	ammo_type = /obj/item/ammo_casing/a556_42
 	caliber = "5.56x42mm"
 	max_ammo = 90
 	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/ammo_box/magazine/python_box/update_icon_state()
-	. = ..()
-	icon_state = "[base_icon_state]-[!!ammo_count()]"
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	multiple_sprite_use_base = TRUE
 
 /obj/item/ammo_box/magazine/python_box/empty
+	icon_state = "python_mag-empty"
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m556_42_hydra
@@ -159,11 +165,10 @@
 
 /obj/item/ammo_box/magazine/m556_42_hydra/update_icon_state()
 	. = ..()
-	if(multiple_sprites == AMMO_BOX_FULL_EMPTY)
-		return
-	icon_state = "[base_icon_state]-[ammo_count() == 1 ? 1 : round(ammo_count(),5)]"
+	icon_state = "[base_icon_state]-[round(ammo_count(),5)]"
 
 /obj/item/ammo_box/magazine/m556_42_hydra/empty
+	icon_state = "hydra_mag-0"
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m556_42_hydra/small
@@ -174,26 +179,30 @@
 	max_ammo = 20
 
 /obj/item/ammo_box/magazine/m556_42_hydra/small/empty
+	icon_state = "hydra_small_mag-0"
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m556_42_hydra/extended
 	name = "extended Hydra assault rifle magazine (5.56x42mm)"
 	desc = "A bulkier, 60-round magazine for the Hydra platform of 5.56x42mm assault rifles. These rounds do moderate damage with good armor penetration."
-	icon_state = "hydra_extended_mag-1"
+	icon_state = "hydra_extended_mag-full"
 	base_icon_state = "hydra_extended_mag"
 	max_ammo = 60
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	multiple_sprite_use_base = TRUE
 
 /obj/item/ammo_box/magazine/m556_42_hydra/extended/empty
+	icon_state = "hydra_extended_mag-empty"
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m556_42_hydra/casket
 	name = "casket Hydra assault rifle magazine (5.56x42mm)"
 	desc = "A very long and bulky 100-round magazine for the Hydra platform of 5.56x42mm assault rifles. These rounds do moderate damage with good armor penetration."
-	icon_state = "hydra_casket_mag-1"
+	icon_state = "hydra_casket_mag-full"
 	base_icon_state = "hydra_casket_mag"
 	max_ammo = 100
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	multiple_sprite_use_base = TRUE
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/nt40_762_40_box
@@ -201,7 +210,7 @@
 	desc = "An 80 round box magazine for NT-40 light machine gun. These rounds do good damage with good armor penetration."
 	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
 	base_icon_state = "cm40_mag"
-	icon_state = "cm40_mag-1"
+	icon_state = "cm40_mag-full"
 	ammo_type = /obj/item/ammo_casing/a762_40
 	caliber = "7.62x40mm"
 	max_ammo = 80
@@ -209,5 +218,5 @@
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/nt40_762_40_box/empty
-	icon_state = "cm40_mag-0"
+	icon_state = "cm40_mag-empty"
 	start_empty = TRUE

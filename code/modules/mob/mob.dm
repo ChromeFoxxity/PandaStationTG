@@ -795,6 +795,26 @@ GAME_VERB_CONTEXT(/mob, examinate, "Examine", "", null, /atom)
 
 	limb_attack_self()
 
+// PANDA EDIT START
+/mob/proc/secondary_action()
+	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(execute_secondary_action)))
+
+/mob/proc/execute_secondary_action()
+	if(ismecha(loc))
+		return
+
+	if(incapacitated)
+		return
+
+	var/obj/item/I = get_active_held_item()
+	if(I)
+		if(I.secondary_action(src))
+			update_held_items()
+			return
+		I.secondary_action(src)
+		update_held_items()
+// PANDA EDIT END
+
 /**
  * Allows you to respawn, abandoning your current mob
  *

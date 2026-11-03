@@ -1,0 +1,1 @@
+#define COMSIG_KB_MOB_SECONDARY_ACTION "keybinding_mob_secondary_action"

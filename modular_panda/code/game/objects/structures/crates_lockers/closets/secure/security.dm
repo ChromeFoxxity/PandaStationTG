@@ -19,7 +19,7 @@
 	new /obj/item/megaphone/command(src)
 
 /obj/structure/closet/secure_closet/station_syndi/sd/populate_contents_immediate()
-	new /obj/item/gun/ballistic/revolver/viper(src)
+	new /obj/item/gun/modular/ballistic/revolver/viper(src)
 	new /obj/item/ammo_box/c357/small(src)
 	new /obj/item/storage/belt/sheath/sabre(src)
 
@@ -46,7 +46,7 @@
 	new /obj/item/storage/box/stamps(src)
 
 /obj/structure/closet/secure_closet/station_syndi/hro/populate_contents_immediate()
-	new /obj/item/gun/ballistic/revolver/viper(src)
+	new /obj/item/gun/modular/ballistic/revolver/viper(src)
 	new /obj/item/ammo_box/c357/small(src)
 	new /obj/item/storage/belt/sheath/sabre(src)
 
@@ -142,7 +142,7 @@
 	. = ..()
 
 	// Traitor steal objective
-	new /obj/item/gun/ballistic/shotgun/gaboon/full(src)
+	new /obj/item/gun/modular/ballistic/shotgun/gaboon/full(src)
 
 /obj/structure/closet/secure_closet/station_syndi/secop
 	name = "security operative's locker"

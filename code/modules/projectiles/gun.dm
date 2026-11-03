@@ -123,6 +123,7 @@
 		pin.gun_insert(new_gun = src, starting = TRUE)
 
 	add_seclight_point()
+	give_gun_safeties() // PANDA EDIT ADDITION - GUN SAFETY
 	give_manufacturer_examine() // PANDA EDIT ADDITON - MANUFACTURER EXAMINE
 	add_bayonet_point()
 	add_deep_lore()

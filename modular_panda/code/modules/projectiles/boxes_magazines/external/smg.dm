@@ -20,15 +20,16 @@
 	name = "Sidewinder magazine (5.7x39mm)"
 	desc = "A 30-round magazine for the Sidewinder personal defense weapon. These rounds do okay damage with average performance against armor."
 	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
-	icon_state = "sidewinder_mag-1"
+	icon_state = "sidewinder_mag-full"
 	base_icon_state = "sidewinder_mag"
 	ammo_type = /obj/item/ammo_casing/c57x39mm
 	caliber = "5.7x39mm"
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	multiple_sprite_use_base = TRUE
 
 /obj/item/ammo_box/magazine/m57_39_sidewinder/empty
-	icon_state = "sidewinder_mag-0"
+	icon_state = "sidewinder_mag-empty"
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m10_cobra
@@ -59,6 +60,7 @@
 	caliber = "9mm"
 	max_ammo = 30
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	multiple_sprite_use_base = TRUE
 
 /obj/item/ammo_box/magazine/nt5_9mm/empty
 	icon_state = "cm5_mag-0"

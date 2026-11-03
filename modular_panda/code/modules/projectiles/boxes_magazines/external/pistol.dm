@@ -8,6 +8,7 @@
 	caliber = ".45 ACP"
 	max_ammo = 10
 	multiple_sprites = AMMO_BOX_PER_BULLET
+	multiple_sprite_use_base = TRUE
 
 /obj/item/ammo_box/magazine/m45/empty
 	icon_state = "candor_mag-0"
@@ -17,15 +18,16 @@
 	name = "Ringneck pistol magazine (10mm)"
 	desc = "An 10-round magazine for the Ringneck pistol. These rounds do moderate damage, but struggle against armor."
 	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
-	icon_state = "ringneck_mag-1"
+	icon_state = "ringneck_mag-full"
 	base_icon_state = "ringneck_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
 	max_ammo = 10
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	multiple_sprite_use_base = TRUE
 
 /obj/item/ammo_box/magazine/m10mm_ringneck/empty
-	icon_state = "ringneck_mag-0"
+	icon_state = "ringneck_mag-empty"
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m57_39_asp
@@ -83,9 +85,9 @@
 	caliber = "10mm"
 	max_ammo = 14
 
-/obj/item/ammo_box/magazine/m9mm_rattlesnake/update_icon_state()
+/obj/item/ammo_box/magazine/m10mm_cottonmouth/update_icon_state()
 	. = ..()
-	icon_state = "[base_icon_state]-[round(ammo_count(), 3)]"
+	icon_state = "[base_icon_state]_[round(ammo_count(), 3)]"
 
 /obj/item/ammo_box/magazine/m10mm_cottonmouth/empty
 	icon_state = "rattlesnake_mag_0"
@@ -102,6 +104,7 @@
 	max_ammo = 10
 	w_class = WEIGHT_CLASS_TINY
 	multiple_sprites = AMMO_BOX_PER_BULLET
+	multiple_sprite_use_base = TRUE
 
 /obj/item/ammo_box/magazine/m22lr_himehabu/rubber
 	name = "pistol magazine (.22 LR Rubber)"
@@ -116,15 +119,16 @@
 	name = "NT-23 pistol magazine (10mm)"
 	desc = "An 10-round magazine magazine designed for the NT-23 pistol. These rounds do moderate damage, but struggle against armor."
 	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
-	icon_state = "cm23_mag-1"
+	icon_state = "cm23_mag-full"
 	base_icon_state = "cm23_mag"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
 	max_ammo = 10
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	multiple_sprite_use_base = TRUE
 
 /obj/item/ammo_box/magazine/nt23/empty
-	icon_state = "cm23_mag-0"
+	icon_state = "cm23_mag-empty"
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/m9mm_nt70
@@ -149,13 +153,14 @@
 	name = "NT-357 pistol magazine (.357)"
 	desc = "A 7-round magazine designed for the NT-357 pistol. These rounds do good damage, but struggle against armor."
 	icon = 'modular_panda/icons/obj/weapons/ammo/magazine.dmi'
-	icon_state = "cm23_mag-1"
+	icon_state = "cm23_mag-full"
 	base_icon_state = "cm23_mag"
 	ammo_type = /obj/item/ammo_casing/c357
 	caliber = ".357"
 	max_ammo = 7
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	multiple_sprite_use_base = TRUE
 
 /obj/item/ammo_box/magazine/nt357/empty
-	icon_state = "cm23_mag-0"
+	icon_state = "cm23_mag-empty"
 	start_empty = TRUE

@@ -1,12 +1,13 @@
 //########### AUTOMATIC ###########//
-/obj/item/gun/ballistic/modular/automatic
-	abstract_type = /obj/item/gun/ballistic/modular/automatic
+/obj/item/gun/modular/ballistic/automatic
+	abstract_type = /obj/item/gun/modular/ballistic/automatic
 	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
 	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
 	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
 	w_class = WEIGHT_CLASS_BULKY
-	actions_types = list(/datum/action/item_action/toggle_firemode)
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
 	semi_auto = TRUE
 	burst_fire_selection = TRUE
 	fire_sound = 'modular_panda/sound/weapons/gun/smg/shot.ogg'
@@ -19,3 +20,7 @@
 	fire_delay = 1
 	spread = 0
 	recoil = 0
+
+/obj/item/gun/modular/ballistic/automatic/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/ammo_hud)

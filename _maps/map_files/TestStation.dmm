@@ -10328,11 +10328,11 @@
 /obj/item/ammo_box/magazine/m10_cobra,
 /obj/item/ammo_box/magazine/m10_cobra,
 /obj/item/ammo_box/magazine/m10_cobra,
-/obj/item/gun/ballistic/modular/automatic/smg/cobra/indie{
+/obj/item/gun/modular/ballistic/automatic/smg/cobra/indie{
 	pixel_x = -6
 	},
-/obj/item/gun/ballistic/modular/automatic/smg/cobra/indie,
-/obj/item/gun/ballistic/modular/automatic/smg/cobra/indie{
+/obj/item/gun/modular/ballistic/automatic/smg/cobra/indie,
+/obj/item/gun/modular/ballistic/automatic/smg/cobra/indie{
 	pixel_x = 6
 	},
 /turf/open/floor/mineral/plastitanium/pod/large,
@@ -32128,11 +32128,11 @@
 /obj/item/ammo_box/magazine/m57_39_sidewinder,
 /obj/item/ammo_box/magazine/m57_39_sidewinder,
 /obj/machinery/light/directional/west,
-/obj/item/gun/ballistic/modular/automatic/smg/sidewinder{
+/obj/item/gun/modular/ballistic/automatic/smg/sidewinder{
 	pixel_x = -6
 	},
-/obj/item/gun/ballistic/modular/automatic/smg/sidewinder,
-/obj/item/gun/ballistic/modular/automatic/smg/sidewinder{
+/obj/item/gun/modular/ballistic/automatic/smg/sidewinder,
+/obj/item/gun/modular/ballistic/automatic/smg/sidewinder{
 	pixel_x = 6
 	},
 /turf/open/floor/mineral/plastitanium/pod/large,
@@ -51110,7 +51110,7 @@
 /obj/effect/spawner/random/maintenance/three,
 /obj/machinery/status_display/ai/directional/north,
 /obj/item/ammo_box/magazine/nt23,
-/obj/item/gun/ballistic/modular/automatic/pistol/nt23,
+/obj/item/gun/modular/ballistic/automatic/pistol/nt23,
 /turf/open/floor/mineral/plastitanium/pod/large,
 /area/station/security/armory)
 "pMg" = (
@@ -54102,11 +54102,11 @@
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
 /obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/gun/ballistic/modular/automatic/pistol/ringneck{
+/obj/item/gun/modular/ballistic/automatic/pistol/ringneck{
 	pixel_x = -6
 	},
-/obj/item/gun/ballistic/modular/automatic/pistol/ringneck,
-/obj/item/gun/ballistic/modular/automatic/pistol/ringneck{
+/obj/item/gun/modular/ballistic/automatic/pistol/ringneck,
+/obj/item/gun/modular/ballistic/automatic/pistol/ringneck{
 	pixel_x = 6
 	},
 /turf/open/floor/mineral/plastitanium/pod/large,
@@ -72508,11 +72508,11 @@
 "wlG" = (
 /obj/structure/detectiveboard/directional/west,
 /obj/structure/rack/gunrack,
-/obj/item/gun/ballistic/modular/shotgun/gaboon{
+/obj/item/gun/modular/ballistic/shotgun/gaboon{
 	pixel_x = -6
 	},
-/obj/item/gun/ballistic/modular/shotgun/gaboon,
-/obj/item/gun/ballistic/modular/shotgun/gaboon{
+/obj/item/gun/modular/ballistic/shotgun/gaboon,
+/obj/item/gun/modular/ballistic/shotgun/gaboon{
 	pixel_x = 6
 	},
 /turf/open/floor/mineral/plastitanium/pod/large,

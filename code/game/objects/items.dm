@@ -1500,6 +1500,17 @@ GAME_VERB_SRC(/obj/item, verb_pickup, oview(1), "Pick up", null)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_OFFER_TAKEN, offerer, taker) & COMPONENT_OFFER_INTERRUPT)
 		return TRUE
 
+// PANDA EDIT START
+///Intended for interactions with guns, like swapping firemodes
+/obj/item/proc/secondary_action(mob/user)
+
+///Called before unique action, if any other associated items should do a secondary action or override it.
+/obj/item/proc/pre_secondary_action(mob/user)
+	if(SEND_SIGNAL(src, COMSIG_CLICK_SECONDARY_ACTION, user) & OVERRIDE_SECONDARY_ACTION)
+		return TRUE
+	return FALSE //return true if the proc should end here
+// PANDA EDIT END
+
 /// Special stuff you want to do when an outfit equips this item.
 /obj/item/proc/on_outfit_equip(mob/living/carbon/human/outfit_wearer, visuals_only, item_slot)
 	SHOULD_CALL_PARENT(TRUE)

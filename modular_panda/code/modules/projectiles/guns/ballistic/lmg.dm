@@ -1,5 +1,9 @@
-/obj/item/gun/ballistic/modular/automatic/lmg
-	abstract_type = /obj/item/gun/ballistic/modular/automatic/lmg
+/obj/item/gun/modular/ballistic/automatic/lmg
+	abstract_type = /obj/item/gun/modular/ballistic/automatic/lmg
+	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
+	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
+	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
+	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
 	w_class = WEIGHT_CLASS_HUGE
 	slot_flags = null
 	actions_types = list()
@@ -9,17 +13,13 @@
 	spread = 4
 	recoil = 1
 
-/obj/item/gun/ballistic/modular/automatic/lmg/Initialize(mapload)
+/obj/item/gun/modular/ballistic/automatic/lmg/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.4 SECONDS)
+	AddComponent(/datum/component/ammo_hud)
 
-/obj/item/gun/ballistic/modular/automatic/lmg/python
+/obj/item/gun/modular/ballistic/automatic/lmg/python
 	name = "\improper SAW-90 Python"
 	desc = "Scarborough Arms' premier Squad-Automatic Weapon. A unique bullpup LMG with best-in-class weight and capacity. The reloading process has been described with every colorful name in the Uncommon language. Chambered in 5.56x42mm."
-	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
-	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
-	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
 	icon_state = "python"
 	inhand_icon_state = "python"
 	fire_sound = 'modular_panda/sound/weapons/gun/rifle/hydra.ogg'
@@ -41,10 +41,15 @@
 	spread = 8
 	recoil = 1.5 //identical to other LMGS
 
-/obj/item/gun/ballistic/modular/automatic/lmg/python/give_manufacturer_examine()
+/obj/item/gun/modular/ballistic/automatic/lmg/python/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/ammo_hud)
+	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
+
+/obj/item/gun/modular/ballistic/automatic/lmg/python/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_SCARBOROUGH)
 
-/obj/item/gun/ballistic/modular/automatic/lmg/nt40
+/obj/item/gun/modular/ballistic/automatic/lmg/nt40
 	name = "\improper NT-40"
 	desc = "A light machine gun used by Nanotrasen heavy military units, capable of withering suppressive fire. The weight and recoil make it nearly impossible without the training and strength to handle it. Chambered in 7.62x40mm."
 	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
@@ -71,9 +76,5 @@
 	spread = 10
 	recoil = 2 //identical to other LMGS
 
-/obj/item/gun/ballistic/modular/automatic/lmg/nt40/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
-
-/obj/item/gun/ballistic/modular/automatic/lmg/nt40/give_manufacturer_examine()
+/obj/item/gun/modular/ballistic/automatic/lmg/nt40/give_manufacturer_examine()
 	AddElement(/datum/element/manufacturer_examine, COMPANY_NANOTRASEN)
