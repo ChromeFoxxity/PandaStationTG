@@ -34,8 +34,6 @@
 	add_screen_object(/atom/movable/screen/healths, HUD_MOB_HEALTH, HUD_GROUP_INFO)
 	add_screen_object(/atom/movable/screen/hunger, HUD_MOB_HUNGER, HUD_GROUP_INFO)
 
-	add_screen_object(/atom/movable/screen/ammo_counter, HUD_MOB_AMMO, HUD_GROUP_INFO)// PANDA EDIT ADDITION
-
 /datum/hud/human/update_locked_slots()
 	if(!mymob)
 		return

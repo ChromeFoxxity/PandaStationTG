@@ -1,10 +1,8 @@
-//########### SHOTGUNS ###########//
-/obj/item/gun/modular/ballistic/shotgun
-	abstract_type = /obj/item/gun/modular/ballistic/shotgun
-	icon = 'modular_panda/icons/obj/weapons/guns/48x32.dmi'
-	worn_icon = 'modular_panda/icons/mob/clothing/back.dmi'
-	lefthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_lefthand.dmi'
-	righthand_file = 'modular_panda/icons/mob/inhands/weapons/guns_righthand.dmi'
+/obj/item/shiptest_gun/ballistic/shotgun
+	name = "shotgun"
+	desc = "You feel as if you should make a 'adminhelp' if you see one of these, along with a 'github' report. You don't really understand what this means though."
+	inhand_icon_state = "shotgun"
+	abstract_type = /obj/item/shiptest_gun/ballistic/shotgun
 	fire_sound = 'modular_panda/sound/weapons/gun/shotgun/shot.ogg'
 	vary_fire_sound = FALSE
 	fire_sound_volume = 90
@@ -14,229 +12,251 @@
 	force = 10
 	obj_flags = CONDUCTS_ELECTRICITY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
-	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/shot
-	gun_firemodes = list(FIREMODE_SEMIAUTO)
-	default_firemode = FIREMODE_SEMIAUTO
-	fire_select_icon_state_prefix = "sg_"
+	default_ammo_type = /obj/item/shiptest_ammo_box/magazine/internal/shot
+	allowed_ammo_types = list(
+		/obj/item/shiptest_ammo_box/magazine/internal/shot,
+	)
 	semi_auto = FALSE
 	internal_magazine = TRUE
 	casing_ejector = FALSE
 	bolt_wording = "pump"
 	cartridge_wording = "shell"
 	tac_reloads = FALSE
-	pickup_sound =  'modular_panda/sound/handling/shotgun_pickup.ogg'
+	pickup_sound = 'modular_panda/sound/handling/shotgun_pickup.ogg'
 	fire_delay = 0.7 SECONDS
-	weapon_weight = WEAPON_HEAVY
-	misfire_probability_cap = 35 // Even if the misfire probability and increment are both zero, we've some shots that may do that.
 	pb_knockback = 2
-	spread = 3
-	recoil = 1
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
-/obj/item/gun/modular/ballistic/shotgun/Initialize(mapload)
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+	fire_select_icon_state_prefix = "sg_"
+
+
+	zoom_amt = SHOTGUN_ZOOM
+
+	spread = 9
+	recoil = 4
+
+	gunslinger_recoil_bonus = -1
+
+	min_recoil = 0.1
+	wear_rate = 0
+
+	//in an ideal world this would be a component but I don't wanna untangle all the sleeps doors pull
+	///can this shotgun breach doors
+	var/door_breaching_weapon = TRUE
+
+/obj/item/shiptest_gun/ballistic/shotgun/afterattack(atom/target, mob/living/user, flag, params)
+	if(door_breaching_weapon && flag && istype(target, /obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/breaching = target
+		if(chambered && chambered.BB && !is_type_in_list(chambered, list(/obj/item/shiptest_ammo_casing/shotgun/blank, /obj/item/shiptest_ammo_casing/shotgun/beanbag, /obj/item/shiptest_ammo_casing/shotgun/rubbershot)))
+			user.visible_message(
+				span_warning("[user] put the barrel of [src] to [breaching]'s electronics!"),
+				span_warning("You put the barrel of [src] to [breaching]'s electronics, preparing to shred them!"),
+				span_warning("Metal brushes against metal")
+			)
+			if(do_after(user, 5 SECONDS, breaching))
+				if(process_fire(breaching, user, FALSE))
+					switch(breaching.security_level)
+						if(0)
+							EMPTY_BLOCK_GUARD
+						if (1) // thin metal plate. blast through it and create debris
+							var/obj/item/debris = new /obj/item/stack/ore/iron
+							debris.safe_throw_at(user, 2, 5, null, 1)
+							breaching.security_level = 0
+						if(2 to 6) //two shots to break
+							var/obj/item/debris = new /obj/item/stack/ore/iron
+							debris.safe_throw_at(user, 2, 5, null, 1)
+							breaching.security_level -= 3
+							breaching.security_level = max(breaching.security_level, 0)
+							return TRUE
+					if(!breaching.open())
+						breaching.update_appearance()
+					//im not rewriting the behavior to do exactly what this does with a different name
+					breaching.obj_flags |= EMAGGED
+					breaching.has_environment_lights = FALSE
+					breaching.locked = TRUE
+					breaching.loseMainPower()
+					breaching.loseBackupPower()
+					breaching.update_appearance()
+					return TRUE
+			return TRUE
 	. = ..()
-	AddComponent(/datum/component/ammo_hud)
 
-/obj/item/gun/modular/ballistic/shotgun/blow_up(mob/user)
-	. = 0
-	if(chambered?.loaded_projectile)
+/obj/item/shiptest_gun/ballistic/shotgun/blow_up(mob/user)
+	if(chambered && chambered.BB)
 		process_fire(user, user, FALSE)
-		. = 1
+		return TRUE
+	for(var/obj/item/shiptest_ammo_casing/ammo in magazine?.stored_ammo)
+		if(ammo.BB)
+			process_chamber(FALSE, FALSE)
+			process_fire(user, user, FALSE)
+			return TRUE
+	return FALSE
 
 // Automatic Shotguns//
-/obj/item/gun/modular/ballistic/shotgun/automatic
-	abstract_type = /obj/item/gun/modular/ballistic/shotgun/automatic
-	spread = 4
-	recoil = 1.5
+/obj/item/shiptest_gun/ballistic/shotgun/automatic
+	abstract_type = /obj/item/shiptest_gun/ballistic/shotgun/automatic
+	spread = 15
+	recoil = 4
+	manufacturer = MANUFACTURER_NONE
 	semi_auto = TRUE
 
-/obj/item/gun/modular/ballistic/shotgun/automatic/bulldog
-	name = "SG-60r \"Bulldog\""
-	desc = "A bullpup combat shotgun usually seen with a characteristic drum magazine. Wildly popular among Syndicate strike teams, although it proved less useful against military-grade equipment. Still popular among the die-hard Syndicate factions, especially the Gorlex Marauders. Chambered in 12g."
-	icon_state = "bulldog"
-	inhand_icon_state = "bulldog"
+	gunslinger_recoil_bonus = 1
+	wear_rate = 1
+	wear_minor_threshold = 60
+	wear_major_threshold = 180
+	wear_maximum = 300
+
+
+/obj/item/shiptest_gun/ballistic/shotgun/automatic/bulldog/inteq
+	name = "\improper Mastiff Shotgun"
+	desc = "A variation of the Bulldog, seized from Syndicate armories by deserting troopers then modified to IRMG's standards."
+	icon_state = "bulldog_inteq"
+	inhand_icon_state = "bulldog_inteq"
+	default_ammo_type = /obj/item/shiptest_ammo_box/magazine/m12g_bulldog
+	allowed_ammo_types = list(
+		/obj/item/shiptest_ammo_box/magazine/m12g_bulldog,
+	)
+	manufacturer = MANUFACTURER_INTEQ
+
+NO_MAG_GUN_HELPER(shotgun/automatic/bulldog/inteq)
+
+
+
+// IMPROVISED SHOTGUN //
+
+/obj/item/shiptest_gun/ballistic/shotgun/doublebarrel/improvised
+	name = "improvised shotgun"
+	desc = "A length of pipe and miscellaneous bits of scrap fashioned into a rudimentary single-shot shotgun."
+	icon = 'modular_panda/icons/obj/guns/manufacturer/hermits/48x32.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
+	worn_icon = 'modular_panda/icons/obj/guns/manufacturer/hermits/onmob.dmi'
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	base_icon_state = "ishotgun"
+	icon_state = "ishotgun"
+	inhand_icon_state = "ishotgun"
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
+	force = 10
+	default_ammo_type = /obj/item/shiptest_ammo_box/magazine/internal/shot/improvised
+	allowed_ammo_types = list(
+		/obj/item/shiptest_ammo_box/magazine/internal/shot/improvised,
+	)
+	sawn_desc = "I'm just here for the gasoline."
+	unique_reskin = null
+	manufacturer = MANUFACTURER_NONE
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO)
+	default_firemode = FIREMODE_SEMIAUTO
+
+
+
+/obj/item/shiptest_gun/ballistic/shotgun/doublebarrel/improvised/update_icon_state()
+	. = ..()
+	if(current_skin)
+		icon_state = "[unique_reskin[current_skin]][sawn_off ? "_sawn" : ""][bolt_locked ? "_open" : ""]"
+	else
+		icon_state = "[base_icon_state || initial(icon_state)][sawn_off ? "_sawn" : ""][bolt_locked ? "_open" : ""]"
+
+/obj/item/shiptest_gun/ballistic/shotgun/doublebarrel/improvised/sawoff(forced = FALSE)
+	. = ..()
+	if(.)
+		weapon_weight = WEAPON_MEDIUM
+		w_class = WEIGHT_CLASS_SMALL
+		slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
+
+		lefthand_file = 'modular_panda/icons/obj/guns/manufacturer/hermits/lefthand.dmi'
+		righthand_file = 'modular_panda/icons/obj/guns/manufacturer/hermits/righthand.dmi'
+		inhand_x_dimension = 32
+		inhand_y_dimension = 32
+
+		spread = 15
+		recoil = 5
+		icon_state = "ishotgun_sawn"
+		inhand_icon_state = "ishotgun_sawn"
+
+/obj/item/shiptest_gun/ballistic/shotgun/doublebarrel/improvised/sawn
+	icon = 'modular_panda/icons/obj/guns/manufacturer/hermits/48x32.dmi'
+	lefthand_file = 'modular_panda/icons/obj/guns/manufacturer/hermits/lefthand.dmi'
+	righthand_file = 'modular_panda/icons/obj/guns/manufacturer/hermits/righthand.dmi'
+	worn_icon = 'modular_panda/icons/obj/guns/manufacturer/hermits/onmob.dmi'
+	inhand_x_dimension = 32
+	inhand_y_dimension = 32
+	icon_state = "ishotgun_sawn"
+	inhand_icon_state = "ishotgun_sawn"
 	weapon_weight = WEAPON_MEDIUM
-	accepted_magazine_type = /obj/item/ammo_box/magazine/m12g_bulldog
-	fire_sound = 'modular_panda/sound/weapons/gun/shotgun/bulldog.ogg'
-	pickup_sound =  'modular_panda/sound/handling/rifle_pickup.ogg'
-	load_sound = 'modular_panda/sound/weapons/gun/rifle/ar_reload.ogg'
-	load_empty_sound = 'modular_panda/sound/weapons/gun/rifle/ar_reload.ogg'
-	eject_sound = 'modular_panda/sound/weapons/gun/rifle/ar_unload.ogg'
-	eject_empty_sound = 'modular_panda/sound/weapons/gun/rifle/ar_unload.ogg'
-	rack_sound = 'modular_panda/sound/weapons/gun/rifle/ar_cock.ogg'
-	mag_display = TRUE
-	special_mags = TRUE
-	mag_display_ammo = TRUE
-	internal_magazine = FALSE
-	tac_reloads = TRUE
+	w_class = WEIGHT_CLASS_SMALL
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_SUITSTORE
+	sawn_off = TRUE
 
-/obj/item/gun/modular/ballistic/shotgun/automatic/bulldog/give_manufacturer_examine()
-	AddElement(/datum/element/manufacturer_examine, COMPANY_SCARBOROUGH)
+	spread = 15
+	recoil = 5
 
-/obj/item/gun/modular/ballistic/shotgun/bulldog/drum
-	accepted_magazine_type = /obj/item/ammo_box/magazine/m12g_bulldog/drum
 
-// Bockadam Burst Bulldog Variant
-
-/obj/item/gun/modular/ballistic/shotgun/automatic/bulldog/bockadam
-	name = "SG-60db \"Bockadam\""
-	desc = "A bullpup combat shotgun from Gorlex Marauder reserves that has been heavily modified, sporting a sawn-down barrel and a two-shot receiver. Reliability has been traded for deadly lethality in tight quarters."
-	icon_state = "bockadam"
-	inhand_icon_state = "bockadam"
-	weapon_weight = WEAPON_MEDIUM
-	accepted_magazine_type = /obj/item/ammo_box/magazine/m12g_bulldog
+//god fucking bless brazil
+/obj/item/shiptest_gun/ballistic/shotgun/doublebarrel/brazil
+	name = "six-barreled \"TRABUCO\" shotgun"
+	desc = "Dear fucking god, what the fuck even is this!? The recoil caused by the sheer act of firing this thing would probably kill you, if the gun itself doesn't explode in your face first! Theres a green flag with a blue circle and a yellow diamond around it. Some text in the circle says: \"ORDEM E PROGRESSO.\""
+	base_icon_state = "shotgun_brazil"
+	icon_state = "shotgun_brazil"
+	icon = 'modular_panda/icons/obj/guns/48x32guns.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/64x_guns_left.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/64x_guns_right.dmi'
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	inhand_icon_state = "shotgun_qb"
+	w_class = WEIGHT_CLASS_BULKY
+	force = 15 //blunt edge and really heavy
+	attack_verb_simple = list("bludgeoned", "smashed")
+	default_ammo_type = /obj/item/shiptest_ammo_box/magazine/internal/shot/sex
+	allowed_ammo_types = list(
+		/obj/item/shiptest_ammo_box/magazine/internal/shot/sex,
+	)
+	burst_size = 6
+	burst_delay = 0.04 SECONDS //?? very weird number
+	pb_knockback = 12
+	unique_reskin = null
+	recoil = 30
+	weapon_weight = WEAPON_LIGHT
+	fire_sound = 'modular_panda/sound/weapons/gun/shotgun/quadfire.ogg'
+	rack_sound = 'modular_panda/sound/weapons/gun/shotgun/quadrack.ogg'
+	load_sound = 'modular_panda/sound/weapons/gun/shotgun/quadinsert.ogg'
+	fire_sound_volume = 50
+	rack_sound_volume = 50
+	can_be_sawn_off = FALSE
+	manufacturer = MANUFACTURER_BRAZIL
+	autowiki_hidden = TRUE //meme weapons
 	gun_firemodes = list(FIREMODE_BURST)
 	default_firemode = FIREMODE_BURST
-	burst_size = 2
-	burst_delay = 1
-	fire_delay = 1
-	spread = 5
 
-/obj/item/gun/modular/ballistic/shotgun/gaboon
-	name = "CSG-12 \"Gaboon\""
-	desc = "A compact pump-action shotgun designed by Scarborough Arms. One of their oldest designs still in circulation due to their appeal among those frequently operating in cramped spaces. Stripped down for maximum portability, the pump-action mechanism renders it wildly overshadowed by the Bulldog, its larger, modern sister. Chambered in 12g."
-	icon_state = "gaboon"
-	inhand_icon_state = "gaboon"
-	fire_sound = 'modular_panda/sound/weapons/gun/shotgun/brimstone.ogg'
-	rack_sound = 'modular_panda/sound/weapons/gun/shotgun/rack.ogg'
-	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/shot/gaboon
-	weapon_weight = WEAPON_MEDIUM
-	w_class = WEIGHT_CLASS_NORMAL
-	fire_delay = 0.1 SECONDS
-	spread = 8
-	recoil = 3
+/obj/item/shiptest_gun/ballistic/shotgun/doublebarrel/brazil/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
+	if(prob(0 + (magazine.ammo_count() * 10)))
+		if(prob(10))
+			to_chat(user, "<span class='userdanger'>Something isn't right. \the [src] doesn't fire for a brief moment. Then, the following words come to mind: \
+			Ó Pátria amada, \n\
+			Idolatrada, \n\
+			Salve! Salve!</span>")
 
-/obj/item/gun/modular/ballistic/shotgun/gaboon/give_manufacturer_examine()
-	AddElement(/datum/element/manufacturer_examine, COMPANY_SCARBOROUGH)
-
-/obj/item/gun/modular/ballistic/shotgun/gaboon/full
-	name = "CSG-12-S \"Gaboon\""
-	desc = "A compact pump-action shotgun designed by Scarborough Arms. One of their oldest designs still in circulation due to their appeal among those frequently operating in cramped spaces. Stripped down for maximum portability, the pump-action mechanism renders it wildly overshadowed by the Bulldog, its larger, modern sister, this one has a stock added. Chambered in 12g."
-	icon_state = "gaboon_stock"
-	weapon_weight = WEAPON_HEAVY
-	w_class = WEIGHT_CLASS_BULKY
-	spread = 6
-	recoil = 1
-
-/obj/item/gun/modular/ballistic/shotgun/doublebarrel
-	name = "double-barreled shotgun"
-	desc = "A classic break action shotgun, hand-made in a Bastion Armaments workshop. Both barrels can be fired in quick succession or even simultaneously. Guns like this have been popular with hunters, sporters, and criminals for millennia. Chambered in 12g."
-	icon_state = "dshotgun"
-	inhand_icon_state = "dshotgun"
-	rack_sound = 'modular_panda/sound/weapons/gun/shotgun/dbshotgun_break.ogg'
-	bolt_drop_sound = 'modular_panda/sound/weapons/gun/shotgun/dbshotgun_close.ogg'
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_MEDIUM
-	force = 10
-	obj_flags = CONDUCTS_ELECTRICITY
-	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
-	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/shot/dual
-	sawn_desc = "A break action shotgun cut down to the size of a sidearm. While the recoil is even harsher, it offers a lot of power in a very small package. Chambered in 12g."
-	obj_flags = UNIQUE_RENAME
-	rack_sound_volume = 0
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
-	default_firemode = FIREMODE_SEMIAUTO
-	semi_auto = TRUE
-	bolt_type = BOLT_TYPE_NO_BOLT
-	pb_knockback = 3 // it's a super shotgun!
-	bolt_wording = "barrel"
-	can_be_sawn_off = TRUE
-	burst_delay = 0.05 SECONDS
-	burst_size = 2
-
-/obj/item/gun/modular/ballistic/shotgun/doublebarrel/do_sawoff()
-	. = ..()
-	weapon_weight = WEAPON_MEDIUM
-	spread = 8
-	recoil = 3 //or not
-
-/obj/item/gun/modular/ballistic/shotgun/doublebarrel/give_manufacturer_examine()
-	AddElement(/datum/element/manufacturer_examine, COMPANY_BASTION)
-
-/obj/item/gun/modular/ballistic/shotgun/doublebarrel/presawn
-	WHEN_MAP(icon_state = "dshotgun_sawn")
-	spawn_sawn_off = TRUE
-
-/obj/item/gun/modular/ballistic/shotgun/brimstone
-	name = "BA Brimstone"
-	desc = "A simple and sturdy pump-action shotgun sporting a 5-round capacity, manufactured by Bastion Armaments. Found widely throughout the Spinward Sector in the hands of hunters, pirates, police, and countless others. Chambered in 12g."
-	fire_sound = 'modular_panda/sound/weapons/gun/shotgun/brimstone.ogg'
-	icon_state = "brimstone"
-	inhand_icon_state = "brimstone"
-	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/shot/brimstone
-	sawn_desc = "A stockless and shortened pump-action shotgun. The worsened recoil and accuracy make it a poor sidearm anywhere beyond punching distance."
-	gun_firemodes = list(FIREMODE_FULLAUTO)
-	default_firemode = FIREMODE_FULLAUTO
-	fire_delay = 0.05 SECONDS //slamfire
-	rack_delay = 0.2 SECONDS
-	can_be_sawn_off = TRUE
-
-/obj/item/gun/modular/ballistic/shotgun/brimstone/do_sawoff()
-	. = ..()
-	weapon_weight = WEAPON_MEDIUM
-	spread = 18
-	recoil = 5 //your punishment for sawing off an short shotgun
-
-/obj/item/gun/modular/ballistic/shotgun/brimstone/presawn
-	WHEN_MAP(icon_state = "brimstone_sawn")
-	spawn_sawn_off = TRUE
-
-/obj/item/gun/modular/ballistic/shotgun/brimstone/give_manufacturer_examine()
-	AddElement(/datum/element/manufacturer_examine, COMPANY_BASTION)
-
-// HELLFIRE //
-
-/obj/item/gun/modular/ballistic/shotgun/hellfire
-	name = "BA Hellfire"
-	desc = "A hefty pump-action riot shotgun with an eight-round tube, manufactured by Bastion Armaments. Especially popular among the Spinward Sector's police forces. Chambered in 12g."
-	icon_state = "hellfire"
-	inhand_icon_state = "hellfire"
-	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/shot/riot
-	sawn_desc = "Come with me if you want to live."
-	can_be_sawn_off = TRUE
-	rack_sound = 'modular_panda/sound/weapons/gun/shotgun/rack_alt.ogg'
-	fire_delay = 0.1 SECONDS
-
-/obj/item/gun/modular/ballistic/shotgun/hellfire/do_sawoff()
-	. = ..()
-	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/shot/riot/sawn
-	weapon_weight = WEAPON_MEDIUM
-	spread = 8
-	recoil = 3 //your punishment for sawing off an short shotgun
-
-/obj/item/gun/modular/ballistic/shotgun/hellfire/presawn
-	WHEN_MAP(icon_state = "hellfire_sawn")
-	spawn_sawn_off = TRUE
-
-/obj/item/gun/modular/ballistic/shotgun/hellfire/give_manufacturer_examine()
-	AddElement(/datum/element/manufacturer_examine, COMPANY_BASTION)
-
-/obj/item/gun/modular/ballistic/shotgun/automatic/nt15
-	name = "\improper NT-15"
-	desc = "A large automatic shotgun used by Nanotrasen. Generally employed by station security and military units, though nowadays has been seen less commonly due to backlash of lethality. Chambered in 12 gauge."
-	icon_state = "nt15"
-	inhand_icon_state = "nt15"
-	accepted_magazine_type = /obj/item/ammo_box/magazine/nt15_12g
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
-	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_FULLAUTO = "auto")
-	weapon_weight = WEAPON_MEDIUM
-	semi_auto = TRUE
-	empty_indicator = FALSE
-	fire_delay = 0.3 SECONDS
-	mag_display = TRUE
-	special_mags = TRUE
-	mag_display_ammo = TRUE
-	internal_magazine = FALSE
-	tac_reloads = TRUE
-	pickup_sound = 'modular_panda/sound/handling/rifle_pickup.ogg'
-	fire_sound = 'modular_panda/sound/weapons/gun/shotgun/bulldog.ogg'
-	load_sound = 'modular_panda/sound/weapons/gun/rifle/ar_reload.ogg'
-	load_empty_sound = 'modular_panda/sound/weapons/gun/rifle/ar_reload.ogg'
-	eject_sound = 'modular_panda/sound/weapons/gun/rifle/ar_unload.ogg'
-	eject_empty_sound = 'modular_panda/sound/weapons/gun/rifle/ar_unload.ogg'
-	rack_sound = 'modular_panda/sound/weapons/gun/rifle/ar_cock.ogg'
-	spread = 3
-	recoil = 1
-
-/obj/item/gun/modular/ballistic/shotgun/automatic/nt15/give_manufacturer_examine()
-	AddElement(/datum/element/manufacturer_examine, COMPANY_NANOTRASEN)
-
+			message_admins("A [src] misfired and exploded at [ADMIN_VERBOSEJMP(src)], which was fired by [user].") //logging
+			log_admin("A [src] misfired and exploded at [ADMIN_VERBOSEJMP(src)], which was fired by [user].")
+			user.take_bodypart_damage(0,50)
+			explosion(src, 0, 2, 4, 6, TRUE, TRUE)
+	..()
+/obj/item/shiptest_gun/ballistic/shotgun/doublebarrel/brazil/death
+	name = "Force of Nature"
+	desc = "So you have chosen death."
+	base_icon_state = "shotgun_e"
+	icon_state = "shotgun_e"
+	burst_size = 100
+	fire_delay = 0.01 SECONDS
+	pb_knockback = 40
+	recoil = 200
+	recoil_backtime_multiplier = 1
+	fire_sound_volume = 100
+	default_ammo_type = /obj/item/shiptest_ammo_box/magazine/internal/shot/hundred
+	allowed_ammo_types = list(
+		/obj/item/shiptest_ammo_box/magazine/internal/shot/hundred,
+	)

@@ -35,9 +35,8 @@
 
 /datum/component/automatic_fire/Initialize(autofire_shot_delay, windup_autofire, windup_autofire_reduction_multiplier, windup_autofire_cap, windup_spindown, allow_akimbo = TRUE, firing_sound_loop)
 	. = ..()
-	if(!isgun(parent))
+	if(!isgun(parent) && !istype(parent, /obj/item/shiptest_gun)) // PANDA EDIT ADDITION
 		return COMPONENT_INCOMPATIBLE
-	var/obj/item/gun = parent
 	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(wake_up))
 	if(autofire_shot_delay)
 		src.autofire_shot_delay = autofire_shot_delay
@@ -47,9 +46,16 @@
 		src.windup_autofire_reduction_multiplier = windup_autofire_reduction_multiplier
 		src.windup_autofire_cap = windup_autofire_cap
 		src.windup_spindown = windup_spindown
-	if(autofire_stat == AUTOFIRE_STAT_IDLE && ismob(gun.loc))
-		var/mob/user = gun.loc
-		wake_up(src, user)
+	if(istype(parent, /obj/item/shiptest_gun))
+		var/obj/item/shiptest_gun/shiptest_gun = parent
+		if(autofire_stat == AUTOFIRE_STAT_IDLE && ismob(shiptest_gun.loc))
+			var/mob/user = shiptest_gun.loc
+			wake_up(src, user)
+	else
+		var/obj/item/gun = parent
+		if(autofire_stat == AUTOFIRE_STAT_IDLE && ismob(gun.loc))
+			var/mob/user = gun.loc
+			wake_up(src, user)
 
 	if(firing_sound_loop)
 		autofire_sound_loop = new firing_sound_loop(parent)
@@ -92,8 +98,12 @@
 		RegisterSignal(shooter, COMSIG_MOB_LOGOUT, PROC_REF(autofire_off))
 		UnregisterSignal(shooter, COMSIG_MOB_LOGIN)
 	RegisterSignals(parent, list(COMSIG_QDELETING, COMSIG_ITEM_DROPPED), PROC_REF(autofire_off))
-	parent.RegisterSignal(src, COMSIG_AUTOFIRE_ONMOUSEDOWN, TYPE_PROC_REF(/obj/item/gun/, autofire_bypass_check))
-	parent.RegisterSignal(parent, COMSIG_AUTOFIRE_SHOT, TYPE_PROC_REF(/obj/item/gun/, do_autofire))
+	if(istype(parent, /obj/item/shiptest_gun))
+		parent.RegisterSignal(src, COMSIG_AUTOFIRE_ONMOUSEDOWN, TYPE_PROC_REF(/obj/item/shiptest_gun, autofire_bypass_check))
+		parent.RegisterSignal(parent, COMSIG_AUTOFIRE_SHOT, TYPE_PROC_REF(/obj/item/shiptest_gun, do_autofire))
+	else
+		parent.RegisterSignal(src, COMSIG_AUTOFIRE_ONMOUSEDOWN, TYPE_PROC_REF(/obj/item/gun, autofire_bypass_check))
+		parent.RegisterSignal(parent, COMSIG_AUTOFIRE_SHOT, TYPE_PROC_REF(/obj/item/gun, do_autofire))
 
 
 /datum/component/automatic_fire/proc/autofire_off(datum/source)
@@ -184,7 +194,12 @@
 
 	RegisterSignal(shooter, COMSIG_MOB_SWAP_HANDS, PROC_REF(stop_autofiring))
 
-	if(isgun(parent))
+	if(istype(parent, /obj/item/shiptest_gun))
+		var/obj/item/shiptest_gun/shoota = parent
+		if(!shoota.on_autofire_start(shooter))
+			stop_autofiring()
+			return
+	else if(isgun(parent))
 		var/obj/item/gun/shoota = parent
 		if(!shoota.on_autofire_start(shooter)) //This is needed because the minigun has a do_after before firing and signals are async.
 			stop_autofiring()
@@ -325,6 +340,29 @@
 				bonus_spread = dual_wield_spread
 				addtimer(CALLBACK(akimbo_gun, TYPE_PROC_REF(/obj/item/gun, process_fire), target, shooter, TRUE, params, null, bonus_spread), 0.1 SECONDS)
 	process_fire(target, shooter, TRUE, params, null, bonus_spread)
+
+/obj/item/shiptest_gun/proc/on_autofire_start(mob/living/shooter)
+	if(current_cooldown || shooter.incapacitated || !can_trigger_gun(shooter))
+		return FALSE
+	if(!can_shoot())
+		shoot_with_empty_chamber(shooter)
+		return FALSE
+	return TRUE
+
+/obj/item/shiptest_gun/proc/autofire_bypass_check(datum/source, client/clicker, atom/target, turf/location, control, params)
+	SIGNAL_HANDLER
+	if(clicker.mob.get_active_held_item() != src)
+		return COMPONENT_AUTOFIRE_ONMOUSEDOWN_BYPASS
+
+/obj/item/shiptest_gun/proc/do_autofire(datum/source, atom/target, mob/living/shooter, allow_akimbo, params)
+	SIGNAL_HANDLER
+	if(current_cooldown || shooter.incapacitated)
+		return NONE
+	if(!can_shoot())
+		shoot_with_empty_chamber(shooter)
+		return NONE
+	INVOKE_ASYNC(src, PROC_REF(pre_fire), target, shooter, TRUE, FALSE, params)
+	return COMPONENT_AUTOFIRE_SHOT_SUCCESS
 
 #undef AUTOFIRE_MOUSEUP
 #undef AUTOFIRE_MOUSEDOWN

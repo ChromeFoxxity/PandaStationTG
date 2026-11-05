@@ -1,105 +1,90 @@
-//########### SMGS ###########//
-/obj/item/gun/modular/ballistic/automatic/smg
-	abstract_type = /obj/item/gun/modular/ballistic/automatic/smg
-	mag_display = TRUE
+/obj/item/shiptest_gun/ballistic/automatic/smg
+	abstract_type = /obj/item/shiptest_gun/ballistic/automatic/smg
+	show_magazine_on_sprite = TRUE
+
 	burst_size = 2
+	actions_types = list()
+	fire_delay = 0.1 SECONDS
+
+	spread = 10
+	zoom_amt = SMG_ZOOM
+	recoil = 4
+	w_class = WEIGHT_CLASS_BULKY
+
+	light_range = 1
+
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
-	fire_delay = 0.2 SECONDS
-	spread = 6
-	w_class = WEIGHT_CLASS_BULKY
-	semi_auto = TRUE
+
+
 	load_sound = 'modular_panda/sound/weapons/gun/smg/smg_reload.ogg'
 	load_empty_sound = 'modular_panda/sound/weapons/gun/smg/smg_reload.ogg'
 	eject_sound = 'modular_panda/sound/weapons/gun/smg/smg_unload.ogg'
 	eject_empty_sound = 'modular_panda/sound/weapons/gun/smg/smg_unload.ogg'
 	suppressed_sound = 'modular_panda/sound/weapons/gun/pistol/shot_suppressed.ogg'
 
-/obj/item/gun/modular/ballistic/automatic/smg/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/ammo_hud)
+	gunslinger_recoil_bonus = 2
+	gunslinger_spread_bonus = 16
+	wear_minor_threshold = 240
+	wear_major_threshold = 720
+	wear_maximum = 1200
 
-/obj/item/gun/modular/ballistic/automatic/smg/cobra
-	name = "C-20r \"Cobra\""
-	desc = "A bullpup submachine gun with an integrated suppressor, heavily used by Syndicate strike teams. Still sees widespread use by the operatives of the Gorlex Marauders. Chambered in 10mm."
-	icon_state = "cobra"
-	inhand_icon_state = "cobra"
-	burst_delay = 2
-	burst_size = 3
-	pin = /obj/item/firing_pin
-	mag_display = TRUE
-	mag_display_ammo = TRUE
-	spread = 3
-	accepted_magazine_type = /obj/item/ammo_box/magazine/m10_cobra
-	fire_sound = 'modular_panda/sound/weapons/gun/smg/cobra.ogg'
-	load_sound = 'modular_panda/sound/weapons/gun/smg/cm5_reload.ogg'
-	load_empty_sound = 'modular_panda/sound/weapons/gun/smg/cm5_reload.ogg'
-	eject_sound = 'modular_panda/sound/weapons/gun/smg/cm5_unload.ogg'
-	eject_empty_sound = 'modular_panda/sound/weapons/gun/smg/cm5_unload.ogg'
-	suppressed_sound = 'modular_panda/sound/weapons/gun/pistol/shot_suppressed.ogg'
 
-/obj/item/gun/modular/ballistic/automatic/smg/cobra/give_manufacturer_examine()
-	AddElement(/datum/element/manufacturer_examine, COMPANY_SCARBOROUGH)
+/obj/item/shiptest_gun/ballistic/automatic/smg/skm_carbine
+	name = "\improper SKM-24v"
+	desc = "The SKM-24v was a carbine modification of the SKM-24 during the Frontiersmen War. This, however, is just a shoddy imitation of that carbine, effectively an SKM-24 with a sawed down barrel and a folding wire stock. Can be fired with the stock folded, though accuracy suffers. Chambered in 4.6x30mm."
 
-/obj/item/gun/modular/ballistic/automatic/smg/cobra/indie
-	name = "Cobra-20"
-	desc = "An older model of submachine gun manufactured by Scarborough Arms and marketed to mercenaries, law enforcement, and independent militia, usually though it's just for budget cut Syndicate teams. Chambered in 10mm."
-	icon_state = "cobra20"
-	inhand_icon_state = "cobra20"
-	burst_size = 4
-	burst_delay = 0.8
-	fire_delay = 3
-	spread = 2
-	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
-	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst")
+	icon_state = "skm_carbine"
+	inhand_icon_state = "skm_carbine"
+	icon = 'modular_panda/icons/obj/guns/manufacturer/hermits/48x32.dmi'
+	lefthand_file = 'modular_panda/icons/obj/guns/manufacturer/hermits/lefthand.dmi'
+	righthand_file = 'modular_panda/icons/obj/guns/manufacturer/hermits/righthand.dmi'
+	worn_icon = 'modular_panda/icons/obj/guns/manufacturer/hermits/onmob.dmi'
+	fire_sound = 'modular_panda/sound/weapons/gun/rifle/skm_smg.ogg'
 
-/obj/item/gun/modular/ballistic/automatic/smg/cobra/indie/Initialize(mapload)
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.2 SECONDS)
+	rack_sound = 'modular_panda/sound/weapons/gun/rifle/skm_cocked.ogg'
+	load_sound = 'modular_panda/sound/weapons/gun/rifle/skm_reload.ogg'
+	load_empty_sound = 'modular_panda/sound/weapons/gun/rifle/skm_reload.ogg'
+	eject_sound = 'modular_panda/sound/weapons/gun/rifle/skm_unload.ogg'
+	eject_empty_sound = 'modular_panda/sound/weapons/gun/rifle/skm_unload.ogg'
 
-/obj/item/gun/modular/ballistic/automatic/smg/sidewinder
-	name = "CDW-81 \"Sidewinder\""
-	desc = "An armor-piercing, compact personal defense weapon, introduced as an improvement over the C-20r when fighting armored personnel. Issued only in small numbers, and used today by specialists of Syndicate factions. Chambered in 5.7x39mm."
-	icon_state = "sidewinder"
-	inhand_icon_state = "sidewinder"
-	accepted_magazine_type = /obj/item/ammo_box/magazine/m57_39_sidewinder
-	fire_sound = 'modular_panda/sound/weapons/gun/smg/sidewinder.ogg'
-	load_sound = 'modular_panda/sound/weapons/gun/smg/sidewinder_reload.ogg'
-	load_empty_sound = 'modular_panda/sound/weapons/gun/smg/sidewinder_reload.ogg'
-	eject_sound = 'modular_panda/sound/weapons/gun/smg/sidewinder_unload.ogg'
-	eject_empty_sound = 'modular_panda/sound/weapons/gun/smg/sidewinder_unload.ogg'
-	rack_sound = 'modular_panda/sound/weapons/gun/smg/sidewinder_cocked.ogg'
-	suppressed_sound = 'modular_panda/sound/weapons/gun/pistol/shot_suppressed.ogg'
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
-	spread = 7
-	mag_display = TRUE
-	mag_display_ammo = TRUE
+	default_ammo_type = /obj/item/shiptest_ammo_box/magazine/skm_46_30
+	allowed_ammo_types = list(
+		/obj/item/shiptest_ammo_box/magazine/skm_46_30,
+	)
 
-/obj/item/gun/modular/ballistic/automatic/smg/sidewinder/give_manufacturer_examine()
-	AddElement(/datum/element/manufacturer_examine, COMPANY_SCARBOROUGH)
+	recoil = 6
 
-/obj/item/gun/modular/ballistic/automatic/smg/nt5
-	name = "\improper NT-5"
-	desc = "Nanotrasen's standard-issue submachine gun. Well-liked for its accuracy, stability, and ease of use compared to other submachineguns. Chambered in 9mm."
-	icon_state = "nt5"
-	inhand_icon_state = "nt5"
-	accepted_magazine_type = /obj/item/ammo_box/magazine/nt5_9mm
-	fire_delay = 0.2 SECONDS // despite being 1 fire delay previously, it fucking rounds up to 1.5. This makes it ACTUALLY ONE
-	weapon_weight = WEAPON_LIGHT
-	fire_sound = 'modular_panda/sound/weapons/gun/smg/cm5.ogg'
-	spread = 4
+	spread = 14
 
-/obj/item/gun/modular/ballistic/automatic/smg/nt5/rubber
-	accepted_magazine_type = /obj/item/ammo_box/magazine/nt5_9mm/rubber
 
-/obj/item/gun/modular/ballistic/automatic/smg/nt5/compact
-	name = "\improper NT-5c"
-	desc = "A modification of the NT-5 featuring a dramatically shortened barrel and removed stock. Designed for Nanotrasen's covert enforcement agents to maximize portability without sacrificing firepower, though accuracy at range is abysmal at best. Chambered in 9mm."
-	icon_state = "nt5c"
-	inhand_icon_state = "nt5c"
+	wear_rate = 1.6
 
-	w_class = WEIGHT_CLASS_NORMAL
+/obj/item/shiptest_gun/ballistic/automatic/smg/skm_carbine/inteq
+	name = "\improper SKM-44v Mongrel"
+	desc = "An SKM-44, further modified into a sub-machine gun by Inteq artificers with a new magazine well, collapsing stock, and shortened barrel. Faced with a surplus of SKM-44s and a shortage of other firearms, IRMG has made the most of their available materiel with conversions such as this. Chambered in 10mm."
+	icon = 'modular_panda/icons/obj/guns/manufacturer/inteq/48x32.dmi'
+	lefthand_file = 'modular_panda/icons/obj/guns/manufacturer/inteq/lefthand.dmi'
+	righthand_file = 'modular_panda/icons/obj/guns/manufacturer/inteq/righthand.dmi'
+	worn_icon = 'modular_panda/icons/obj/guns/manufacturer/inteq/onmob.dmi'
+	icon_state = "skm_inteqsmg"
+	inhand_icon_state = "skm_inteqsmg"
+
+	default_ammo_type = /obj/item/shiptest_ammo_box/magazine/smgm10mm
+	allowed_ammo_types = list(
+		/obj/item/shiptest_ammo_box/magazine/smgm10mm,
+	)
+	manufacturer = MANUFACTURER_INTEQ
+
+	fire_sound = 'modular_panda/sound/weapons/gun/smg/vector_fire.ogg'
+
+	load_sound = 'modular_panda/sound/weapons/gun/smg/smg_reload.ogg'
+	load_empty_sound = 'modular_panda/sound/weapons/gun/smg/smg_reload.ogg'
+	eject_sound = 'modular_panda/sound/weapons/gun/smg/smg_unload.ogg'
+	eject_empty_sound = 'modular_panda/sound/weapons/gun/smg/smg_unload.ogg'
 
 	spread = 10
-	recoil = 1
+
+	recoil = 4

@@ -124,6 +124,10 @@ export const IconCutterTarget = new Juke.Target({
       `icons/**/*.png.toml`,
       `icons/**/*.dmi.toml`,
       `cutter_templates/**/*.toml`,
+      // PANDA EDIT ADDITION START: Modular iconcutter
+      `modular_panda/icons/**/*.png.toml`,
+      `modular_panda/icons/**/*.dmi.toml`,
+      // PANDA EDIT END
       cutter_path,
     ];
     // Alright we're gonna search out any existing toml files and convert
@@ -131,6 +135,10 @@ export const IconCutterTarget = new Juke.Target({
     const existing_configs = [
       ...Juke.glob(`icons/**/*.png.toml`),
       ...Juke.glob(`icons/**/*.dmi.toml`),
+      // PANDA EDIT ADDITION START: Modular iconcutter
+      ...Juke.glob(`modular_panda/icons/**/*.png.toml`),
+      ...Juke.glob(`modular_panda/icons/**/*.dmi.toml`),
+      // PANDA EDIT END
     ];
     return [
       ...standard_inputs,
@@ -142,6 +150,10 @@ export const IconCutterTarget = new Juke.Target({
     const folders = [
       ...Juke.glob(`icons/**/*.png.toml`),
       ...Juke.glob(`icons/**/*.dmi.toml`),
+      // PANDA EDIT ADDITION START: Modular iconcutter
+      ...Juke.glob(`modular_panda/icons/**/*.png.toml`),
+      ...Juke.glob(`modular_panda/icons/**/*.dmi.toml`),
+      // PANDA EDIT END
     ];
     return folders
       .map((file) => file.replace(`.png.toml`, '.dmi'))
@@ -154,12 +166,21 @@ export const IconCutterTarget = new Juke.Target({
       'cutter_templates',
       'icons',
     ]);
+    // PANDA EDIT ADDITION START: Modular iconcutter
+    await Juke.exec(cutter_path, [
+      '--dont-wait',
+      '--templates',
+      'cutter_templates',
+      'modular_panda/icons',
+    ]);
+    // PANDA EDIT END
   },
 });
 
 export const DmMapsIncludeTarget = new Juke.Target({
   executes: async () => {
     const folders = [
+      ...Juke.glob('_maps/panda/**/*.dmm'), // PANDA EDIT ADDITION - Include our templates
       ...Juke.glob('_maps/map_files/**/modular_pieces/*.dmm'),
       ...Juke.glob('_maps/RandomRuins/**/*.dmm'),
       ...Juke.glob('_maps/RandomZLevels/**/*.dmm'),
@@ -178,6 +199,7 @@ export const BehaviorTreeCompilerTarget = new Juke.Target({
   inputs: [
     'code/**/*.bt.json',
     'code/__DEFINES/**/*.dm',
+    'modular_panda/**/*.bt.json', // PANDA EDIT ADD
     'tools/build_bt.py',
   ],
   outputs: () => {
@@ -209,6 +231,7 @@ export const DmTarget = new Juke.Target({
     '_maps/map_files/generic/**',
     'maps/**/*.dm',
     'code/**',
+    'modular_panda/code/**',
     'html/**',
     'icons/**',
     'interface/**',

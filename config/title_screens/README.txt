@@ -1,4 +1,8 @@
 The enclosed /images folder holds the image files used as the title screen for the game.
+PandaStation's modular title-screen override forces
+modular_panda/icons/ui_icons/title_screen/default.png, so these images are ignored.
+The format and naming conventions below describe the base title-screen behavior and
+only apply if the modular override is removed.
 
 Specification:
 Formats: PNG, JPG, GIF, DMI*
