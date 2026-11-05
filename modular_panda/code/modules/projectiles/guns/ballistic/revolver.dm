@@ -6,7 +6,6 @@
 #define REVOLVER_AUTO_ROTATE_LEFT_LOADING "auto rotate left when loading ammo"
 #define REVOLVER_EJECT_CURRENT "eject current bullet"
 #define REVOLVER_EJECT_ALL "auto eject all bullets"
-#define REVOLVER_FLIP "flip the revolver by the trigger"
 
 /obj/item/shiptest_gun/ballistic/revolver
 	name = "I DEMAND!!!"
@@ -18,7 +17,6 @@
 		/obj/item/shiptest_ammo_box/magazine/internal/cylinder,
 	)
 	fire_sound = 'modular_panda/sound/weapons/gun/revolver/shot.ogg'
-	rack_sound = 'modular_panda/sound/weapons/gun/revolver/revolver_prime.ogg'
 	load_sound = 'modular_panda/sound/weapons/gun/revolver/load_bullet.ogg'
 	eject_sound = 'modular_panda/sound/weapons/gun/revolver/empty.ogg'
 	vary_fire_sound = FALSE
@@ -33,21 +31,12 @@
 	fire_delay = 0.4 SECONDS
 	spread = 4
 	recoil = 2
-	semi_auto = FALSE
-	bolt_wording = "hammer"
 	dry_fire_text = "snap"
-	has_safety = FALSE
-	safety = FALSE
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-	safety_wording = "hammer"
-	var/hammer_cocked = FALSE
-
-	// gunslingers love these!
-	gunslinger_recoil_bonus = -1
-	gunslinger_spread_bonus = -8
+	safety_wording = "safety"
 
 	// SPINNING //
 	var/spin_delay = 10
@@ -58,29 +47,12 @@
 	var/gate_offset = 5 // index of the accessible round when gate loaded
 	var/gate_load_direction = REVOLVER_AUTO_ROTATE_RIGHT_LOADING // which way do we spin when loading?
 
-	COOLDOWN_DECLARE(flip_cooldown)
-
 /obj/item/shiptest_gun/ballistic/revolver/examine(mob/user)
 	. = ..()
 	. += "<span class='info'>You can use the revolver with your <b>other empty hand</b> to empty the cylinder.</span>"
 
-/obj/item/shiptest_gun/ballistic/revolver/update_overlays()
-	. = ..()
-	if(semi_auto)
-		return
-	if(current_skin)
-		. += "[unique_reskin[current_skin]][hammer_cocked ? "_hammer_up" : "_hammer_down"]"
-	else
-		. += "[base_icon_state || initial(icon_state)][hammer_cocked ? "_hammer_up" : "_hammer_down"]"
-
-
 /obj/item/shiptest_gun/ballistic/revolver/process_chamber(empty_chamber = TRUE, from_firing = TRUE, chamber_next_round = TRUE, atom/shooter)
 	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
-	return ..()
-
-/obj/item/shiptest_gun/ballistic/revolver/can_shoot()
-	if(!semi_auto && !hammer_cocked)
-		return FALSE
 	return ..()
 
 /obj/item/shiptest_gun/ballistic/revolver/attack_hand(mob/user)
@@ -265,35 +237,6 @@
 		update_appearance()
 		return TRUE
 
-/obj/item/shiptest_gun/ballistic/revolver/unique_action(mob/living/user)
-	rack(user) // operate hammer
-	return
-
-///updates a bunch of racking related stuff and also handles the sound effects and the like
-/obj/item/shiptest_gun/ballistic/revolver/rack(mob/user = null, toggle_hammer = TRUE)
-	if(!semi_auto)
-		if(!toggle_hammer)
-			return FALSE
-		if(hammer_cocked)
-			if(user)
-				to_chat(user, span_warning("The hammer is already cocked."))
-			return FALSE
-		hammer_cocked = TRUE
-		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
-		if(user)
-			user.visible_message(
-				span_notice("[user] pulls back the hammer on [src]."),
-				span_notice("You pull back the hammer on [src]."),
-			)
-		chamber_round(TRUE)
-		SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
-		update_appearance()
-		return TRUE
-	if(user)
-		to_chat(user, "<span class='notice'>You rack the [bolt_wording] of \the [src].</span>")
-		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
-	return ..()
-
 // move a new round into "chambered" for firing
 /obj/item/shiptest_gun/ballistic/revolver/chamber_round(spin_cylinder = TRUE, counter_clockwise = FALSE)
 	if(spin_cylinder)
@@ -312,14 +255,10 @@
 		REVOLVER_EJECT_ALL = image(icon = 'modular_panda/icons/hud/radial.dmi', icon_state = "radial_revolver_eject_all"),
 		REVOLVER_EJECT_CURRENT = image(icon = 'modular_panda/icons/hud/radial.dmi', icon_state = "radial_revolver_eject_one"),
 		REVOLVER_AUTO_ROTATE_RIGHT_LOADING = image(icon = 'modular_panda/icons/hud/radial.dmi', icon_state = "radial_revolver_auto_right"),
-		REVOLVER_FLIP = image(icon = 'icons/hud/radial.dmi', icon_state = "radial_revolver_flip"),
 		)
 
 	var/image/editing_image = chamber_options[gate_load_direction]
 	editing_image.icon_state = "radial_revolver_auto_[gate_load_direction == REVOLVER_AUTO_ROTATE_RIGHT_LOADING ? "right":"left"]_on"
-
-	if(!HAS_TRAIT(user, TRAIT_GUNFLIP))
-		chamber_options -= REVOLVER_FLIP
 
 	if(!gate_loaded) //these are completely redundant if you can reload everything with a speedloader
 		chamber_options -= REVOLVER_AUTO_ROTATE_LEFT_LOADING
@@ -345,8 +284,6 @@
 			return CLICK_ACTION_SUCCESS
 		if(REVOLVER_EJECT_CURRENT)
 			eject_chamber(user)
-		if(REVOLVER_FLIP)
-			tryflip(user)
 	update_appearance()
 	return CLICK_ACTION_SUCCESS
 
@@ -390,85 +327,17 @@
 		boolets += magazine.ammo_count(countempties)
 	return boolets
 
-// handles hammer operation. or safety on regular revolvers
-/obj/item/shiptest_gun/ballistic/revolver/toggle_safety(mob/user, silent=FALSE, rack_gun=TRUE)
-	if(semi_auto)
-		return ..()
-	if(hammer_cocked)
-		if(user && !silent)
-			to_chat(user, span_warning("The hammer is already cocked."))
-		return TRUE
-	hammer_cocked = TRUE
-	chamber_round(TRUE)
-	SEND_SIGNAL(src, COMSIG_UPDATE_AMMO_HUD)
-	if(!silent)
-		playsound(src, rack_sound, rack_sound_volume, rack_sound_vary)
-		if(user)
-			user.visible_message(
-				span_notice("[user] pulls back the hammer on [src]."),
-				span_notice("You pull back the hammer on [src]."),
-			)
-
-	update_appearance()
-	return TRUE
-
 /obj/item/shiptest_gun/ballistic/revolver/examine(mob/user)
 	. = ..()
 	var/live_ammo = get_ammo(FALSE, FALSE)
 	. += "[live_ammo ? live_ammo : "None"] of those are live rounds."
-	if(!semi_auto)
-		. += span_notice("The hammer is [hammer_cocked ? "cocked" : "down"]. Ctrl-Click or use the unique action to cock it.")
 	if (current_skin)
 		. += "It can be spun with <b>alt+click</b>"
 
-// hammer fanning behavior for gunslingers
-/obj/item/shiptest_gun/ballistic/revolver/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
-	if(!semi_auto && !hammer_cocked)
-		shoot_with_empty_chamber(user)
-		return FALSE
-
-	var/fan = FALSE
-	if(HAS_TRAIT(user, TRAIT_GUNFLIP) && !semi_auto && loc == user && hammer_cocked && !user.get_inactive_held_item())
-		fan = TRUE
-		fire_delay = 0 SECONDS
-	. = ..()
-	fire_delay = src::fire_delay
-	if(fan)
-		rack()
-		to_chat(user, span_notice("You fan the [bolt_wording] of \the [src]!"))
-		balloon_alert_to_viewers("fans revolver!")
-		fire_delay = 0 SECONDS
-
-/obj/item/shiptest_gun/ballistic/revolver/shoot_live_shot(mob/living/user, pointblank, atom/pbtarget, message)
-	. = ..()
-	if(!semi_auto)
-		hammer_cocked = FALSE
-		update_appearance()
-
 /obj/item/shiptest_gun/ballistic/revolver/shoot_with_empty_chamber(mob/living/user as mob|obj)
-	if(!semi_auto && !hammer_cocked)
-		to_chat(user, span_warning("The hammer is down on [src]. Pull it back before firing."))
-		return
-	if(!semi_auto)
-		to_chat(user, "<span class='danger'>*[dry_fire_text]*</span>")
-		playsound(src, dry_fire_sound, 30, TRUE)
-		hammer_cocked = FALSE
-		update_appearance()
-		return
 	..()
-
-/obj/item/shiptest_gun/ballistic/revolver/pickup(mob/user)
-	. = ..()
-	tryflip(user)
-
-/obj/item/shiptest_gun/ballistic/revolver/proc/tryflip(mob/living/user)
-	if(HAS_TRAIT(user, TRAIT_GUNFLIP))
-		if(COOLDOWN_FINISHED(src, flip_cooldown))
-			COOLDOWN_START(src, flip_cooldown, 0.3 SECONDS)
-			SpinAnimation(5,1)
-			user.visible_message("<span class='notice'>[user] spins the [src] around their finger by the trigger. That’s pretty badass.</span>")
-			playsound(src, 'sound/items/handling/ammobox_pickup.ogg', 20, FALSE)
-			return
+	if(!safety)
+		chamber_round()
 
 // golden revolver. it is here. woe
 /obj/item/shiptest_gun/ballistic/revolver/golden

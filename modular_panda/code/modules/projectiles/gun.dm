@@ -270,7 +270,7 @@
 			return
 		if(target == user && user.zone_selected != BODY_ZONE_PRECISE_MOUTH) //so we can't shoot ourselves (unless mouth selected)
 			return
-		if(ismob(target))
+		if(ismob(target) && target != user)
 			if(user.GetComponent(/datum/component/gunpoint))
 				to_chat(user, span_warning("You are already holding someone up!"))
 				return

@@ -7237,6 +7237,7 @@
 #include "modular_panda\code\datums\components\movable_physics.dm"
 #include "modular_panda\code\controllers\subsystem\processing\movable_physics.dm"
 #include "modular_panda\code\controllers\subsystem\title_splashscreen.dm"
+#include "modular_panda\code\datums\components\pellet_cloud.dm"
 #include "modular_panda\code\datums\keybinding\dextrous.dm"
 #include "modular_panda\code\datums\weather\weather_types\radiation_storm.dm"
 #include "modular_panda\code\game\area\areas\station\command.dm"
