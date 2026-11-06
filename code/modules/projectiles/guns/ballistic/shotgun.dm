@@ -334,7 +334,7 @@
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
 /////////////////////////////
-/* // PANDA REMOVAL
+
 /obj/item/gun/ballistic/shotgun/doublebarrel
 	name = "double-barreled shotgun"
 	desc = "A true classic."
@@ -365,7 +365,6 @@
 /obj/item/gun/ballistic/shotgun/doublebarrel/do_sawoff()
 	. = ..()
 	weapon_weight = WEAPON_MEDIUM
-*/
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/slugs
 	name = "hunting shotgun"

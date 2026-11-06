@@ -5058,18 +5058,6 @@
 "bzL" = (
 /obj/structure/rack/shelf,
 /obj/machinery/status_display/evac/directional/north,
-/obj/item/ammo_box/a12g/rubbershot{
-	pixel_y = -3
-	},
-/obj/item/ammo_box/a12g/beanbag{
-	pixel_y = 8
-	},
-/obj/item/ammo_box/a12g/beanbag{
-	pixel_y = 8
-	},
-/obj/item/ammo_box/a12g/rubbershot{
-	pixel_y = -3
-	},
 /turf/open/floor/mineral/plastitanium/pod/large,
 /area/station/security/brig)
 "bzN" = (
@@ -10322,17 +10310,11 @@
 	c_tag = "Armory - Internal"
 	},
 /obj/structure/rack/gunrack,
-/obj/item/ammo_box/magazine/m10_cobra,
-/obj/item/ammo_box/magazine/m10_cobra,
-/obj/item/ammo_box/magazine/m10_cobra,
-/obj/item/ammo_box/magazine/m10_cobra,
-/obj/item/ammo_box/magazine/m10_cobra,
-/obj/item/ammo_box/magazine/m10_cobra,
-/obj/item/gun/modular/ballistic/automatic/smg/cobra/indie{
+/obj/item/shiptest_gun/ballistic/automatic/smg/cobra/indie{
 	pixel_x = -6
 	},
-/obj/item/gun/modular/ballistic/automatic/smg/cobra/indie,
-/obj/item/gun/modular/ballistic/automatic/smg/cobra/indie{
+/obj/item/shiptest_gun/ballistic/automatic/smg/cobra/indie,
+/obj/item/shiptest_gun/ballistic/automatic/smg/cobra/indie{
 	pixel_x = 6
 	},
 /turf/open/floor/mineral/plastitanium/pod/large,
@@ -18271,18 +18253,16 @@
 "fGb" = (
 /obj/machinery/firealarm/directional/south,
 /obj/effect/turf_decal/tile/neutral/anticorner/contrasted,
-/obj/item/ammo_box/a12g/blank{
-	pixel_y = 12;
-	pixel_x = -3
-	},
-/obj/item/ammo_box/c22lr/rubber{
-	pixel_y = 2;
-	pixel_x = 3
-	},
 /obj/effect/turf_decal/siding/thinplating_new/dark/corner{
 	dir = 1
 	},
 /obj/structure/table/reinforced,
+/obj/item/storage/box/ammo/a12g/blank{
+	pixel_y = 11
+	},
+/obj/item/storage/box/ammo/c22lr/rubber{
+	pixel_y = 2
+	},
 /turf/open/floor/iron/dark,
 /area/station/security/range)
 "fGc" = (
@@ -32121,18 +32101,12 @@
 "jUD" = (
 /obj/machinery/newscaster/directional/west,
 /obj/structure/rack/gunrack,
-/obj/item/ammo_box/magazine/m57_39_sidewinder,
-/obj/item/ammo_box/magazine/m57_39_sidewinder,
-/obj/item/ammo_box/magazine/m57_39_sidewinder,
-/obj/item/ammo_box/magazine/m57_39_sidewinder,
-/obj/item/ammo_box/magazine/m57_39_sidewinder,
-/obj/item/ammo_box/magazine/m57_39_sidewinder,
 /obj/machinery/light/directional/west,
-/obj/item/gun/modular/ballistic/automatic/smg/sidewinder{
+/obj/item/shiptest_gun/ballistic/automatic/smg/sidewinder{
 	pixel_x = -6
 	},
-/obj/item/gun/modular/ballistic/automatic/smg/sidewinder,
-/obj/item/gun/modular/ballistic/automatic/smg/sidewinder{
+/obj/item/shiptest_gun/ballistic/automatic/smg/sidewinder,
+/obj/item/shiptest_gun/ballistic/automatic/smg/sidewinder{
 	pixel_x = 6
 	},
 /turf/open/floor/mineral/plastitanium/pod/large,
@@ -35033,28 +35007,10 @@
 /area/station/security/brig)
 "kOi" = (
 /obj/structure/rack/shelf,
-/obj/item/ammo_box/a12g{
-	pixel_y = 8
-	},
-/obj/item/ammo_box/a12g{
-	pixel_y = 8
-	},
-/obj/item/ammo_box/a12g/stun{
-	pixel_y = 8
-	},
-/obj/item/ammo_box/a12g/slug{
-	pixel_y = -3
-	},
-/obj/item/ammo_box/a12g/slug{
-	pixel_y = -3
-	},
-/obj/item/ammo_box/a12g/incen{
-	pixel_y = -3
-	},
 /obj/machinery/status_display/evac/directional/north,
-/obj/item/ammo_box/c57x39{
-	pixel_y = 7
-	},
+/obj/item/storage/box/ammo/c57x39,
+/obj/item/storage/box/ammo/c57x39,
+/obj/item/storage/box/ammo/c57x39/rubber,
 /turf/open/floor/mineral/plastitanium/pod/large,
 /area/station/security/armory)
 "kOj" = (
@@ -42607,32 +42563,29 @@
 /area/station/security/brig)
 "niE" = (
 /obj/structure/rack/shelf,
-/obj/item/ammo_box/c10mm{
+/obj/item/storage/box/ammo/c9mm{
 	pixel_y = 8
 	},
-/obj/item/ammo_box/c10mm{
+/obj/item/storage/box/ammo/c9mm{
+	pixel_y = -2
+	},
+/obj/item/storage/box/ammo/c22lr{
 	pixel_y = 8
 	},
-/obj/item/ammo_box/c10mm/hollow_point{
+/obj/item/storage/box/ammo/c22lr{
+	pixel_y = -2
+	},
+/obj/item/storage/box/ammo/c22lr/hp{
+	pixel_y = -2
+	},
+/obj/item/storage/box/ammo/c22lr/ap{
 	pixel_y = 8
 	},
-/obj/item/ammo_box/c10mm/armor_piercing{
+/obj/item/storage/box/ammo/c10mm{
 	pixel_y = 8
 	},
-/obj/item/ammo_box/c9mm{
-	pixel_y = -3
-	},
-/obj/item/ammo_box/c9mm{
-	pixel_y = -3
-	},
-/obj/item/ammo_box/c9mm/hollow_point{
-	pixel_y = -3
-	},
-/obj/item/ammo_box/c9mm/armor_piercing{
-	pixel_y = -3
-	},
-/obj/item/ammo_box/c357/small{
-	pixel_y = 6
+/obj/item/storage/box/ammo/c10mm{
+	pixel_y = -2
 	},
 /turf/open/floor/mineral/plastitanium/pod/large,
 /area/station/security/armory)
@@ -51109,8 +51062,6 @@
 	},
 /obj/effect/spawner/random/maintenance/three,
 /obj/machinery/status_display/ai/directional/north,
-/obj/item/ammo_box/magazine/nt23,
-/obj/item/gun/modular/ballistic/automatic/pistol/nt23,
 /turf/open/floor/mineral/plastitanium/pod/large,
 /area/station/security/armory)
 "pMg" = (
@@ -54096,17 +54047,11 @@
 "qKw" = (
 /obj/machinery/firealarm/directional/east,
 /obj/structure/rack/gunrack,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/ammo_box/magazine/m10mm_ringneck,
-/obj/item/gun/modular/ballistic/automatic/pistol/ringneck{
+/obj/item/shiptest_gun/ballistic/automatic/pistol/asp{
 	pixel_x = -6
 	},
-/obj/item/gun/modular/ballistic/automatic/pistol/ringneck,
-/obj/item/gun/modular/ballistic/automatic/pistol/ringneck{
+/obj/item/shiptest_gun/ballistic/automatic/pistol/asp,
+/obj/item/shiptest_gun/ballistic/automatic/pistol/asp{
 	pixel_x = 6
 	},
 /turf/open/floor/mineral/plastitanium/pod/large,
@@ -67760,14 +67705,6 @@
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 1
 	},
-/obj/item/ammo_box/magazine/m22lr_himehabu/rubber{
-	pixel_x = -9;
-	pixel_y = 5
-	},
-/obj/item/ammo_box/magazine/m22lr_himehabu/rubber{
-	pixel_x = -4;
-	pixel_y = 3
-	},
 /obj/effect/turf_decal/siding/thinplating_new/dark,
 /obj/structure/table/reinforced,
 /turf/open/floor/iron/dark,
@@ -72508,11 +72445,11 @@
 "wlG" = (
 /obj/structure/detectiveboard/directional/west,
 /obj/structure/rack/gunrack,
-/obj/item/gun/modular/ballistic/shotgun/gaboon{
+/obj/item/shiptest_gun/ballistic/shotgun/gaboon{
 	pixel_x = -6
 	},
-/obj/item/gun/modular/ballistic/shotgun/gaboon,
-/obj/item/gun/modular/ballistic/shotgun/gaboon{
+/obj/item/shiptest_gun/ballistic/shotgun/gaboon,
+/obj/item/shiptest_gun/ballistic/shotgun/gaboon{
 	pixel_x = 6
 	},
 /turf/open/floor/mineral/plastitanium/pod/large,

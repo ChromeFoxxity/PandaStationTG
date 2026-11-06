@@ -35,8 +35,8 @@
 
 /obj/item/shiptest_ammo_box/magazine/internal/cylinder/rev44
 	name = "cattleman revolver cylinder"
-	ammo_type = /obj/item/shiptest_ammo_casing/a44roum
-	caliber = ".44 Roumain"
+	ammo_type = /obj/item/shiptest_ammo_casing/a44sol
+	caliber = ".44 Solarian"
 	max_ammo = 6
 	instant_load = FALSE
 

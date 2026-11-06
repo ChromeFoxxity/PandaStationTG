@@ -52,45 +52,18 @@
 		/obj/item/shiptest_ammo_box/magazine/ammo_stack/prefilled/a300 = 4)
 	generate_items_inside(items_inside,src)
 
-/obj/item/shiptest_ammo_box/magazine/ammo_stack/prefilled/a300/trac
-	ammo_type = /obj/item/shiptest_ammo_casing/a300/trac
+//6.5mm
+
+/obj/item/shiptest_ammo_box/magazine/ammo_stack/prefilled/a65
+	ammo_type = /obj/item/shiptest_ammo_casing/a65
 	max_ammo = 5
 
-/obj/item/storage/box/ammo/a300/trac
-	name = "box of .300 trac ammo"
-	desc = "A box of .308 TRAC ammo."
-	icon_state = "300box"
-
-/obj/item/storage/box/ammo/a300/trac/PopulateContents()
-	var/static/items_inside = list(
-		/obj/item/shiptest_ammo_box/magazine/ammo_stack/prefilled/a300/trac = 2)
-	generate_items_inside(items_inside,src)
-
-//6.5mm CLIP
-
-/obj/item/shiptest_ammo_box/magazine/ammo_stack/prefilled/a65clip
-	ammo_type = /obj/item/shiptest_ammo_casing/a65clip
-	max_ammo = 5
-
-/obj/item/storage/box/ammo/a65clip
-	name = "box of 6.5mm CLIP ammo"
-	desc = "A box of standard 6.5mm CLIP ammo."
+/obj/item/storage/box/ammo/a65
+	name = "box of 6.5mm ammo"
+	desc = "A box of standard 6.5mm ammo."
 	icon_state = "65box"
 
-/obj/item/storage/box/ammo/a65clip/PopulateContents()
+/obj/item/storage/box/ammo/a65/PopulateContents()
 	var/static/items_inside = list(
-		/obj/item/shiptest_ammo_box/magazine/ammo_stack/prefilled/a65clip = 4)
-	generate_items_inside(items_inside,src)
-
-/obj/item/shiptest_ammo_box/magazine/ammo_stack/prefilled/a65clip/trac
-	ammo_type = /obj/item/shiptest_ammo_casing/a65clip/trac
-	max_ammo = 5
-
-/obj/item/storage/box/ammo/a65clip/trac
-	name = "box of 6.5mm CLIP tracker ammo"
-	desc = "A box of standard 6.5mm CLIP tracker ammo."
-
-/obj/item/storage/box/ammo/a65clip/trac/PopulateContents()
-	var/static/items_inside = list(
-		/obj/item/shiptest_ammo_box/magazine/ammo_stack/prefilled/a65clip/trac = 2)
+		/obj/item/shiptest_ammo_box/magazine/ammo_stack/prefilled/a65 = 4)
 	generate_items_inside(items_inside,src)

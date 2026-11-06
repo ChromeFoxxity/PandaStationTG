@@ -90,6 +90,7 @@
 					boolets++
 			if(boolets > 0)
 				ammo_stack.update_ammo_count()
+				playsound(ammo_stack, 'modular_panda/sound/weapons/gun/general/mag_bullet_insert.ogg', 60, TRUE)
 				to_chat(user, span_notice("You collect [boolets] round\s. [ammo_stack] now contains [length(ammo_stack.stored_ammo)] round\s."))
 			else
 				to_chat(user, span_warning("You can't stack any more!"))
@@ -100,10 +101,6 @@
 		return
 
 	return ..()
-
-/obj/item/shiptest_ammo_casing/examine(mob/user)
-	. = ..()
-	. += span_notice("You could write a message on \the [src] by writing on it with a pen.")
 
 /obj/item/shiptest_ammo_casing/proc/try_stacking(obj/item/shiptest_ammo_casing/other_casing, mob/living/user)
 	if(user)

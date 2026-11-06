@@ -186,24 +186,24 @@
 	explosion(target, -1, 0, 0,  light_impact_range = 20, explosion_cause = src)
 	return BULLET_ACT_HIT
 
-// 44 Short (Roumain & Shadow)
+// 44 Short (Solarian & Shadow)
 
-/obj/shiptest_projectile/bullet/a44roum
-	name = ".44 roumain bullet"
+/obj/shiptest_projectile/bullet/a44sol
+	name = ".44 solarian bullet"
 	damage =  30
 	speed = 1.25
 	bullet_identifier = "small bullet"
 
-/obj/shiptest_projectile/bullet/a44roum/rubber
-	name = ".44 roumain rubber bullet"
+/obj/shiptest_projectile/bullet/a44sol/rubber
+	name = ".44 solarian rubber bullet"
 	damage =  10
 	stamina = 40
 	armour_penetration = -10
 	speed_mod = BULLET_SPEED_RUBBER_MOD
 	bullet_identifier = "small rubber bullet"
 
-/obj/shiptest_projectile/bullet/a44roum/hp
-	name = ".44 roumain hollow point bullet"
+/obj/shiptest_projectile/bullet/a44sol/hp
+	name = ".44 solarian hollow point bullet"
 	damage =  45
 	armour_penetration = -20
 	ricochet_chance = 0

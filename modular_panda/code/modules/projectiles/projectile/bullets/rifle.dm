@@ -1,7 +1,7 @@
-// 5.56x42mm CLIP (CM82, Hydra variants)
+// 5.56x42mm (CM82, Hydra variants)
 
 /obj/shiptest_projectile/bullet/a556_42
-	name = "5.56x42mm CLIP bullet"
+	name = "5.56x42mm bullet"
 	damage = 25
 	armour_penetration = 20
 	wound_bonus = -40
@@ -9,19 +9,19 @@
 	bullet_identifier = "medium bullet"
 
 /obj/shiptest_projectile/bullet/a556_42/hp
-	name = "5.56x42mm CLIP hollow point bullet"
+	name = "5.56x42mm hollow point bullet"
 	damage = 35
 	armour_penetration = -20
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/shiptest_projectile/bullet/a556_42/ap
-	name = "5.56x42mm CLIP AP bullet"
+	name = "5.56x42mm AP bullet"
 	damage = 22
 	armour_penetration = 40
 	speed_mod = BULLET_SPEED_AP_MOD
 
 /obj/shiptest_projectile/bullet/a556_42/rubber
-	name = "5.56x42mm CLIP Rubber bullet"
+	name = "5.56x42mm Rubber bullet"
 	damage = 5
 	stamina = 25
 	armour_penetration = 0
@@ -64,29 +64,29 @@
 	name = "8x58mm tracer bullet"
 	color = COLOR_ORANGE
 
-//7.62x40mm CLIP (SKM Rifles)
+//7.62x40mm (SKM Rifles)
 
 /obj/shiptest_projectile/bullet/a762_40
-	name = "7.62x40mm CLIP bullet"
+	name = "7.62x40mm bullet"
 	damage = 30
 	armour_penetration = 20
 	speed = 2.5
 	bullet_identifier = "medium bullet"
 
 /obj/shiptest_projectile/bullet/a762_40/hp
-	name = "7.62x40mm CLIP hollow point bullet"
+	name = "7.62x40mm hollow point bullet"
 	damage = 40
 	armour_penetration = -20
 	speed_mod = BULLET_SPEED_HP_MOD
 
 /obj/shiptest_projectile/bullet/a762_40/ap
-	name = "7.62x40mm CLIP armor piercing bullet"
+	name = "7.62x40mm armor piercing bullet"
 	damage = 27
 	armour_penetration = 40
 	speed_mod = BULLET_SPEED_AP_MOD
 
 /obj/shiptest_projectile/bullet/a762_40/rubber //"rubber"
-	name = "7.62x40mm CLIP rubber bullet"
+	name = "7.62x40mm rubber bullet"
 	damage = 15
 	stamina = 40
 	armour_penetration = 10

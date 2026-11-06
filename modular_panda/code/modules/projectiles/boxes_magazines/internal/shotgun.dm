@@ -104,8 +104,7 @@
 	max_ammo = 100
 	ammo_type = /obj/item/shiptest_ammo_casing/shotgun/buckshot
 
-/obj/item/shiptest_ammo_box/magazine/internal/shot/twobore
-	name = "two-bore shotgun internal magazine"
-	max_ammo = 2
-	caliber = "twobore"
-	ammo_type = /obj/item/shiptest_ammo_casing/shotgun/buckshot/twobore
+/obj/item/shiptest_ammo_box/magazine/internal/shot/buckmaster
+	name = "Buckmaster internal magazine"
+	ammo_type = /obj/item/shiptest_ammo_casing/shotgun/buckshot
+	max_ammo = 6

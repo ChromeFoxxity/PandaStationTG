@@ -58,7 +58,7 @@
 	shrapnel_type = null
 	ricochets_max = 0
 
-/obj/shiptest_projectile/bullet/rocket/on_hit(atom/target, blocked = FALSE)
+/obj/shiptest_projectile/bullet/rocket/on_hit(atom/target, blocked = FALSE, pierce_hit)
 	. = ..()
 	explosion(target, heavy_impact_range = 1, light_impact_range = 2, flame_range = 3, flash_range = 4, explosion_cause = src)
 	return BULLET_ACT_HIT

@@ -25,22 +25,6 @@
 
 #define SUPPRESSED_EXTREME 3 /// doesnt trigger aggro
 
-#define MANUFACTURER_NONE null
-#define MANUFACTURER_SHARPLITE_NEW "the Makosso-Warra-Sharplite logo"
-#define MANUFACTURER_HUNTERSPRIDE "the Hunter's Pride Arms and Ammunition logo"
-#define MANUFACTURER_SOLARARMORIES "the Solarbundswaffenkammer emblem"
-#define MANUFACTURER_SCARBOROUGH "the Scarborough Arms logo"
-#define MANUFACTURER_EOEHOMA "the Eoehoma Firearms emblem"
-#define MANUFACTURER_VIGILITAS "the Makosso-Warra Advantage logo"
-#define MANUFACTURER_BRAZIL "a green flag with a blue circle and a yellow diamond around it"
-#define MANUFACTURER_INTEQ "an orange crest with the letters 'IRMG'"
-#define MANUFACTURER_MINUTEMAN "the Lanchester City Firearms Plant logo"
-#define MANUFACTURER_MINUTEMAN_LASER "the Clover Photonics logo"
-#define MANUFACTURER_PGF "the Etherbor Industries emblem"
-#define MANUFACTURER_IMPORT "Lanchester Import Co."
-#define MANUFACTURER_SERENE "the Serene Outdoors logo"
-#define MANUFACTURER_CYBERSUN "the Tadeusz Armory logo"
-
 // Misfire chances if the gun's safety is off
 #define GUN_NO_SAFETY_MALFUNCTION_CHANCE_LOW 5
 #define GUN_NO_SAFETY_MALFUNCTION_CHANCE_MEDIUM 10

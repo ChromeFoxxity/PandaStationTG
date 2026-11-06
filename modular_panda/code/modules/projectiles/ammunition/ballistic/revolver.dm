@@ -116,24 +116,24 @@
 	bullet_skin = "force"
 	projectile_type = /obj/shiptest_projectile/bullet/c38/force
 
-//44 Roumain (Montagne & Shadow)
+//44 Solarian (Montagne & Shadow)
 
-/obj/item/shiptest_ammo_casing/a44roum
-	name = ".44 roumain bullet casing"
-	desc = "A .44 roumain bullet casing."
-	caliber = ".44 Roumain"
+/obj/item/shiptest_ammo_casing/a44sol
+	name = ".44 solarian bullet casing"
+	desc = "A .44 solarian bullet casing."
+	caliber = ".44 Solarian"
 	icon_state = "pistol-steel"
-	projectile_type = /obj/shiptest_projectile/bullet/a44roum
+	projectile_type = /obj/shiptest_projectile/bullet/a44sol
 	stack_size = 12
 
-/obj/item/shiptest_ammo_casing/a44roum/rubber
-	name = ".44 roumain rubber bullet casing"
-	desc = "A .44 roumain rubber bullet casing."
+/obj/item/shiptest_ammo_casing/a44sol/rubber
+	name = ".44 solarian rubber bullet casing"
+	desc = "A .44 solarian rubber bullet casing."
 	bullet_skin = "rubber"
-	projectile_type = /obj/shiptest_projectile/bullet/a44roum/rubber
+	projectile_type = /obj/shiptest_projectile/bullet/a44sol/rubber
 
-/obj/item/shiptest_ammo_casing/a44roum/hp
-	name = ".44 roumain hollow-point bullet casing"
-	desc = "A .44 roumain holow-point bullet casing."
+/obj/item/shiptest_ammo_casing/a44sol/hp
+	name = ".44 solarian hollow-point bullet casing"
+	desc = "A .44 solarian holow-point bullet casing."
 	bullet_skin = "hollow"
-	projectile_type = /obj/shiptest_projectile/bullet/a44roum/hp
+	projectile_type = /obj/shiptest_projectile/bullet/a44sol/hp

@@ -78,12 +78,12 @@
 	ammo_type = /obj/item/shiptest_ammo_casing/caseless/c556mm/surplus
 	custom_materials = list(/datum/material/iron = 4000)
 
-/obj/item/storage/box/ammo/c556mm_surplus
+/obj/item/storage/box/ammo/c556mm/surplus
 	name = "box of surplus 5.56mm HITP caseless ammo"
 	desc = "A box of low-quality 5.56mm HITP caseless ammo."
 	icon_state = "556mmHITPbox-surplus"
 
-/obj/item/storage/box/ammo/c556mm_surplus/PopulateContents()
+/obj/item/storage/box/ammo/c556mm/surplus/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/shiptest_ammo_box/magazine/ammo_stack/prefilled/c556mm/surplus = 4)
 	generate_items_inside(items_inside,src)
@@ -91,12 +91,12 @@
 /obj/item/shiptest_ammo_box/magazine/ammo_stack/prefilled/c556mm/ap
 	ammo_type = /obj/item/shiptest_ammo_casing/caseless/c556mm/ap
 
-/obj/item/storage/box/ammo/c556mm_ap
+/obj/item/storage/box/ammo/c556mm/ap
 	name = "box of armor-piercing 5.56mm HITP caseless ammo"
 	desc = "A box of 5.56mm HITP caseless armor-piercing ammo, designed to penetrate through armor at the cost of total damage."
 	icon_state = "556mmHITPbox-ap"
 
-/obj/item/storage/box/ammo/c556mm_ap/PopulateContents()
+/obj/item/storage/box/ammo/c556mm/ap/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/shiptest_ammo_box/magazine/ammo_stack/prefilled/c556mm/ap = 4)
 	generate_items_inside(items_inside,src)
@@ -104,12 +104,12 @@
 /obj/item/shiptest_ammo_box/magazine/ammo_stack/prefilled/c556mm/hp
 	ammo_type = /obj/item/shiptest_ammo_casing/caseless/c556mm/hp
 
-/obj/item/storage/box/ammo/c556mm_hp
+/obj/item/storage/box/ammo/c556mm/hp
 	name = "box of hollow-point 5.56mm HITP caseless ammo"
 	desc = "A box of 5.56mm HITP caseless hollow-point ammo, designed to cause massive tissue damage at the cost of armor penetration."
 	icon_state = "556mmHITPbox-hp"
 
-/obj/item/storage/box/ammo/c556mm_hp/PopulateContents()
+/obj/item/storage/box/ammo/c556mm/hp/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/shiptest_ammo_box/magazine/ammo_stack/prefilled/c556mm/hp = 4)
 	generate_items_inside(items_inside,src)
@@ -117,12 +117,12 @@
 /obj/item/shiptest_ammo_box/magazine/ammo_stack/prefilled/c556mm/rubbershot
 	ammo_type = /obj/item/shiptest_ammo_casing/caseless/c556mm/rubbershot
 
-/obj/item/storage/box/ammo/c556mm_rubber
+/obj/item/storage/box/ammo/c556mm/rubber
 	name = "box of rubber 5.56mm HITP caseless ammo"
 	desc = "A box of 5.56mm HITP caseless rubbershot ammo, designed to disable targets without causing serious damage."
 	icon_state = "556mmHITPbox-rubbershot"
 
-/obj/item/storage/box/ammo/c556mm_rubber/PopulateContents()
+/obj/item/storage/box/ammo/c556mm/rubber/PopulateContents()
 	var/static/items_inside = list(
 		/obj/item/shiptest_ammo_box/magazine/ammo_stack/prefilled/c556mm/rubbershot = 4)
 	generate_items_inside(items_inside,src)

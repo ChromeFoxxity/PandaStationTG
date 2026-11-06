@@ -123,7 +123,6 @@
 		pin.gun_insert(new_gun = src, starting = TRUE)
 
 	add_seclight_point()
-	give_manufacturer_examine() // PANDA EDIT ADDITON - MANUFACTURER EXAMINE
 	add_bayonet_point()
 	add_deep_lore()
 	RegisterSignal(src, COMSIG_ITEM_IN_UNWRAPPED_TRAITOR_MAIL, PROC_REF(on_mail_unwrap))

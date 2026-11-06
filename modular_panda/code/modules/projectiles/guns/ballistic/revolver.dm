@@ -26,7 +26,6 @@
 	internal_magazine = TRUE
 	bolt_type = BOLT_TYPE_NO_BOLT
 	tac_reloads = FALSE
-	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	fire_delay = 0.4 SECONDS
 	spread = 4
@@ -347,4 +346,180 @@
 	icon_state = "goldrevolver"
 	fire_sound = 'sound/items/weapons/resonator_blast.ogg'
 	recoil = 8
-	manufacturer = MANUFACTURER_NONE
+
+/obj/item/shiptest_gun/ballistic/revolver/golden/give_manufacturer_examine()
+	AddElement(/datum/element/manufacturer_examine, COMPANY_REMOVED)
+
+/obj/item/shiptest_gun/ballistic/revolver/viper
+	name = "R-23 \"Viper\""
+	desc = "An imposing revolver used by officers and certain agents of Syndicate member factions, still favored by station directors and high-ranking officers of the Syndicate. Chambered in .357 Magnum."
+
+	icon = 'modular_panda/icons/obj/guns/manufacturer/scarborough/48x32.dmi'
+	lefthand_file = 'modular_panda/icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
+	righthand_file = 'modular_panda/icons/obj/guns/manufacturer/scarborough/righthand.dmi'
+	worn_icon = 'modular_panda/icons/obj/guns/manufacturer/scarborough/onmob.dmi'
+
+	icon_state = "viper"
+	inhand_icon_state = "sa_generic"
+
+	fire_sound = 'modular_panda/sound/weapons/gun/revolver/viper.ogg'
+	rack_sound = 'modular_panda/sound/weapons/gun/revolver/viper_prime.ogg'
+	load_sound = 'modular_panda/sound/weapons/gun/revolver/load_bullet.ogg'
+	eject_sound = 'modular_panda/sound/weapons/gun/revolver/empty.ogg'
+
+	dry_fire_sound = 'modular_panda/sound/weapons/gun/revolver/dry_fire.ogg'
+
+	fire_delay = 0.35 SECONDS
+
+	spread = 3
+	recoil = 2
+
+	semi_auto = TRUE //double action
+	safety_wording = "safety"
+
+/obj/item/shiptest_gun/ballistic/revolver/viper/give_manufacturer_examine()
+	AddElement(/datum/element/manufacturer_examine, COMPANY_SCARBOROUGH)
+
+/obj/item/shiptest_gun/ballistic/revolver/viper/indie
+	name = "Viper-23"
+	desc = "A powerful bull-barrel revolver. Very popular among mercenaries and the occasional well-to-do spacer or pirate for its flashy appearance and powerful cartridge. Chambered in .357 Magnum."
+
+	icon_state = "viper23"
+	inhand_icon_state = "viper23"
+	spread = 10
+	obj_flags = UNIQUE_RENAME
+
+/obj/item/shiptest_gun/ballistic/revolver/montagne
+	name = "\improper BA Montagne"
+	desc = "An ornate break-open revolver issued to high-ranking members of the Terran Colonial Defense Militia. Chambered in .44."
+	icon = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/48x32.dmi'
+	lefthand_file = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/lefthand.dmi'
+	righthand_file = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/righthand.dmi'
+	worn_icon = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/onmob.dmi'
+
+	icon_state = "montagne"
+	inhand_icon_state = "hp_generic"
+	recoil = 0
+
+	default_ammo_type = /obj/item/shiptest_ammo_box/magazine/internal/cylinder/rev44/montagne
+	allowed_ammo_types = list(
+		/obj/item/shiptest_ammo_box/magazine/internal/cylinder/rev44/montagne,
+	)
+
+/obj/item/shiptest_gun/ballistic/revolver/montagne/give_manufacturer_examine()
+	AddElement(/datum/element/manufacturer_examine, COMPANY_BASTION)
+
+/obj/item/shiptest_gun/ballistic/revolver/ashhand
+	name = "BA Ashhand"
+	desc = "A massive, long-barreled revolver often used by the Terran Colonial Defense Militia as protection against big game. Uses .45-70 ammo."
+	icon = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/48x32.dmi'
+	lefthand_file = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/lefthand.dmi'
+	righthand_file = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/righthand.dmi'
+	worn_icon = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/onmob.dmi'
+
+	icon_state = "ashhand"
+	inhand_icon_state = "ashhand"
+	default_ammo_type = /obj/item/shiptest_ammo_box/magazine/internal/cylinder/rev4570
+	allowed_ammo_types = list(
+		/obj/item/shiptest_ammo_box/magazine/internal/cylinder/rev4570,
+	)
+	fire_sound = 'modular_panda/sound/weapons/gun/revolver/shot_hunting.ogg'
+	rack_sound = 'modular_panda/sound/weapons/gun/revolver/viper_prime.ogg'
+	fire_delay = 0.6 SECONDS
+
+	zoom_amt = 4 // Built-in zoom lets the revolver serve as a long-range sidearm.
+
+	spread = 1
+	recoil = 2
+
+/obj/item/shiptest_gun/ballistic/revolver/ashhand/give_manufacturer_examine()
+	AddElement(/datum/element/manufacturer_examine, COMPANY_BASTION)
+
+/obj/item/shiptest_gun/ballistic/revolver/firebrand
+	name = "\improper BA Firebrand"
+	desc = "An archaic precursor to revolver-type firearms, this gun was rendered completely obsolete millennia ago. While fast to fire, it is extremely inaccurate. Uses .357 ammo."
+	icon_state = "pepperbox"
+	inhand_icon_state = "hp_generic_fresh"
+	icon = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/48x32.dmi'
+	lefthand_file = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/lefthand.dmi'
+	righthand_file = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/righthand.dmi'
+	worn_icon = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/onmob.dmi'
+
+	default_ammo_type = /obj/item/shiptest_ammo_box/magazine/internal/cylinder/pepperbox
+	allowed_ammo_types = list(
+		/obj/item/shiptest_ammo_box/magazine/internal/cylinder/pepperbox,
+	)
+	spread = 20
+	fire_delay = 0 SECONDS
+	gate_offset = 4
+	semi_auto = TRUE
+	safety_wording = "safety"
+
+/obj/item/shiptest_gun/ballistic/revolver/firebrand/give_manufacturer_examine()
+	AddElement(/datum/element/manufacturer_examine, COMPANY_BASTION)
+
+/obj/item/shiptest_gun/ballistic/revolver/shadow
+	name = "\improper BA Shadow"
+	desc = "A mid-size revolver. Despite the antiquated design, it is cheap, reliable, and stylish, making it a favorite among fast-drawing spacers and the officers of various militaries, as well as small-time police units. Chambered in .44."
+	fire_sound = 'modular_panda/sound/weapons/gun/revolver/cattleman.ogg'
+	icon = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/48x32.dmi'
+	lefthand_file = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/lefthand.dmi'
+	righthand_file = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/righthand.dmi'
+	worn_icon = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/onmob.dmi'
+	icon_state = "shadow"
+	inhand_icon_state = "shadow"
+
+	default_ammo_type = /obj/item/shiptest_ammo_box/magazine/internal/cylinder/rev44
+	allowed_ammo_types = list(
+		/obj/item/shiptest_ammo_box/magazine/internal/cylinder/rev44,
+	)
+	obj_flags = UNIQUE_RENAME
+	gate_loaded = TRUE
+
+	unique_reskin = list(\
+		"Shadow" = "shadow",
+		"Cattleman" = "shadow_cattleman",
+		"General" = "shadow_general",
+		"Sheriff" = "shadow_sheriff",
+		"Cobra" = "shadow_cobra",
+		"Hired Gun" = "shadow_hiredgun",
+		"Buntline" = "shadow_buntline",
+		"Cavalry" = "shadow_cavalry",
+		"Lanchester Special" = "shadow_lanchester"
+		)
+	unique_reskin_changes_inhand = TRUE
+
+	recoil = 0
+
+/obj/item/shiptest_gun/ballistic/revolver/shadow/give_manufacturer_examine()
+	AddElement(/datum/element/manufacturer_examine, COMPANY_BASTION)
+
+/obj/item/shiptest_gun/ballistic/revolver/flint
+	name = "\improper BA Flint"
+	desc = "A small revolver. Its low price and weight make it a popular self-defense option among civilians. Uses .38 Special rounds."
+	fire_sound = 'modular_panda/sound/weapons/gun/revolver/shot_light.ogg'
+	icon_state = "flint"
+	inhand_icon_state = "hp_generic"
+	icon = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/48x32.dmi'
+	lefthand_file = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/lefthand.dmi'
+	righthand_file = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/righthand.dmi'
+	worn_icon = 'modular_panda/icons/obj/guns/manufacturer/bastion_armaments/onmob.dmi'
+
+	default_ammo_type = /obj/item/shiptest_ammo_box/magazine/internal/cylinder/rev38
+	allowed_ammo_types = list(
+		/obj/item/shiptest_ammo_box/magazine/internal/cylinder/rev38,
+	)
+	obj_flags = UNIQUE_RENAME
+	semi_auto = TRUE //double action
+	safety_wording = "safety"
+	unique_reskin = list("Default" = "flint",
+		"Stainless Steel" = "flint_stainless",
+		"Gold Trim" = "flint_gold",
+		"Leopard Spots" = "flint_leopard",
+		"The Peacemaker" = "flint_peacemaker",
+		"Black Panther" = "flint_panther"
+		)
+	w_class = WEIGHT_CLASS_SMALL
+
+	recoil = 0
+	fire_delay = 0.2 SECONDS

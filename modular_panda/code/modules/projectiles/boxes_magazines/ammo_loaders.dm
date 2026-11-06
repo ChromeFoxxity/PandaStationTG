@@ -163,20 +163,20 @@
 /obj/item/shiptest_ammo_box/a762_stripper/empty
 	start_empty = TRUE
 
-// .44 Roumain speedloader
+// .44 Solarian speedloader
 
-/obj/item/shiptest_ammo_box/a44roum_speedloader
+/obj/item/shiptest_ammo_box/a44sol_speedloader
 	name = "speed loader (.44)"
 	desc = "Designed to quickly reload revolvers."
 	icon_state = "speedloader_38-6"
 	base_icon_state = "speedloader_38"
-	ammo_type = /obj/item/shiptest_ammo_casing/a44roum
-	caliber = ".44 Roumain"
+	ammo_type = /obj/item/shiptest_ammo_casing/a44sol
+	caliber = ".44 Solarian"
 	max_ammo = 6
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	custom_materials = list(/datum/material/iron = 15000)
 	w_class = WEIGHT_CLASS_TINY
 	instant_load = TRUE
 
-/obj/item/shiptest_ammo_box/a44roum_speedloader/empty
+/obj/item/shiptest_ammo_box/a44sol_speedloader/empty
 	start_empty = TRUE

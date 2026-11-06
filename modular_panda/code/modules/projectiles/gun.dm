@@ -24,7 +24,6 @@
 	trigger_guard = TRIGGER_GUARD_NORMAL // cruft?
 	light_system = OVERLAY_LIGHT_DIRECTIONAL
 
-	var/manufacturer = MANUFACTURER_NONE // manufacturer shown in examine text
 	var/autowiki_hidden = FALSE
 
 	// MUZZLE FLASH //
@@ -95,9 +94,6 @@
 	var/min_recoil = 0 // recoil is always at least this
 	var/min_recoil_aimed = 0 // do we have a min recoil while aiming
 
-	var/gunslinger_recoil_bonus = 0 // recoil adjustment for gunslinger quirk
-	var/gunslinger_spread_bonus = 0 // spread adjustment for gunslinger quirk
-
 	var/burst_size = 3 // shots per burst for burst firing
 	var/burst_delay = 0.15 SECONDS // delay between shots in a burst
 	var/fire_delay = 0.2 SECONDS // delay between shots or between bursts
@@ -144,11 +140,15 @@
 	var/fire_select_icon_state_prefix = "" // BASICALLY: the little button you select firing modes from? this is just the prefix of the icon state of that. For example, if we set it as "laser", the fire select will use "laser_single" and so on.
 	var/adjust_fire_select_icon_state_on_safety = FALSE // if we should add "safety_" as an icon prefix if the gun is on safety
 
+/obj/item/shiptest_gun/give_manufacturer_examine()
+	AddElement(/datum/element/manufacturer_examine, COMPANY_REMOVED)
+
 /obj/item/shiptest_gun/Initialize(mapload, spawn_empty)
 	. = ..()
 	muzzle_flash = new(src, muzzleflash_iconstate)
 	if(zoomable)
 		azoom = new(src)
+	give_manufacturer_examine()
 	build_firemodes()
 
 	if(glunked && !actually_shoots)
@@ -194,8 +194,6 @@
 
 /obj/item/shiptest_gun/examine(mob/user)
 	. = ..()
-	if(manufacturer)
-		. += span_notice("It has <b>[manufacturer]</b> engraved on it.")
 	if(gun_firemodes[firemode_index] == FIREMODE_AIMED)
 		. += span_notice("You can cancel a charged shot by pressing the <b>unique action</b> key. By default, this is <b>space</b>.")
 
@@ -648,8 +646,7 @@
 	if(actual_angle > 360)
 		actual_angle -= 360
 	if(total_recoil > 0)
-		// Shiptest recoil stats are much larger than the current camera shake scale.
-		recoil_camera(user, total_recoil + 1, (total_recoil * recoil_backtime_multiplier)+1, total_recoil * 0.1, actual_angle)
+		recoil_camera(user, max(2, round(total_recoil * 0.75)), max(2, round(total_recoil * recoil_backtime_multiplier * 0.75)), total_recoil, actual_angle)
 
 /obj/item/shiptest_gun/proc/calculate_spread(mob/user, bonus_spread)
 	var/final_spread = 0
