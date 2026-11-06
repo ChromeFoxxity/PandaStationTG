@@ -1231,7 +1231,7 @@
 
 	var/datum/point/end_point = beam_points[start_point]
 	var/datum/point/midpoint = point_midpoint_points(start_point, end_point)
-	var/obj/effect/projectile/tracer/tracer_effect = new tracer_type(midpoint.return_turf())
+	var/obj/effect/shiptest_projectile/tracer/tracer_effect = new tracer_type(midpoint.return_turf())
 	tracer_effect.apply_vars(
 		angle_override = angle_between_points(start_point, end_point),
 		p_x = midpoint.pixel_x,

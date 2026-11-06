@@ -122,11 +122,3 @@
 	speed_mod = BULLET_SPEED_RUBBER_MOD
 	bullet_identifier = "large rubber bullet"
 
-// .299 Eoehoma Caseless (E-40)
-
-/obj/shiptest_projectile/bullet/c299
-	name = ".299 Eoehoma caseless bullet"
-	damage = 20
-	armour_penetration = 10
-	speed = 2.5
-	bullet_identifier = "medium bullet"

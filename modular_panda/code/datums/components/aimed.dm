@@ -24,7 +24,7 @@
 	var/aiming_lastangle = 0
 	var/delay = 25
 	var/lastfire = 0
-	var/list/obj/effect/projectile/tracer/current_tracers
+	var/list/obj/effect/shiptest_projectile/tracer/current_tracers
 
 /datum/component/aimed_fire/Initialize(_aiming_time, _aiming_threshold, _movement_delay, _angle_delay)
 	. = ..()
@@ -325,7 +325,7 @@
 
 /obj/shiptest_projectile/beam/hitscan/aiming
 	hitscan = TRUE
-	tracer_type = /obj/effect/projectile/tracer/tracer/aiming
+	tracer_type = /obj/effect/shiptest_projectile/tracer/tracer/aiming
 	name = "aiming beam"
 	icon = ""
 

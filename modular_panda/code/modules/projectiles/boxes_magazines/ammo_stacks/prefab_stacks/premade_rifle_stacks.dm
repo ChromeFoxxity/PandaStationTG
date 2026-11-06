@@ -196,19 +196,3 @@
 /obj/item/storage/box/ammo/a308/ap/nt
 	icon_state = "a308box_nt-ap"
 
-//.299 Eoehoma Caseless (E-40)
-
-/obj/item/shiptest_ammo_box/magazine/ammo_stack/prefilled/c299
-	ammo_type = /obj/item/shiptest_ammo_casing/caseless/c299
-	max_ammo = 15
-
-/obj/item/storage/box/ammo/c299
-	name = "box of .299 Eoehoma caseless ammo"
-	desc = "A box of .299 Eoehoma caseless, for use with the E-40 hybrid assault rifle."
-	icon_state = "299box"
-
-/obj/item/storage/box/ammo/c299/PopulateContents()
-	var/static/items_inside = list(
-		/obj/item/shiptest_ammo_box/magazine/ammo_stack/prefilled/c299 = 4)
-	generate_items_inside(items_inside,src)
-

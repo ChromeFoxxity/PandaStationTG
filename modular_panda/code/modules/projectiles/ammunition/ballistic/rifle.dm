@@ -120,12 +120,3 @@
 	bullet_skin = "hollow"
 	projectile_type = /obj/shiptest_projectile/bullet/a308/hp
 
-//.299
-
-/obj/item/shiptest_ammo_casing/caseless/c299
-	name = ".299 Eoehoma caseless bullet casing"
-	desc = "A .299 Eoehoma caseless bullet casing."
-	icon_state = "caseless"
-	caliber = ".299 caseless"
-	projectile_type = /obj/shiptest_projectile/bullet/c299
-	stack_size = 15
