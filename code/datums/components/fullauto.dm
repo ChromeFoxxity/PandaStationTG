@@ -199,7 +199,7 @@
 		if(!shoota.on_autofire_start(shooter))
 			stop_autofiring()
 			return
-	else if(isgun(parent))
+	else if(istype(parent, /obj/item/shiptest_gun))
 		var/obj/item/gun/shoota = parent
 		if(!shoota.on_autofire_start(shooter)) //This is needed because the minigun has a do_after before firing and signals are async.
 			stop_autofiring()

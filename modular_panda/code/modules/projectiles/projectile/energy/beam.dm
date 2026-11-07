@@ -1,11 +1,3 @@
-/obj/shiptest_projectile/energy
-	name = "energy"
-	icon_state = "spark"
-	damage = 0
-	damage_type = BURN
-	armor_flag = ENERGY
-	reflectable = REFLECT_NORMAL
-
 /obj/shiptest_projectile/beam
 	name = "laser"
 	icon_state = "laser"
@@ -40,6 +32,12 @@
 	ricochet_chance = 90
 	ricochet_incidence_leeway = 75
 	reflectable = REFLECT_NORMAL
+
+/obj/shiptest_projectile/beam/scatter
+	name = "laser pellet"
+	icon_state = "scatterlaser"
+	damage = 5
+	range = 7
 
 /obj/shiptest_projectile/beam/hitscan
 	name = "hitscan beam"
@@ -84,51 +82,49 @@
 	damage *= damage_constant
 	armour_penetration *= ap_constant
 
-/obj/shiptest_projectile/beam/laser
-	tracer_type = /obj/effect/shiptest_projectile/tracer/laser
-	muzzle_type = /obj/effect/shiptest_projectile/muzzle/laser
-	impact_type = /obj/effect/shiptest_projectile/impact/laser
+/obj/shiptest_projectile/beam/weak/shotgun
+	damage = 20
+	armour_penetration = -10
+	var/tile_dropoff = 1
+	var/ap_dropoff = 5
+	var/ap_dropoff_cutoff = -35
 
-/obj/shiptest_projectile/beam/disabler
-	name = "disabler beam"
-	icon_state = "omnilaser"
-	damage = 30
-	armour_penetration = -20
-	damage_type = STAMINA
-	armor_flag = ENERGY
-	bullet_identifier = "disabler"
-	hitsound = 'modular_panda/sound/weapons/tap.ogg'
-	hitsound_glass = null
-	hitsound_stone = null
-	hitsound_metal = null
-	hitsound_wood = null
-	hitsound_snow = null
-	eyeblur = 0
-	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
-	light_color = LIGHT_COLOR_BLUE
-	tracer_type = /obj/effect/shiptest_projectile/tracer/disabler
-	muzzle_type = /obj/effect/shiptest_projectile/muzzle/disabler
-	impact_type = /obj/effect/shiptest_projectile/impact/disabler
-
-/obj/shiptest_projectile/energy/electrode
-	name = "electrode"
-	icon_state = "spark"
-	color = "#FFFF00"
-	hitsound = 'modular_panda/sound/weapons/taserhit.ogg'
-	damage = 40
-	damage_type = STAMINA
-	stutter = 5
-	jitter = 20 SECONDS
-	range = 6
-	tracer_type = /obj/effect/shiptest_projectile/tracer/stun
-	muzzle_type = /obj/effect/shiptest_projectile/muzzle/stun
-	impact_type = /obj/effect/shiptest_projectile/impact/stun
-
-/obj/shiptest_projectile/energy/electrode/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if(!ismob(target) || blocked >= 100) //Fully blocked by mob or collided with dense object - burst into sparks!
-		do_sparks(1, TRUE, src)
-
-/obj/shiptest_projectile/energy/electrode/on_range() //to ensure the bolt sparks when it reaches the end of its range if it didn't hit a target yet
-	do_sparks(1, TRUE, src)
+/obj/shiptest_projectile/beam/weak/shotgun/on_range() //10% loss per tile = max range of 10, generally
 	..()
+	if(damage > 0)
+		damage -= tile_dropoff
+	if(armour_penetration > ap_dropoff_cutoff)
+		armour_penetration -= ap_dropoff
+	if(accuracy_mod < 3)
+		accuracy_mod += 0.3
+	if(damage < 0 && stamina < 0)
+		qdel(src)
+
+/obj/shiptest_projectile/beam/hitscan/kalix
+	name = "concentrated energy beam"
+	tracer_type = /obj/effect/shiptest_projectile/tracer/kalix_rifle
+	muzzle_type = /obj/effect/shiptest_projectile/muzzle/kalix_rifle
+	impact_type = /obj/effect/shiptest_projectile/impact/kalix_rifle
+	hitscan_light_color_override = LIGHT_COLOR_ELECTRIC_CYAN
+	muzzle_flash_color_override = LIGHT_COLOR_ELECTRIC_CYAN
+	impact_light_color_override = LIGHT_COLOR_ELECTRIC_CYAN
+	range = 12
+	damage_constant = 0.8
+	damage = 25
+	armour_penetration = -10
+
+/obj/shiptest_projectile/beam/hitscan/kalix/faveleira
+	damage = 35
+	armour_penetration = 30
+
+/obj/shiptest_projectile/beam/hitscan/kalix/nock
+	name = "concentrated energy beam"
+	tracer_type = /obj/effect/shiptest_projectile/tracer/nock
+	muzzle_type = /obj/effect/shiptest_projectile/muzzle/nock
+	impact_type = /obj/effect/shiptest_projectile/impact/nock
+	hitscan_light_color_override = LIGHT_COLOR_PURPLE
+	muzzle_flash_color_override = LIGHT_COLOR_PURPLE
+	impact_light_color_override = LIGHT_COLOR_PURPLE
+	damage_constant = 0.8
+	damage = 15
+	armour_penetration = -20

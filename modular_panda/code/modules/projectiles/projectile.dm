@@ -2,7 +2,7 @@
 
 /obj/shiptest_projectile
 	name = "projectile"
-	icon = 'icons/obj/weapons/guns/projectiles.dmi'
+	icon = 'modular_panda/icons/obj/projectiles.dmi'
 	icon_state = "bullet"
 	abstract_type = /obj/shiptest_projectile
 	density = FALSE

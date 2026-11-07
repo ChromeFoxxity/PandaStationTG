@@ -1,8 +1,31 @@
+/obj/item/stock_parts/power_store
+	/// If TRUE, this cell behaves like a Shiptest rigged cell when power is used or supplied.
+	var/rigged = FALSE
+
+/obj/item/stock_parts/power_store/proc/legacy_rigged_explode()
+	var/range_heavy = round(sqrt(charge) / 60)
+	var/range_light = round(sqrt(charge) / 30)
+
+	if(!range_light)
+		corrupt()
+		return FALSE
+
+	explosion(
+		src,
+		devastation_range = -1,
+		heavy_impact_range = range_heavy,
+		light_impact_range = range_light,
+		flash_range = range_light
+	)
+
+	qdel(src)
+	return TRUE
+
 /obj/item/stock_parts/power_store/cell/gun
-	name = "Nanotrasen power cell"
-	desc = "A rechargeable weapon cell. While intended for Nanotrasen laser weapons, these are compatible with various other manufacturers' designs, intentionally or not."
+	name = "weapon power cell"
+	desc = "A rechargeable weapon cell developed by Nanotrasen. While originally intended for a specific laser weapon, these are compatible with various other manufacturers' designs, intentionally or not."
 	icon = 'modular_panda/icons/obj/cells.dmi'
-	icon_state = "e-cell"
+	icon_state = "g-cell"
 	maxcharge = 10000
 	chargerate = 1500
 	rating = 0 // Keeps weapon cells incompatible with RPED.
@@ -34,9 +57,9 @@
 	empty = TRUE
 
 /obj/item/stock_parts/power_store/cell/gun/upgraded
-	name = "high-capacity Nanotrasen power cell"
-	desc = "A high capacity weapon cell. Intended for use in heavy weapons and the odd piece of personal gear."
-	icon_state = "e-class2-cell"
+	name = "high-capacity weapon power cell"
+	desc = "A rechargeable high-capacity weapon cell developed by Nanotrasen. Intended for use in heavy weapons and the odd piece of personal gear."
+	icon_state = "ug-cell"
 	maxcharge = 15000
 	chargerate = 2000
 
@@ -44,8 +67,9 @@
 	empty = TRUE
 
 /obj/item/stock_parts/power_store/cell/gun/mini
-	name = "miniature Nanotrasen power cell"
-	icon_state = "e_mini-cell"
+	name = "miniature weapon power cell"
+	desc = "A rechargeable high-capacity weapon cell developed by Nanotrasen. This thing is so friggin' tiny!"
+	icon_state = "mg-cell"
 	maxcharge = 5000
 	chargerate = 1000
 	w_class = WEIGHT_CLASS_TINY
@@ -53,30 +77,9 @@
 /obj/item/stock_parts/power_store/cell/gun/mini/empty
 	empty = TRUE
 
-/* Heavy Aegis Dynamicss cells */
-
-/obj/item/stock_parts/power_store/cell/gun/heavy
-	name = "heavy clover photonics power cell"
-	icon_state = "e-cell-heavy"
-	desc = "A rechargeable weapon cell, derived from the Nanotrasen models, designed for Aegis Dynamicss heavy weapons."
-	maxcharge = 20000
-
-/obj/item/stock_parts/power_store/cell/gun/heavy/empty
-	empty = TRUE
-
-/obj/item/stock_parts/power_store/cell/gun/heavy/upgraded
-	name = "heavy high-capacity clover photonics power cell"
-	icon_state = "e-class2-heavy"
-	desc = "An extremely high-charge weapon cell, designed to provide exceptional magazine depth to Aegis Dynamicss heavy weapons."
-	maxcharge = 30000
-
-/obj/item/stock_parts/power_store/cell/gun/heavy/upgraded/empty
-	empty = TRUE
-
-/* Large weapon cells */
-
 /obj/item/stock_parts/power_store/cell/gun/large
-	name = "extra-large weapon power cell"
+	name = "super-capacity weapon power cell"
+	desc = "A rechargeable super-capacity weapon cell developed by Nanotrasen. This thing is truly a marvel of art."
 	icon_state = "bg-cell"
 	maxcharge = 50000
 	chargerate = 5000
@@ -85,11 +88,31 @@
 /obj/item/stock_parts/power_store/cell/gun/large/empty
 	empty = TRUE
 
+/* Heavy Aegis Dynamicss cells */
+
+/obj/item/stock_parts/power_store/cell/gun/heavy
+	name = "heavy weapon power power cell"
+	icon_state = "e-cell-heavy"
+	desc = "A rechargeable weapon cell, derived from the Nanotrasen models, designed by Aegis Dynamics. Used mainly for weapons that are truly heavy-duty."
+	maxcharge = 20000
+
+/obj/item/stock_parts/power_store/cell/gun/heavy/empty
+	empty = TRUE
+
+/obj/item/stock_parts/power_store/cell/gun/heavy/upgraded
+	name = "heavy high-capacity weapon power cell"
+	icon_state = "e-class2-heavy"
+	desc = "A rechargeable high-capacity weapon cell, derived from the Nanotrasen models, designed by Aegis Dynamics. Used mainly for weapons that are truly heavy-duty"
+	maxcharge = 30000
+
+/obj/item/stock_parts/power_store/cell/gun/heavy/upgraded/empty
+	empty = TRUE
+
 /* Aegis cells */
 
 /obj/item/stock_parts/power_store/cell/gun/ewc5
 	name = "Aegis EWC-5"
-	desc = "Brought to you by Aegis Dynamics, proudly based within the TerraGov, is the EWC-5, an energy cell compatible with any Aegis Dynamics energy weapons."
+	desc = "Brought to you by Aegis Dynamics, proudly based within TerraGov, is the EWC-5, an energy cell compatible with any Aegis Dynamics energy weapons."
 	icon_state = "kalix-cell"
 	maxcharge = 12750
 	chargerate = 1750
@@ -99,7 +122,7 @@
 
 /obj/item/stock_parts/power_store/cell/gun/ewc6
 	name = "Aegis EWC-6m"
-	desc = "Exclusive only to the TerraGov military, the EWC-6m is an Aegis energy weapon cell designed for military-grade use, including expanded capacity and output."
+	desc = "Exclusive only to the TerraGov military, the EWC-6m is an Aegis Dynamics energy weapon cell designed for military-grade use, including expanded capacity and output."
 	icon_state = "pgf-cell"
 	maxcharge = 20000
 	chargerate = 2000
@@ -163,7 +186,7 @@
 
 /obj/item/stock_parts/power_store/cell/gun/cybersun
 	name = "\improper Cybersun plasma cell"
-	desc = "A proprietary power cell primarily used by Tadeusz Armory weaponry. Contains stabilized plasma maintained at high temperature within a containment field, as well as a material catalyst to generate more. Understandably volatile."
+	desc = "A proprietary power cell primarily used by Cybersun Industries weaponry. Contains stabilized plasma maintained at high temperature within a containment field, as well as a material catalyst to generate more. Understandably volatile."
 	icon = 'modular_panda/icons/obj/cells.dmi'
 	icon_state = "cybersun-cell"
 	maxcharge = 15000
@@ -175,7 +198,7 @@
 
 /obj/item/stock_parts/power_store/cell/gun/cybersun/heavy
 	name = "\improper heavy Cybersun plasma cell"
-	desc = "A large proprietary power cell primarily used by Tadeusz Armory weaponry. Contains stabilized plasma maintained at high temperature within a containment field, as well as a material catalyst to generate more. Understandably very volatile."
+	desc = "A large proprietary power cell primarily used by Cybersun Industries weaponry. Contains stabilized plasma maintained at high temperature within a containment field, as well as a material catalyst to generate more. Understandably very volatile."
 	icon_state = "cybersun-heavy"
 	maxcharge = 30000
 	rating = 3

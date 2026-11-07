@@ -192,6 +192,11 @@
 
 /obj/item/stock_parts/power_store/examine(mob/user)
 	. = ..()
+	// PANDA EDIT START
+	if(rigged)
+		. += span_danger("This [src] seems to be faulty, and smoking slightly!")
+	// PANDA EDIT END
+
 	if(corrupted)
 		. += span_danger("This [name] seems to be faulty!")
 	else if(!isnull(charge_light_type))
@@ -205,6 +210,10 @@
 	if(!check_charge)
 		return FALSE
 
+	// PANDA EDIT START
+	if(rigged)
+		return legacy_rigged_explode()
+	// PANDA EDIT END
 	if (!corrupted)
 		if (!(reagents?.spark_act(check_charge, SPARK_ACT_ENCLOSED) & SPARK_ACT_DESTRUCTIVE))
 			return FALSE

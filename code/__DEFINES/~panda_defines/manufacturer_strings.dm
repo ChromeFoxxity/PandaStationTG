@@ -4,6 +4,7 @@
 #define COMPANY_NANOTRASEN "It has <b>[span_cyan("Nanotrasen Armories")]</b> stamped onto it."
 
 #define COMPANY_BASTION "It has <b>[span_orange("Bastion Armaments")]</b> etched onto it."
+#define COMPANY_AEGIS "It has <b>[span_pink("Aegis Dynamics")]</b> etched onto it."
 #define COMPANY_FRONTIER "It has <b>[span_green("Frontier Ordnance Corporation")]</b> engraved onto it, the former manufacturer markings having been scrubbed off."
 #define COMPANY_HINTERLAND "It has <b>[span_yellow("Hinterland Sporting Arms")]</b> engraved onto it."
 #define COMPANY_PIRATE "It has <b>[span_brass("crude Pirate Skull emblem")]</b> painted onto it, the former manufacturer markings having been covered over, long since indistinguishable."

@@ -764,7 +764,7 @@
 /datum/action/toggle_scope_zoom
 	name = "Aim Down Sights"
 	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_HANDS_BLOCKED|AB_CHECK_IMMOBILE|AB_CHECK_LYING
-	button_icon = 'icons/mob/actions/actions_items.dmi'
+	button_icon = 'modular_panda/icons/mob/actions/actions_items.dmi'
 	button_icon_state = "sniper_zoom"
 
 /datum/action/toggle_scope_zoom/Trigger(mob/clicker, trigger_flags)

@@ -28,7 +28,7 @@
 
 /datum/component/aimed_fire/Initialize(_aiming_time, _aiming_threshold, _movement_delay, _angle_delay)
 	. = ..()
-	if(!isgun(parent))
+	if(!istype(parent, /obj/item/shiptest_gun))
 		return COMPONENT_INCOMPATIBLE
 	var/obj/item/gun = parent
 	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(wake_up))
@@ -192,7 +192,7 @@
 	RegisterSignal(shooter, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
 	RegisterSignal(parent, COMSIG_CLICK_UNIQUE_ACTION, PROC_REF(cancel_shot))
 
-	if(isgun(parent))
+	if(istype(parent, /obj/item/shiptest_gun))
 		var/obj/item/shiptest_gun/shoota = parent
 		if(!shoota.on_aimedfire_start(src, target, shooter, mouse_parameters)) //This is needed because the minigun has a do_after before firing and signals are async.
 			stop_aiming()

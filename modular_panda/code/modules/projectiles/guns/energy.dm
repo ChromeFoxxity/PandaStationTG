@@ -42,6 +42,8 @@
 	var/charge_delay = 8
 	var/use_cyborg_cell = FALSE
 	var/datum/action/item_action/toggle_ammotype/ammo_type_action
+	/// Prefix used to select the ammunition-mode action button icon.
+	var/action_icon_manufacturer = "fallback"
 
 	// ENERGY AMMUNITION MODES
 	var/list/ammo_type = list(
@@ -124,7 +126,6 @@
 	else
 		ammo_type_action?.Remove(user)
 
-
 /obj/item/shiptest_gun/energy/dropped(mob/user)
 	. = ..()
 	ammo_type_action?.Remove(user)
@@ -143,33 +144,52 @@
 		fire_sound = shot.fire_sound
 		fire_delay = shot.delay
 
-/obj/item/shiptest_gun/energy/proc/update_ammotype_action_icon()
-	if(!ammo_type_action || !ammo_type.len)
+/datum/action/item_action/toggle_ammotype
+	name = "Toggle Energy Mode"
+	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_HANDS_BLOCKED|AB_CHECK_IMMOBILE|AB_CHECK_LYING
+	button_icon = 'modular_panda/icons/mob/actions/actions_items.dmi'
+
+/datum/action/item_action/toggle_ammotype/build_button_icon(status_only = FALSE, force = FALSE)
+	var/obj/item/shiptest_gun/energy/our_gun = target
+	if(!istype(our_gun) || !length(our_gun.ammo_type))
 		return
 
-	if(select < 1 || select > ammo_type.len)
+	if(our_gun.select < 1 || our_gun.select > our_gun.ammo_type.len)
 		return
 
-	var/obj/item/shiptest_ammo_casing/energy/shot = ammo_type[select]
-
+	var/obj/item/shiptest_ammo_casing/energy/shot = our_gun.ammo_type[our_gun.select]
 	if(!shot)
 		return
 
-	// Ensure the casing has instantiated its projectile.
-	if(!shot.BB)
-		shot.newshot()
+	var/current_ammotype = lowertext(shot.select_name || "fallback")
 
-	var/obj/shiptest_projectile/projectile = shot.BB
+	var/list/valid_ammotypes = list(
+		"kill",
+		"disable",
+		"overcharge",
+		"stun",
+		"ion",
+		"energy",
+		"lethal",
+		"medium",
+		"heavy",
+		"focus",
+		"scatter",
+		"flare",
+		"lorentz",
+		"ionization"
+	)
 
-	if(!projectile || !projectile.icon_state)
-		return
+	if(!(current_ammotype in valid_ammotypes))
+		current_ammotype = "fallback"
 
-	ammo_type_action.button_icon_state = projectile.icon_state
-	ammo_type_action.build_all_button_icons(force = TRUE)
+	var/manufacturer_prefix = our_gun.action_icon_manufacturer
+	if(!manufacturer_prefix)
+		manufacturer_prefix = "fallback"
 
-/datum/action/item_action/toggle_ammotype
-	name = "Toggle Ammunition Type"
-	button_icon = 'modular_panda/icons/mob/actions/actions_items.dmi'
+	button_icon_state = "[manufacturer_prefix]_laser_[current_ammotype]"
+
+	return ..()
 
 /obj/item/shiptest_gun/energy/proc/build_ammotypes()
 	if(ammo_type_action)
@@ -177,7 +197,7 @@
 
 	if(ammo_type.len > 1)
 		ammo_type_action = new(src)
-		update_ammotype_action_icon()
+		ammo_type_action.build_button_icon(force = TRUE)
 
 /obj/item/shiptest_gun/energy/ui_action_click(mob/user, actiontype)
 	if(istype(actiontype, /datum/action/item_action/toggle_ammotype))
@@ -206,7 +226,7 @@
 
 	recharge_newshot(TRUE)
 	update_appearance()
-	update_ammotype_action_icon()
+	ammo_type_action?.build_button_icon(force = TRUE)
 
 /obj/item/shiptest_gun/energy/secondary_action(user)
 	if(gun_firemodes.len > 1)
@@ -547,14 +567,29 @@
 		var/obj/item/shiptest_ammo_casing/energy/shot = ammo_type[select]
 
 		if(ammo_type.len > 1)
-			. += "You can switch ammo modes by pressing the <b>Ammo Toggle</b> button."
+			. += "You can switch ammo modes by pressing the <b>Energy Mode</b> button."
 
 		if(cell)
-			. += "[capitalize(name)]'s cell has [cell.percent()]% charge remaining."
-			. += "[capitalize(name)] has [round(cell.charge / shot.e_cost)] shots remaining on <b>[shot.select_name]</b> mode."
+			. += "The [src]'s cell has [cell.percent()]% charge remaining."
+			. += "The [src] has [round(cell.charge / shot.e_cost)] shots remaining on <b>[shot.select_name]</b> mode."
 		else
-			. += span_notice("[capitalize(name)] doesn't seem to have a cell!")
+			. += "The [src] doesn't seem to have a cell!"
 
 /obj/item/shiptest_gun/energy/unsafe_shot(target)
 	. = ..()
 	process_chamber()
+
+/obj/item/shiptest_gun/energy/eoehoma
+	action_icon_manufacturer = "eoehoma"
+
+/obj/item/shiptest_gun/energy/sharplite
+	action_icon_manufacturer = "sharplite"
+
+/obj/item/shiptest_gun/energy/etherbor
+	action_icon_manufacturer = "etherbor"
+
+/obj/item/shiptest_gun/energy/cybersun
+	action_icon_manufacturer = "cybersun"
+
+/obj/item/shiptest_gun/energy/nanotrasen
+	action_icon_manufacturer = "nt"
