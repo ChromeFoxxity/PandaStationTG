@@ -61,6 +61,7 @@
 
 	min_recoil = 0
 	recoil = 0.1
+	fire_delay = 0.4 SECONDS
 
 	spread = -2
 
@@ -120,7 +121,7 @@
 	zoomable = TRUE
 	zoom_amt = DMR_ZOOM
 
-	fire_delay = 0.8 SECONDS
+	fire_delay = 1 SECONDS
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
@@ -128,7 +129,7 @@
 
 	min_recoil = 0
 	min_recoil_aimed = 0
-	recoil = 0.5
+	recoil = 3
 
 /obj/item/shiptest_gun/energy/cybersun/anode
 	name = "\improper IT41 Anode"
@@ -156,11 +157,13 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-	spread = 4
+	spread = 5
+
+	fire_delay = 0.2 SECONDS
 
 	min_recoil = 0
 	min_recoil_aimed = 0
-	recoil = 0.2
+	recoil = 0.9
 
 //parent type for lorentz guns since they have snowflake behavior
 /obj/item/shiptest_gun/energy/cybersun/lorentz
@@ -247,7 +250,9 @@
 	inhand_icon_state = "opportunist"
 	latch_icon_state = "opportunist"
 
-	recoil = 1
+	fire_delay = 0.8 SECONDS
+
+	recoil = 2.5
 
 	default_ammo_type = /obj/item/stock_parts/power_store/cell/gun/cybersun
 	allowed_ammo_types = list(
@@ -291,7 +296,8 @@
 
 	default_firemode = FIREMODE_SEMIAUTO
 
-	recoil = 2
+	fire_delay = 1 SECONDS
+	recoil = 5
 
 /obj/item/shiptest_gun/energy/cybersun/lorentz/impactor/empty_cell
 	spawn_no_ammo = TRUE
@@ -324,7 +330,9 @@
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
 
-	recoil = 1.5
+	fire_delay = 0.3 SECONDS
+
+	recoil = 1.4
 
 	spread = 5
 
@@ -365,7 +373,7 @@
 	default_firemode = FIREMODE_AIMED
 
 
-	recoil = 2
+	recoil = 5
 
 	spread = 0
 

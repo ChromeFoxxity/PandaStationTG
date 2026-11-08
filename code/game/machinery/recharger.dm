@@ -19,6 +19,8 @@
 		/obj/item/ammo_box/magazine/recharge,
 		/obj/item/modular_computer,
 		/obj/item/gun/ballistic/automatic/battle_rifle,
+		/obj/item/stock_parts/power_store/cell/gun, // PANDA EDIT ADDITION
+		/obj/item/shiptest_gun/energy, // PANDA EDIT ADDITION
 	))
 
 /obj/machinery/recharger/RefreshParts()

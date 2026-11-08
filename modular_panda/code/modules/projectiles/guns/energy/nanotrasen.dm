@@ -48,15 +48,10 @@
 	name = "NT-1 \"Pioneer\""
 	desc = "An exceptionally rare example of Nanotrasen's earliest commissioned laser weaponry, originally manufactured by Aegis Dynamics during the corporation's colonial expansion. The NT-1 was issued to the first generation of Nanotrasen Security, serving as one of the company's earliest standardized energy weapons. Now over a century old, surviving examples are increasingly difficult to maintain, with replacement components being scarce and often prohibitively expensive. Despite its age, the NT-1 remains a functional and formidable weapon. Most surviving units are preserved for ceremonial purposes at Central Command, though a select few have been presented to particularly distinguished members of Nanotrasen's military divisions."
 
-	default_ammo_type = /obj/item/stock_parts/power_store/cell/gun
-	allowed_ammo_types = list(
-		/obj/item/stock_parts/power_store/cell/gun,
-		/obj/item/stock_parts/power_store/cell/gun/upgraded,
-		/obj/item/stock_parts/power_store/cell/gun/empty,
-		/obj/item/stock_parts/power_store/cell/gun/upgraded/empty,
-	)
 	icon_state = "cm1"
 	inhand_icon_state = "cm1"
+
+	fire_delay = 0.3 SECONDS
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -91,9 +86,9 @@
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
-	recoil = 0.5
+	recoil = 0.6
 
-	fire_delay = 0.16 SECONDS
+	fire_delay = 0.4 SECONDS
 
 	w_class = WEIGHT_CLASS_BULKY
 
@@ -104,14 +99,14 @@
 
 /obj/item/shiptest_gun/energy/nanotrasen/sparrow/hawthorn
 	name = "NT-12 \"Hawthorn\""
-	desc = "A modernized successor to the civilian NTC-10 energy SMG, redesigned for professional use by Nanotrasen personnel. The NT-12 retains the original's compact design while incorporating improved energy output and a fully automatic firing mode, offering greater firepower at the cost of overall ammunition capacity. Uses Nanotrasen cells."
+	desc = "A modernized successor to the civilian NTC-10 energy SMG, redesigned for professional use by Nanotrasen personnel. The NT-12 retains the original's compact design while incorporating improved energy output, and offering greater firepower at the cost of overall ammunition capacity. Uses Nanotrasen cells."
 
 	icon_state = "ecm12"
 	inhand_icon_state = "ecm12"
 
 	recoil = 0.7
 
-	fire_delay = 0.16 SECONDS
+	fire_delay = 0.3 SECONDS
 
 	default_ammo_type = /obj/item/stock_parts/power_store/cell/gun/upgraded
 
@@ -120,7 +115,7 @@
 
 /obj/item/shiptest_gun/energy/nanotrasen/nettle
 	name = "NTC-7 \"Nettle\""
-	desc = "A lightweight, compact energy pistol designed around a reliable three-round burst firing system. Originally developed as an affordable personal-defense weapon, the Nettle has since found widespread adoption among civilian security contractors, law enforcement agencies, and private citizens alike. Its straightforward design, manageable size, and dependable performance have made it a popular choice for those seeking an economical alternative to more specialized sidearms. Uses Nanotrasen Mini cells."
+	desc = "A lightweight, compact energy pistol designed around a reliable two-round burst firing system. Originally developed as an affordable personal-defense weapon, the Nettle has since found widespread adoption among civilian security contractors, law enforcement agencies, and private citizens alike. Its straightforward design, manageable size, and dependable performance have made it a popular choice for those seeking an economical alternative to more specialized sidearms. Uses Nanotrasen Mini cells."
 	icon_state = "pl7"
 	inhand_icon_state = "clover_generic_civ"
 
@@ -129,14 +124,14 @@
 	righthand_file = 'modular_panda/icons/obj/guns/manufacturer/nanotrasen/righthand.dmi'
 	worn_icon = 'modular_panda/icons/obj/guns/manufacturer/nanotrasen/onmob.dmi'
 
-	burst_size = 3
-	burst_delay = 0.15 SECONDS
-	fire_delay = 0.6 SECONDS
+	burst_size = 2
+	burst_delay = 0.2 SECONDS
+	fire_delay = 0.45 SECONDS
 
 	modifystate = TRUE
 
 	spread = 6
-	recoil = 0
+	recoil = 0.3
 
 	w_class = WEIGHT_CLASS_SMALL
 
@@ -155,12 +150,16 @@
 
 /obj/item/shiptest_gun/energy/nanotrasen/nettle/bramble
 	name = "NT-9 \"Bramble\""
-	desc = "A professional-grade refinement of the civilian NTC-7 Nettle, redesigned to meet the demands of Nanotrasen's emergency response personnel. The NT-9 retains the original's compact frame and reliable three-round burst firing system while incorporating improved energy regulation, reinforced internal components, and greater overall durability. Its lightweight construction and simplified cell logistics have made it a favored sidearm among Nanotrasen emergency response teams and corporate security personnel. Uses Nanotrasen Mini cells."
+	desc = "A professional-grade refinement of the civilian NTC-7 Nettle, redesigned to meet the demands of Nanotrasen's emergency response personnel. The NT-9 retains the original's compact frame and reliable burst firing system while incorporating improved energy regulation, reinforced internal components, three-round burst support, and greater overall durability. Its lightweight construction and simplified cell logistics have made it a favored sidearm among Nanotrasen emergency response teams and corporate security personnel. Uses Nanotrasen Mini cells."
 	icon_state = "ecm7"
 	inhand_icon_state = "clover_generic"
 
-	fire_delay = 0.5 SECONDS
+	burst_size = 3
+	burst_delay = 0.15 SECONDS
+	fire_delay = 0.35 SECONDS
+
 	spread = 4
+	recoil = 0.5
 
 /obj/item/shiptest_gun/energy/nanotrasen/nettle/stinging
 	name = "xNTC-7 \"Stinging Nettle\""
@@ -168,6 +167,7 @@
 	icon_state = "stinging_nettle"
 
 	spread = 10
+	recoil = 0.7
 
 	fire_delay = 0.1 SECONDS
 
@@ -189,13 +189,11 @@
 	righthand_file = 'modular_panda/icons/obj/guns/manufacturer/nanotrasen/righthand.dmi'
 	worn_icon = 'modular_panda/icons/obj/guns/manufacturer/nanotrasen/onmob.dmi'
 
-	burst_size = 3
-	burst_delay = 0.15 SECONDS
 	fire_delay = 0.5 SECONDS
 
 	modifystate = TRUE
 
-	spread = 2
+	spread = 3
 	recoil = 1
 
 	w_class = WEIGHT_CLASS_NORMAL
@@ -219,9 +217,10 @@
 	icon_state = "ecm9"
 	inhand_icon_state = "ecm9"
 
-	fire_delay = 0.35 SECONDS
+	fire_delay = 0.4 SECONDS
 
 	recoil = 0.7
+	spread = 2
 
 /obj/item/shiptest_gun/energy/nanotrasen/faveleira
 	name = "NTC-24 \"Faveleira\""
@@ -250,10 +249,10 @@
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
-	spread = 1
-	recoil = 1
+	spread = 2
+	recoil = 4
 
-	fire_delay = 0.7 SECONDS
+	fire_delay = 0.85 SECONDS
 
 	w_class = WEIGHT_CLASS_BULKY
 
@@ -268,7 +267,10 @@
 	icon_state = "ecm25"
 	inhand_icon_state = "ecm25"
 
-	fire_delay = 0.6 SECONDS
+	spread = 1
+	recoil = 3
+
+	fire_delay = 0.65 SECONDS
 
 	w_class = WEIGHT_CLASS_BULKY
 
@@ -301,9 +303,9 @@
 
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_SUITSTORE
 
-	fire_delay = 0.16 SECONDS
+	fire_delay = 0.4 SECONDS
 	spread = 4
-	recoil = 0.4
+	recoil = 0.9
 
 	w_class = WEIGHT_CLASS_BULKY
 
@@ -318,8 +320,8 @@
 	icon_state = "ecm20"
 	inhand_icon_state = "ecm20"
 
-	fire_delay = 0.12 SECONDS
+	fire_delay = 0.3 SECONDS
 	spread = 2
-	recoil = 0.5
+	recoil = 0.8
 
 	ammo_type = list(/obj/item/shiptest_ammo_casing/energy/laser/clover/highpower, /obj/item/shiptest_ammo_casing/energy/laser/clover/overcharge)
